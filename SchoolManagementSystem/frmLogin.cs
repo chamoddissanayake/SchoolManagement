@@ -36,7 +36,7 @@ namespace SchoolManagementSystem
             }else if (userType.Text == ""){
                 MessageBox.Show("Please select usertype");
             }else{
-                //Login validation start
+                
 
                 string conString = CommonConstants.connnectionString;
                 if (userType.Text.Equals("Academic Staff"))
