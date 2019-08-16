@@ -112,12 +112,16 @@ namespace SchoolManagementSystem
                         Order by sf.term, sf.sID
                 */
 
-                command.CommandText = "SELECT sf.sID AS 'Student ID',std.fName AS 'First Name',std.mName AS 'Middle Name',std.lName AS 'Last Name',sf.sCode AS 'Subject Code', s.sName AS 'Subject Name',sf.mark AS 'Mark', sf.term AS 'Term', s.forGrade AS 'Grade',sf.examID AS 'ExamID' FROM Student_follow_subject sf, Subject s, Class_Student cs , Student std  WHERE s.sCode = sf.sCode AND sf.sID = cs.sid AND cs.sid = std.sID AND sf.sID LIKE @sid AND cs.classID IN( SELECT classID FROM Class_Teacher  WHERE stfID = 'STF001') Order by sf.term, sf.sID";
+                command.CommandText = "SELECT sf.sID AS 'Student ID',std.fName AS 'First Name',std.mName AS 'Middle Name',std.lName AS 'Last Name',sf.sCode AS 'Subject Code', s.sName AS 'Subject Name',sf.mark AS 'Mark', sf.term AS 'Term', s.forGrade AS 'Grade',sf.examID AS 'ExamID' FROM Student_follow_subject sf, Subject s, Class_Student cs , Student std  WHERE s.sCode = sf.sCode AND sf.sID = cs.sid AND cs.sid = std.sID AND sf.sID LIKE @sid AND cs.classID IN( SELECT classID FROM Class_Teacher  WHERE stfID = @tid) Order by sf.term, sf.sID";
 
                 SqlParameter sid = new SqlParameter("@sid", SqlDbType.VarChar, 100);
                 sid.Value = "%" + studentIDForSearchResult + "%";
                 command.Parameters.Add(sid);
 
+                SqlParameter tid = new SqlParameter("@tid", SqlDbType.VarChar, 100);
+                tid.Value = u.getuserID() ;
+                command.Parameters.Add(tid);
+                
                 command.Prepare();
                 DataTable dt = new DataTable();
 
@@ -166,11 +170,15 @@ namespace SchoolManagementSystem
 					            ) 
                 */
 
-                command.CommandText = "SELECT sf.sID AS 'Student ID',std.fName AS 'First Name',std.mName AS 'Middle Name',std.lName AS 'Last Name',sf.sCode AS 'Subject Code', s.sName AS 'Subject Name',sf.mark AS 'Mark', sf.term AS 'Term', s.forGrade AS 'Grade',sf.examID AS 'ExamID' FROM Student_follow_subject sf, Subject s, Class_Student cs , Student std   WHERE s.sCode = sf.sCode AND sf.sID = cs.sid AND cs.sid = std.sID AND(std.fName LIKE @stdNameForSearchResult OR  std.mName LIKE @stdNameForSearchResult OR std.lName LIKE @stdNameForSearchResult)  AND cs.classID IN( SELECT classID  FROM Class_Teacher  WHERE stfID = 'STF001' )";
+                command.CommandText = "SELECT sf.sID AS 'Student ID',std.fName AS 'First Name',std.mName AS 'Middle Name',std.lName AS 'Last Name',sf.sCode AS 'Subject Code', s.sName AS 'Subject Name',sf.mark AS 'Mark', sf.term AS 'Term', s.forGrade AS 'Grade',sf.examID AS 'ExamID' FROM Student_follow_subject sf, Subject s, Class_Student cs , Student std   WHERE s.sCode = sf.sCode AND sf.sID = cs.sid AND cs.sid = std.sID AND(std.fName LIKE @stdNameForSearchResult OR  std.mName LIKE @stdNameForSearchResult OR std.lName LIKE @stdNameForSearchResult)  AND cs.classID IN( SELECT classID  FROM Class_Teacher  WHERE stfID = @tid )";
 
                 SqlParameter sName = new SqlParameter("@stdNameForSearchResult", SqlDbType.VarChar, 100);
                 sName.Value = "%" + studentNameForSearchResult + "%";
                 command.Parameters.Add(sName);
+
+                SqlParameter tid = new SqlParameter("@tid", SqlDbType.VarChar, 100);
+                tid.Value = u.getuserID();
+                command.Parameters.Add(tid);
 
                 command.Prepare();
                 DataTable dt = new DataTable();
