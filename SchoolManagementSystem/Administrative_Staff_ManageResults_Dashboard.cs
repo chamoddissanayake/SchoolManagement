@@ -44,7 +44,7 @@ namespace SchoolManagementSystem
                 ORDER BY classID,rank
                 */
 
-                command.CommandText = "SELECT Student.sID, Student.fName, Student.mName, Student.lName, Class_Student.classID, Student_Rank.year, Student_Rank.rank FROM Student, Class_Student, Student_Rank WHERE Student.sID = Student_Rank.sID AND Class_Student.sid = Student.sID AND rank in(1,2,3,4,5) ORDER BY classID,rank";
+                command.CommandText = "SELECT Student.sID, Student.fName, Student.mName, Student.lName, Class_Student.classID, Student_Rank.year, Student_Rank.rank,  Student_Rank.term FROM Student, Class_Student, Student_Rank WHERE Student.sID = Student_Rank.sID AND Class_Student.sid = Student.sID AND rank in(1,2,3) ORDER BY classID,term,rank";
 
                 command.Prepare();
 
