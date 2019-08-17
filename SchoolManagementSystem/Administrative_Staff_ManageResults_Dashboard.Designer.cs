@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administrative_Staff_ManageResults_Dashboard));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.helloMsg = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.goBack = new System.Windows.Forms.Button();
@@ -49,10 +52,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.generateSummary = new System.Windows.Forms.Button();
             this.teacherNamelbl = new System.Windows.Forms.Label();
+            this.AverageBySubjectChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.topStudentsDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AverageBySubjectChart)).BeginInit();
             this.SuspendLayout();
             // 
             // helloMsg
@@ -267,12 +272,30 @@
             this.teacherNamelbl.TabIndex = 30;
             this.teacherNamelbl.Text = "text";
             // 
+            // AverageBySubjectChart
+            // 
+            this.AverageBySubjectChart.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.AverageBySubjectChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.AverageBySubjectChart.Legends.Add(legend1);
+            this.AverageBySubjectChart.Location = new System.Drawing.Point(392, 418);
+            this.AverageBySubjectChart.Name = "AverageBySubjectChart";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "AverageMark";
+            this.AverageBySubjectChart.Series.Add(series1);
+            this.AverageBySubjectChart.Size = new System.Drawing.Size(583, 223);
+            this.AverageBySubjectChart.TabIndex = 31;
+            this.AverageBySubjectChart.Text = "chart1";
+            // 
             // Administrative_Staff_ManageResults_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1136, 653);
+            this.Controls.Add(this.AverageBySubjectChart);
             this.Controls.Add(this.teacherNamelbl);
             this.Controls.Add(this.generateSummary);
             this.Controls.Add(this.label6);
@@ -300,6 +323,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.topStudentsDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AverageBySubjectChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,5 +351,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button generateSummary;
         private System.Windows.Forms.Label teacherNamelbl;
+        private System.Windows.Forms.DataVisualization.Charting.Chart AverageBySubjectChart;
     }
 }

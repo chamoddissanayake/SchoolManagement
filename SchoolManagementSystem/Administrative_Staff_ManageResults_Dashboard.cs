@@ -29,9 +29,11 @@ namespace SchoolManagementSystem
             fillTopStudentsDGV();
 
             fillClassIDCombobox();
+            generateSummary_Click(sender, e);
+
         }
 
-        private void fillClassIDCombobox()
+    private void fillClassIDCombobox()
         {
             fillClassIDComboboxCompleteCode();
             fillTermCombobox();
@@ -200,21 +202,26 @@ namespace SchoolManagementSystem
             string selected_classID = this.classID.GetItemText(this.classID.SelectedItem);
             string selected_term = this.term.GetItemText(this.term.SelectedItem);
             string selected_year = this.year.GetItemText(this.year.SelectedItem);
-           
 
-            string teacher_name = findClassTeacher(selected_classID , selected_year);
-            //MessageBox.Show(teacher_name);
+
+            String[] teacher_details = new String[2];
+            teacher_details = findClassTeacher(selected_classID , selected_year);
+
+            //MessageBox.Show(teacher_details[0]+" "+teacher_details[1]);
+
             teacherNamelbl.Visible = true;
-            teacherNamelbl.Text = "Class Teacher of "+ selected_classID +" in "+ selected_year +" => "+ teacher_name;
+            teacherNamelbl.Text = "Class Teacher of "+ selected_classID +" in "+ selected_year +" => "+ teacher_details[1] +" ("+ teacher_details[0] + ")";
 
+            getDataForGraph(teacher_details[0], selected_year, selected_term, selected_classID);
 
 
         }
 
-        private string findClassTeacher(string selected_classID , string selected_year)
+       
+        private string[] findClassTeacher(string selected_classID , string selected_year)
         {
             string conString = CommonConstants.connnectionString;
-            string teacher_name="";
+            String[] teacher_details = new String[2];
             using (SqlConnection connection = new SqlConnection(conString))
             {
                 connection.Open();
@@ -243,11 +250,79 @@ namespace SchoolManagementSystem
 
                 while (reader.Read())
                 {
-                    teacher_name = reader["fName"].ToString()+" " + reader["lName"].ToString();
+                    teacher_details[0] = reader["stfID"].ToString();
+                    teacher_details[1] = reader["fName"].ToString()+" " + reader["lName"].ToString();
                 }
                 connection.Close();
             }
-            return teacher_name;
+            return teacher_details;
         }
+
+
+
+        private void getDataForGraph(string teacherID, string selected_year, string selected_term, string selected_classID)
+        {
+            string conString = CommonConstants.connnectionString;
+            //Get Avearge results form db -start
+
+            using (SqlConnection connection = new SqlConnection(conString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(null, connection);
+
+                command.CommandText = "SELECT s.sName AS 'Subject Name', AVG(sf.mark) AS 'AvgMark' FROM Student_follow_subject sf, Subject s, Class_Student cs , Student std, Class_Teacher ct WHERE s.sCode = sf.sCode AND sf.sID = cs.sid AND cs.sid = std.sID AND cs.classID = ct.classID AND ct.stfID = @stfID AND ct.year = @year AND sf.term = @term AND cs.classID = @classID Group by s.sName";
+                // @term @
+
+                SqlParameter stfID = new SqlParameter("@stfID", SqlDbType.VarChar, 100);
+                stfID.Value = teacherID;
+                command.Parameters.Add(stfID);
+
+                SqlParameter year = new SqlParameter("@year", SqlDbType.Int, 100);
+                year.Value = selected_year;
+                command.Parameters.Add(year);
+
+                SqlParameter term = new SqlParameter("@term", SqlDbType.Int, 100);
+                term.Value = selected_term;
+                command.Parameters.Add(term);
+
+                SqlParameter clsID = new SqlParameter("@classID", SqlDbType.VarChar, 100);
+                clsID.Value = selected_classID;
+                command.Parameters.Add(clsID);
+
+                // Call Prepare after setting the Commandtext and Parameters.
+                command.Prepare();
+                SqlDataReader reader = command.ExecuteReader();
+
+
+                string[] Subject_Name_Array = new string[30];
+                int[] Subject_Average_Mark_Array = new int[30];
+                int counter = 0;
+
+                while (reader.Read())
+                {
+
+                    Subject_Name_Array[counter] = reader["Subject Name"].ToString();
+                    Subject_Average_Mark_Array[counter] = int.Parse(reader["AvgMark"].ToString());
+                    counter++;
+                }
+
+                connection.Close();
+                drawGraph(Subject_Name_Array, Subject_Average_Mark_Array, counter);
+            }
+            //Get Avearge results form db - end
+        }
+
+
+        private void drawGraph(string[] subject_Name_Array, int[] subject_Average_Mark_Array, int counter)
+        {
+            this.AverageBySubjectChart.Series["AverageMark"].Points.Clear();
+            for (int i = 0; i < counter; i++)
+            {
+                this.AverageBySubjectChart.Series["AverageMark"].Points.AddXY(subject_Name_Array[i], subject_Average_Mark_Array[i]);
+            }
+        } 
+
+
+
     }
 }
