@@ -41,6 +41,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.classID = new System.Windows.Forms.ComboBox();
+            this.term = new System.Windows.Forms.ComboBox();
+            this.year = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.generateSummary = new System.Windows.Forms.Button();
+            this.teacherNamelbl = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -179,12 +187,100 @@
             this.label11.TabIndex = 21;
             this.label11.Text = "Administrative Staff";
             // 
+            // classID
+            // 
+            this.classID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.classID.FormattingEnabled = true;
+            this.classID.Location = new System.Drawing.Point(312, 357);
+            this.classID.Name = "classID";
+            this.classID.Size = new System.Drawing.Size(121, 24);
+            this.classID.TabIndex = 23;
+            // 
+            // term
+            // 
+            this.term.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.term.FormattingEnabled = true;
+            this.term.Location = new System.Drawing.Point(538, 364);
+            this.term.Name = "term";
+            this.term.Size = new System.Drawing.Size(121, 24);
+            this.term.TabIndex = 24;
+            // 
+            // year
+            // 
+            this.year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.year.FormattingEnabled = true;
+            this.year.Location = new System.Drawing.Point(750, 364);
+            this.year.Name = "year";
+            this.year.Size = new System.Drawing.Size(121, 24);
+            this.year.TabIndex = 25;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(242, 357);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 17);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Class";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(473, 367);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 17);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Term";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Location = new System.Drawing.Point(689, 371);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 17);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Year";
+            // 
+            // generateSummary
+            // 
+            this.generateSummary.BackColor = System.Drawing.Color.SandyBrown;
+            this.generateSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generateSummary.Location = new System.Drawing.Point(907, 357);
+            this.generateSummary.Name = "generateSummary";
+            this.generateSummary.Size = new System.Drawing.Size(217, 31);
+            this.generateSummary.TabIndex = 29;
+            this.generateSummary.Text = "Generate Summary";
+            this.generateSummary.UseVisualStyleBackColor = false;
+            this.generateSummary.Click += new System.EventHandler(this.generateSummary_Click);
+            // 
+            // teacherNamelbl
+            // 
+            this.teacherNamelbl.AutoSize = true;
+            this.teacherNamelbl.BackColor = System.Drawing.Color.Transparent;
+            this.teacherNamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teacherNamelbl.Location = new System.Drawing.Point(298, 395);
+            this.teacherNamelbl.Name = "teacherNamelbl";
+            this.teacherNamelbl.Size = new System.Drawing.Size(36, 20);
+            this.teacherNamelbl.TabIndex = 30;
+            this.teacherNamelbl.Text = "text";
+            // 
             // Administrative_Staff_ManageResults_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1136, 653);
+            this.Controls.Add(this.teacherNamelbl);
+            this.Controls.Add(this.generateSummary);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.year);
+            this.Controls.Add(this.term);
+            this.Controls.Add(this.classID);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label5);
@@ -223,5 +319,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox classID;
+        private System.Windows.Forms.ComboBox term;
+        private System.Windows.Forms.ComboBox year;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button generateSummary;
+        private System.Windows.Forms.Label teacherNamelbl;
     }
 }
