@@ -25,7 +25,7 @@ namespace SchoolManagementSystem
             helloMsg.Text = "Hello " + u.getuserID();
 
             fillTerm();
-
+            
         }
 
 
@@ -210,10 +210,36 @@ namespace SchoolManagementSystem
         private void drawGraph(string[] subject_Name_Array, int[] subject_Average_Mark_Array, int counter)
         {
             this.AverageBySubjectChart.Series["AverageMark"].Points.Clear();
-            for (int i = 0; i < counter; i++)
-            {
-                this.AverageBySubjectChart.Series["AverageMark"].Points.AddXY(subject_Name_Array[i], subject_Average_Mark_Array[i]);
-            }
+            //for (int i = 0; i < counter; i++)
+            //{
+            //    this.AverageBySubjectChart.Series["AverageMark"].Points.AddXY(subject_Name_Array[i], subject_Average_Mark_Array[i]);
+            //}
+
+
+            Dictionary<string, int> AverageMarks = new Dictionary<string, int>();
+
+            AverageMarks.Add("Subject 1", 20);
+            AverageMarks.Add("Subject 2", 50);
+            AverageMarks.Add("Subject 3", 30);
+            AverageMarks.Add("Subject 4", 60);
+            AverageMarks.Add("Subject 5", 70);
+            AverageMarks.Add("Subject 6", 20);
+            AverageMarks.Add("Subject 7", 50);
+            AverageMarks.Add("Subject 8", 90);
+            AverageMarks.Add("Subject 9", 30);
+            AverageMarks.Add("Subject 10", 30);
+
+
+            foreach (KeyValuePair<string, int> avgMarks in AverageMarks)
+                AverageBySubjectChart.Series[0].Points.AddXY(avgMarks.Key, avgMarks.Value);
+
+
+
+        }
+
+        private void AverageBySubjectChart_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

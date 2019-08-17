@@ -288,6 +288,7 @@
             this.AverageBySubjectChart.Size = new System.Drawing.Size(583, 223);
             this.AverageBySubjectChart.TabIndex = 31;
             this.AverageBySubjectChart.Text = "chart1";
+            chartArea1.AxisX.LabelStyle.Angle = 90;
             // 
             // Administrative_Staff_ManageResults_Dashboard
             // 

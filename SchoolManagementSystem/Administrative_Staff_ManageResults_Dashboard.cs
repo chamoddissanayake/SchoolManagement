@@ -298,14 +298,19 @@ namespace SchoolManagementSystem
                 int[] Subject_Average_Mark_Array = new int[30];
                 int counter = 0;
 
+                //StringBuilder strBuilder = new StringBuilder("");
+                
                 while (reader.Read())
                 {
 
                     Subject_Name_Array[counter] = reader["Subject Name"].ToString();
+                    //strBuilder.Append(Subject_Name_Array[counter]);
+
                     Subject_Average_Mark_Array[counter] = int.Parse(reader["AvgMark"].ToString());
                     counter++;
                 }
 
+                //MessageBox.Show(strBuilder.ToString());
                 connection.Close();
                 drawGraph(Subject_Name_Array, Subject_Average_Mark_Array, counter);
             }
@@ -316,11 +321,30 @@ namespace SchoolManagementSystem
         private void drawGraph(string[] subject_Name_Array, int[] subject_Average_Mark_Array, int counter)
         {
             this.AverageBySubjectChart.Series["AverageMark"].Points.Clear();
-            for (int i = 0; i < counter; i++)
-            {
-                this.AverageBySubjectChart.Series["AverageMark"].Points.AddXY(subject_Name_Array[i], subject_Average_Mark_Array[i]);
-            }
-        } 
+            //for (int i = 0; i < counter; i++)
+            //{
+            //    this.AverageBySubjectChart.Series["AverageMark"].Points.AddXY(subject_Name_Array[i], subject_Average_Mark_Array[i]);
+            //}
+
+
+            Dictionary<string, int> AverageMarks = new Dictionary<string, int>();
+
+            AverageMarks.Add("Subject 1", 20);
+            AverageMarks.Add("Subject 2", 50);
+            AverageMarks.Add("Subject 3", 30);
+            AverageMarks.Add("Subject 4", 60);
+            AverageMarks.Add("Subject 5", 70);
+            AverageMarks.Add("Subject 6", 20);
+            AverageMarks.Add("Subject 7", 50);
+            AverageMarks.Add("Subject 8", 90);
+            AverageMarks.Add("Subject 9", 30);
+            //AverageMarks.Add("Subject 10", 30);
+
+
+            foreach (KeyValuePair<string, int> avgMarks in AverageMarks)
+                AverageBySubjectChart.Series[0].Points.AddXY(avgMarks.Key, avgMarks.Value);
+
+        }
 
 
 
