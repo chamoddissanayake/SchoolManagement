@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.NonAcademic_Staff_OB_Management = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -130,12 +131,27 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Dashboard >";
             // 
+            // NonAcademic_Staff_OB_Management
+            // 
+            this.NonAcademic_Staff_OB_Management.BackColor = System.Drawing.Color.Transparent;
+            this.NonAcademic_Staff_OB_Management.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NonAcademic_Staff_OB_Management.BackgroundImage")));
+            this.NonAcademic_Staff_OB_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.NonAcademic_Staff_OB_Management.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NonAcademic_Staff_OB_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NonAcademic_Staff_OB_Management.Location = new System.Drawing.Point(325, 179);
+            this.NonAcademic_Staff_OB_Management.Name = "NonAcademic_Staff_OB_Management";
+            this.NonAcademic_Staff_OB_Management.Size = new System.Drawing.Size(157, 130);
+            this.NonAcademic_Staff_OB_Management.TabIndex = 15;
+            this.NonAcademic_Staff_OB_Management.UseVisualStyleBackColor = false;
+            // 
             // NonAcademicStaffDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1138, 653);
+            this.Controls.Add(this.NonAcademic_Staff_OB_Management);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel2);
@@ -164,5 +180,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button NonAcademic_Staff_OB_Management;
     }
 }

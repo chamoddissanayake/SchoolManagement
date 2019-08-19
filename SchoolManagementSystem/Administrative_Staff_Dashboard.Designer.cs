@@ -38,6 +38,12 @@
             this.Administrative_Staff_Manage_Results = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.Admin_Library_Management = new System.Windows.Forms.Button();
+            this.Admin_OB_Management = new System.Windows.Forms.Button();
+            this.Admin_Event_Management = new System.Windows.Forms.Button();
+            this.Admin_Staff_Management = new System.Windows.Forms.Button();
+            this.Admin_Subject_Management = new System.Windows.Forms.Button();
+            this.Admin_Student_Management = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -111,13 +117,13 @@
             // 
             this.Administrative_Staff_Manage_Results.BackColor = System.Drawing.Color.Transparent;
             this.Administrative_Staff_Manage_Results.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Administrative_Staff_Manage_Results.BackgroundImage")));
+            this.Administrative_Staff_Manage_Results.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Administrative_Staff_Manage_Results.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Administrative_Staff_Manage_Results.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Administrative_Staff_Manage_Results.Location = new System.Drawing.Point(296, 174);
+            this.Administrative_Staff_Manage_Results.Location = new System.Drawing.Point(325, 209);
             this.Administrative_Staff_Manage_Results.Name = "Administrative_Staff_Manage_Results";
             this.Administrative_Staff_Manage_Results.Size = new System.Drawing.Size(157, 130);
             this.Administrative_Staff_Manage_Results.TabIndex = 6;
-            this.Administrative_Staff_Manage_Results.Text = "Manage Results";
             this.Administrative_Staff_Manage_Results.UseVisualStyleBackColor = false;
             this.Administrative_Staff_Manage_Results.Click += new System.EventHandler(this.Administrative_Staff_Manage_Results_Click);
             // 
@@ -145,12 +151,97 @@
             this.label11.TabIndex = 19;
             this.label11.Text = "Administrative Staff";
             // 
+            // Admin_Library_Management
+            // 
+            this.Admin_Library_Management.BackColor = System.Drawing.Color.Transparent;
+            this.Admin_Library_Management.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Admin_Library_Management.BackgroundImage")));
+            this.Admin_Library_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Admin_Library_Management.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Admin_Library_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Admin_Library_Management.Location = new System.Drawing.Point(608, 289);
+            this.Admin_Library_Management.Name = "Admin_Library_Management";
+            this.Admin_Library_Management.Size = new System.Drawing.Size(157, 130);
+            this.Admin_Library_Management.TabIndex = 27;
+            this.Admin_Library_Management.UseVisualStyleBackColor = false;
+            // 
+            // Admin_OB_Management
+            // 
+            this.Admin_OB_Management.BackColor = System.Drawing.Color.Transparent;
+            this.Admin_OB_Management.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Admin_OB_Management.BackgroundImage")));
+            this.Admin_OB_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Admin_OB_Management.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Admin_OB_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Admin_OB_Management.Location = new System.Drawing.Point(608, 460);
+            this.Admin_OB_Management.Name = "Admin_OB_Management";
+            this.Admin_OB_Management.Size = new System.Drawing.Size(157, 130);
+            this.Admin_OB_Management.TabIndex = 26;
+            this.Admin_OB_Management.UseVisualStyleBackColor = false;
+            // 
+            // Admin_Event_Management
+            // 
+            this.Admin_Event_Management.BackColor = System.Drawing.Color.Transparent;
+            this.Admin_Event_Management.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Admin_Event_Management.BackgroundImage")));
+            this.Admin_Event_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Admin_Event_Management.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Admin_Event_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Admin_Event_Management.Location = new System.Drawing.Point(911, 395);
+            this.Admin_Event_Management.Name = "Admin_Event_Management";
+            this.Admin_Event_Management.Size = new System.Drawing.Size(157, 130);
+            this.Admin_Event_Management.TabIndex = 25;
+            this.Admin_Event_Management.UseVisualStyleBackColor = false;
+            // 
+            // Admin_Staff_Management
+            // 
+            this.Admin_Staff_Management.BackColor = System.Drawing.Color.Transparent;
+            this.Admin_Staff_Management.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Admin_Staff_Management.BackgroundImage")));
+            this.Admin_Staff_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Admin_Staff_Management.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Admin_Staff_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Admin_Staff_Management.Location = new System.Drawing.Point(337, 395);
+            this.Admin_Staff_Management.Name = "Admin_Staff_Management";
+            this.Admin_Staff_Management.Size = new System.Drawing.Size(157, 130);
+            this.Admin_Staff_Management.TabIndex = 24;
+            this.Admin_Staff_Management.UseVisualStyleBackColor = false;
+            // 
+            // Admin_Subject_Management
+            // 
+            this.Admin_Subject_Management.BackColor = System.Drawing.Color.Transparent;
+            this.Admin_Subject_Management.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Admin_Subject_Management.BackgroundImage")));
+            this.Admin_Subject_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Admin_Subject_Management.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Admin_Subject_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Admin_Subject_Management.Location = new System.Drawing.Point(902, 214);
+            this.Admin_Subject_Management.Name = "Admin_Subject_Management";
+            this.Admin_Subject_Management.Size = new System.Drawing.Size(157, 130);
+            this.Admin_Subject_Management.TabIndex = 23;
+            this.Admin_Subject_Management.UseVisualStyleBackColor = false;
+            // 
+            // Admin_Student_Management
+            // 
+            this.Admin_Student_Management.BackColor = System.Drawing.Color.Transparent;
+            this.Admin_Student_Management.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Admin_Student_Management.BackgroundImage")));
+            this.Admin_Student_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Admin_Student_Management.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Admin_Student_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Admin_Student_Management.Location = new System.Drawing.Point(608, 131);
+            this.Admin_Student_Management.Name = "Admin_Student_Management";
+            this.Admin_Student_Management.Size = new System.Drawing.Size(157, 130);
+            this.Admin_Student_Management.TabIndex = 22;
+            this.Admin_Student_Management.UseVisualStyleBackColor = false;
+            // 
             // AdministrativeStaffDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1135, 640);
+            this.Controls.Add(this.Admin_Library_Management);
+            this.Controls.Add(this.Admin_OB_Management);
+            this.Controls.Add(this.Admin_Event_Management);
+            this.Controls.Add(this.Admin_Staff_Management);
+            this.Controls.Add(this.Admin_Subject_Management);
+            this.Controls.Add(this.Admin_Student_Management);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.Administrative_Staff_Manage_Results);
@@ -182,5 +273,11 @@
         private System.Windows.Forms.Button Administrative_Staff_Manage_Results;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button Admin_Library_Management;
+        private System.Windows.Forms.Button Admin_OB_Management;
+        private System.Windows.Forms.Button Admin_Event_Management;
+        private System.Windows.Forms.Button Admin_Staff_Management;
+        private System.Windows.Forms.Button Admin_Subject_Management;
+        private System.Windows.Forms.Button Admin_Student_Management;
     }
 }
