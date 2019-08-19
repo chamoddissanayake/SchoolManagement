@@ -275,20 +275,20 @@
             // AverageBySubjectChart
             // 
             this.AverageBySubjectChart.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisX.LabelStyle.Angle = 90;
             chartArea1.Name = "ChartArea1";
             this.AverageBySubjectChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.AverageBySubjectChart.Legends.Add(legend1);
-            this.AverageBySubjectChart.Location = new System.Drawing.Point(392, 418);
+            this.AverageBySubjectChart.Location = new System.Drawing.Point(386, 394);
             this.AverageBySubjectChart.Name = "AverageBySubjectChart";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "AverageMark";
             this.AverageBySubjectChart.Series.Add(series1);
-            this.AverageBySubjectChart.Size = new System.Drawing.Size(583, 223);
+            this.AverageBySubjectChart.Size = new System.Drawing.Size(678, 223);
             this.AverageBySubjectChart.TabIndex = 31;
             this.AverageBySubjectChart.Text = "chart1";
-            chartArea1.AxisX.LabelStyle.Angle = 90;
             // 
             // Administrative_Staff_ManageResults_Dashboard
             // 

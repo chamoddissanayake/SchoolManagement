@@ -218,16 +218,21 @@ namespace SchoolManagementSystem
 
             Dictionary<string, int> AverageMarks = new Dictionary<string, int>();
 
-            AverageMarks.Add("Subject 1", 20);
-            AverageMarks.Add("Subject 2", 50);
-            AverageMarks.Add("Subject 3", 30);
-            AverageMarks.Add("Subject 4", 60);
-            AverageMarks.Add("Subject 5", 70);
-            AverageMarks.Add("Subject 6", 20);
-            AverageMarks.Add("Subject 7", 50);
-            AverageMarks.Add("Subject 8", 90);
-            AverageMarks.Add("Subject 9", 30);
-            AverageMarks.Add("Subject 10", 30);
+            //AverageMarks.Add("Subject 1", 20);
+            //AverageMarks.Add("Subject 2", 50);
+            //AverageMarks.Add("Subject 3", 30);
+            //AverageMarks.Add("Subject 4", 60);
+            //AverageMarks.Add("Subject 5", 70);
+            //AverageMarks.Add("Subject 6", 20);
+            //AverageMarks.Add("Subject 7", 50);
+            //AverageMarks.Add("Subject 8", 90);
+            //AverageMarks.Add("Subject 9", 30);
+            // AverageMarks.Add("Subject 10", 30);
+
+            for (int i = 0; i < 9; i++)
+            {
+                AverageMarks.Add(subject_Name_Array[i], subject_Average_Mark_Array[i]);
+            }
 
 
             foreach (KeyValuePair<string, int> avgMarks in AverageMarks)
