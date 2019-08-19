@@ -224,7 +224,7 @@
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1138, 649);
+            this.ClientSize = new System.Drawing.Size(1132, 649);
             this.Controls.Add(this.Admin_Library_Management);
             this.Controls.Add(this.Admin_OB_Management);
             this.Controls.Add(this.Admin_Event_Management);
@@ -235,7 +235,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Admin_Manage_Results);
             this.Controls.Add(this.helloMsg);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AdminDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Dashboard";

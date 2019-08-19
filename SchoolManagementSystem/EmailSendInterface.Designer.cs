@@ -185,7 +185,10 @@
             this.Controls.Add(this.emailBody);
             this.Controls.Add(this.helloMsg);
             this.Controls.Add(this.back);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EmailSendInterface";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Email Send Interface";
