@@ -90,147 +90,169 @@ namespace SchoolManagementSystem
 
         private void addMark_Click(object sender, EventArgs e)
         {
+            int tempResult;
 
-            if(found == false)
+            if (found == false)
             {
-                                            //Adding marks to the database - start
-                        if (addResult_class.SelectedIndex == -1 || addResult_subject.SelectedIndex == -1 || addResult_Year.SelectedIndex == -1 || addResult_ExamID.SelectedIndex == -1 || addResult_Term.SelectedIndex == -1 || addResult_student.SelectedIndex == -1 || addResult_mark.Text == "")
+                //MessageBox.Show("Not Found");
+                //Adding marks to the database - start
+
+                if (addResult_class.SelectedIndex == -1 || addResult_subject.SelectedIndex == -1 || addResult_Year.SelectedIndex == -1 || addResult_ExamID.SelectedIndex == -1 || addResult_Term.SelectedIndex == -1 || addResult_student.SelectedIndex == -1 || addResult_mark.Text == "")
+                {
+                    MessageBox.Show("All columns should be filled.");
+                }
+                else if (!(int.TryParse(addResult_mark.Text, out tempResult)))
+                {
+                    MessageBox.Show("Mark is not a valid number.");
+                }
+                else if (int.Parse(addResult_mark.Text) > 100 || int.Parse(addResult_mark.Text) < 0)
+                {
+                    MessageBox.Show("Mark should be in between 0 - 100");
+                }
+                else
+                {
+                    string selectedClass = this.addResult_class.GetItemText(this.addResult_class.SelectedItem);
+                    string selectedSubject = this.addResult_subject.GetItemText(this.addResult_subject.SelectedItem);
+                    string selectedYear = this.addResult_Year.GetItemText(this.addResult_Year.SelectedItem);
+                    string selectedExamID = this.addResult_ExamID.GetItemText(this.addResult_ExamID.SelectedItem);
+                    string selectedTerm = this.addResult_Term.GetItemText(this.addResult_Term.SelectedItem);
+                    string selectedStudent = this.addResult_student.GetItemText(this.addResult_student.SelectedItem);
+                    string inputMark = addResult_mark.Text;
+
+                    //   MessageBox.Show("CLASS="+selectedClass+" SUBJECT="+selectedSubject+" YEAR="+selectedYear+" EXAMID="+selectedExamID+" TERM="+selectedTerm+ "STUDENT="+selectedStudent+" MARK="+inputMark);          
+
+                    //Adding student results to db
+                    string conString = CommonConstants.connnectionString;
+
+                    using (SqlConnection connection = new SqlConnection(conString))
+                    {
+                        connection.Open();
+                        SqlCommand command = new SqlCommand(null, connection);
+
+                        command.CommandText = "insert into student_follow_subject values(@sid,@scode,@mark,@examid,@term)";
+                        SqlParameter sid = new SqlParameter("@sid", SqlDbType.VarChar, 100);
+                        sid.Value = selectedStudent;
+                        command.Parameters.Add(sid);
+
+                        SqlParameter scode = new SqlParameter("@scode", SqlDbType.VarChar, 100);
+                        scode.Value = selectedSubject;
+                        command.Parameters.Add(scode);
+
+                        SqlParameter mark = new SqlParameter("@mark", SqlDbType.Int, 100);
+                        mark.Value = int.Parse(inputMark);
+                        command.Parameters.Add(mark);
+
+                        SqlParameter examid = new SqlParameter("@examid", SqlDbType.VarChar, 100);
+                        examid.Value = selectedExamID;
+                        command.Parameters.Add(examid);
+
+                        SqlParameter term = new SqlParameter("@term", SqlDbType.Int, 100);
+                        term.Value = int.Parse(selectedTerm);
+                        command.Parameters.Add(term);
+
+                        // call prepare after setting the commandtext and parameters.
+
+                        command.Prepare();
+
+                        try
                         {
-                            MessageBox.Show("All columns should be filled.");
+                            command.ExecuteNonQuery();
+                            MessageBox.Show("student results added successfully.");
                         }
-                        else if (int.Parse(addResult_mark.Text) > 100 || int.Parse(addResult_mark.Text) < 0)
+                        catch (SqlException)
                         {
-                            MessageBox.Show("Mark should be in between 0 - 100");
+                            MessageBox.Show("Result is already in the database.");
                         }
-                        else
-                        {
-                            string selectedClass = this.addResult_class.GetItemText(this.addResult_class.SelectedItem);
-                            string selectedSubject = this.addResult_subject.GetItemText(this.addResult_subject.SelectedItem);
-                            string selectedYear = this.addResult_Year.GetItemText(this.addResult_Year.SelectedItem);
-                            string selectedExamID = this.addResult_ExamID.GetItemText(this.addResult_ExamID.SelectedItem);
-                            string selectedTerm = this.addResult_Term.GetItemText(this.addResult_Term.SelectedItem);
-                            string selectedStudent = this.addResult_student.GetItemText(this.addResult_student.SelectedItem);
-                            string inputMark = addResult_mark.Text;
+                        connection.Close();
+                    }
 
-                            //   MessageBox.Show("CLASS="+selectedClass+" SUBJECT="+selectedSubject+" YEAR="+selectedYear+" EXAMID="+selectedExamID+" TERM="+selectedTerm+ "STUDENT="+selectedStudent+" MARK="+inputMark);          
-
-                            //Adding student results to db
-                            string conString = CommonConstants.connnectionString;
-
-                            using (SqlConnection connection = new SqlConnection(conString))
-                            {
-                                connection.Open();
-                                SqlCommand command = new SqlCommand(null, connection);
-
-                                command.CommandText = "insert into student_follow_subject values(@sid,@scode,@mark,@examid,@term)";
-                                SqlParameter sid = new SqlParameter("@sid", SqlDbType.VarChar, 100);
-                                sid.Value = selectedStudent;
-                                command.Parameters.Add(sid);
-
-                                SqlParameter scode = new SqlParameter("@scode", SqlDbType.VarChar, 100);
-                                scode.Value = selectedSubject;
-                                command.Parameters.Add(scode);
-
-                                SqlParameter mark = new SqlParameter("@mark", SqlDbType.Int, 100);
-                                mark.Value = int.Parse(inputMark);
-                                command.Parameters.Add(mark);
-
-                                SqlParameter examid = new SqlParameter("@examid", SqlDbType.VarChar, 100);
-                                examid.Value = selectedExamID;
-                                command.Parameters.Add(examid);
-
-                                SqlParameter term = new SqlParameter("@term", SqlDbType.Int, 100);
-                                term.Value = int.Parse(selectedTerm);
-                                command.Parameters.Add(term);
-
-                                // call prepare after setting the commandtext and parameters.
-
-                                command.Prepare();
-
-                                try
-                                {
-                                    command.ExecuteNonQuery();
-                                    MessageBox.Show("student results added successfully.");
-                                }
-                                catch (SqlException )
-                                {
-                                    MessageBox.Show("Result is already in the database." );
-                                }
-                                connection.Close();
-                            }
-                            // adding student results end
-
-                            }
+                }
                 //Adding marks to the database - end
             }
             else if (found==true){
-                //update mark of found student - start
-                string selectedStudent = this.addResult_student.GetItemText(this.addResult_student.SelectedItem);
-                string selectedSubject = this.addResult_subject.GetItemText(this.addResult_subject.SelectedItem);
-                string selectedExamID = this.addResult_ExamID.GetItemText(this.addResult_ExamID.SelectedItem);
-                string selectedTerm = this.addResult_Term.GetItemText(this.addResult_Term.SelectedItem);
-                string inputMark = addResult_mark.Text;
 
+                //MessageBox.Show("Found");
 
-                string conString = CommonConstants.connnectionString;
-
-                using (SqlConnection connection = new SqlConnection(conString))
+                if (addResult_class.SelectedIndex == -1 || addResult_subject.SelectedIndex == -1 || addResult_Year.SelectedIndex == -1 || addResult_ExamID.SelectedIndex == -1 || addResult_Term.SelectedIndex == -1 || addResult_student.SelectedIndex == -1 || addResult_mark.Text == "")
                 {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand(null, connection);
-
-                    /*
-                    UPDATE Student_follow_subject
-                    SET mark = 93
-                    WHERE sID = 'S00001' AND sCode = 'A001' AND examID = 'E002' AND term = 1
-                    */
-
-                    command.CommandText = "UPDATE Student_follow_subject SET mark = @mark WHERE sID = @sid AND sCode = @scode AND examID = @examid AND term = @term";
-
-                    SqlParameter mark = new SqlParameter("@mark", SqlDbType.Int, 100);
-                    mark.Value = int.Parse(inputMark);
-                    command.Parameters.Add(mark);
-
-                    SqlParameter sid = new SqlParameter("@sid", SqlDbType.VarChar, 100);
-                    sid.Value = selectedStudent;
-                    command.Parameters.Add(sid);
-
-                    SqlParameter scode = new SqlParameter("@scode", SqlDbType.VarChar, 100);
-                    scode.Value = selectedSubject;
-                    command.Parameters.Add(scode);
-
-                    SqlParameter examid = new SqlParameter("@examid", SqlDbType.VarChar, 100);
-                    examid.Value = selectedExamID;
-                    command.Parameters.Add(examid);
-
-                    SqlParameter term = new SqlParameter("@term", SqlDbType.Int, 100);
-                    term.Value = int.Parse(selectedTerm);
-                    command.Parameters.Add(term);
-
-                    // call prepare after setting the commandtext and parameters.
-
-                    command.Prepare();
-
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                        MessageBox.Show("marks updated successfully.");
-                        addResult_mark.Text = "";
-                    }
-                    catch (SqlException)
-                    {
-                        MessageBox.Show("Error while updating marks.");
-                    }
-                    connection.Close();
+                    MessageBox.Show("All columns should be filled.");
                 }
+                else if (!(int.TryParse(addResult_mark.Text, out tempResult)))
+                {
+                    MessageBox.Show("Mark is not a valid number.");
+                }
+                else if (int.Parse(addResult_mark.Text) > 100 || int.Parse(addResult_mark.Text) < 0)
+                {
+                    MessageBox.Show("Mark should be in between 0 - 100");
+                }
+                else
+                {
 
+                    //update mark of found student - start
+                    string selectedStudent = this.addResult_student.GetItemText(this.addResult_student.SelectedItem);
+                    string selectedSubject = this.addResult_subject.GetItemText(this.addResult_subject.SelectedItem);
+                    string selectedExamID = this.addResult_ExamID.GetItemText(this.addResult_ExamID.SelectedItem);
+                    string selectedTerm = this.addResult_Term.GetItemText(this.addResult_Term.SelectedItem);
+                    string inputMark = addResult_mark.Text;
+
+
+                    string conString = CommonConstants.connnectionString;
+
+                    using (SqlConnection connection = new SqlConnection(conString))
+                    {
+                        connection.Open();
+                        SqlCommand command = new SqlCommand(null, connection);
+
+                        /*
+                        UPDATE Student_follow_subject
+                        SET mark = 93
+                        WHERE sID = 'S00001' AND sCode = 'A001' AND examID = 'E002' AND term = 1
+                        */
+
+                        command.CommandText = "UPDATE Student_follow_subject SET mark = @mark WHERE sID = @sid AND sCode = @scode AND examID = @examid AND term = @term";
+
+                        SqlParameter mark = new SqlParameter("@mark", SqlDbType.Int, 100);
+                        mark.Value = int.Parse(inputMark);
+                        command.Parameters.Add(mark);
+
+                        SqlParameter sid = new SqlParameter("@sid", SqlDbType.VarChar, 100);
+                        sid.Value = selectedStudent;
+                        command.Parameters.Add(sid);
+
+                        SqlParameter scode = new SqlParameter("@scode", SqlDbType.VarChar, 100);
+                        scode.Value = selectedSubject;
+                        command.Parameters.Add(scode);
+
+                        SqlParameter examid = new SqlParameter("@examid", SqlDbType.VarChar, 100);
+                        examid.Value = selectedExamID;
+                        command.Parameters.Add(examid);
+
+                        SqlParameter term = new SqlParameter("@term", SqlDbType.Int, 100);
+                        term.Value = int.Parse(selectedTerm);
+                        command.Parameters.Add(term);
+
+                        // call prepare after setting the commandtext and parameters.
+
+                        command.Prepare();
+
+                        try
+                        {
+                            command.ExecuteNonQuery();
+                            MessageBox.Show("marks updated successfully.");
+                            addResult_mark.Text = "";
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("Error while updating marks.");
+                        }
+                        connection.Close();
+                    }
+
+                }
 
                 //update mark of found student - end
             }
-
-
-
-
+            fillDataGridView_Results_All_Students();
         }
 
         private void addResult_class_SelectedValueChanged(object sender, EventArgs e)
@@ -333,6 +355,7 @@ namespace SchoolManagementSystem
             addResult_Term.SelectedIndex = 0;
 
             fillStudents();
+            addResult_mark.Text = "";
         }
 
                 private void fillStudents()
@@ -374,7 +397,12 @@ namespace SchoolManagementSystem
                             String sid = reader["sid"].ToString();
                             addResult_student.Items.Add(sid);
                         }
-                            addResult_student.SelectedIndex = 0;
+                        
+                        //if (counterSelectedStudentLoop != 0)
+                        //{
+                        //    addResult_student.SelectedIndex = 0;
+                        //}
+                        // counterSelectedStudentLoop++;           
 
                         connection.Close();
                     }
@@ -414,7 +442,7 @@ namespace SchoolManagementSystem
                 // command.CommandText = "SELECT * FROM Student_follow_subject WHERE sID = 'S00001' AND sCode = 'A002' AND examID = 'E002' AND term = 1";
                 // MessageBox.Show(selectedStudent+" "+ selectedSubject+" "+ selectedExamID+" "+ selectedTerm);
 
-                command.CommandText = "SELECT * FROM Student_follow_subject WHERE sID = @sid AND sCode = @scode AND examID = examid AND term = term";
+                command.CommandText = "SELECT * FROM Student_follow_subject WHERE sID = @sid AND sCode = @scode AND examID = @examid AND term = @term";
 
                 SqlParameter sid = new SqlParameter("@sid", SqlDbType.VarChar, 100);
                 sid.Value = selectedStudent;
@@ -438,11 +466,17 @@ namespace SchoolManagementSystem
 
                 SqlDataReader reader = command.ExecuteReader();
 
+                found = false;
+
                 while (reader.Read())
                 {
                     String mark = reader["mark"].ToString();
                     addResult_mark.Text = mark;
                     found = true;
+                }
+                if (found == false)
+                {
+                    addResult_mark.Text = "";
                 }
                 
                 connection.Close();
@@ -508,7 +542,7 @@ namespace SchoolManagementSystem
                     }
                     //Delete result - code end
             }
-
+            fillDataGridView_Results_All_Students();
         }
 
         private void refreshDatagridView_Click(object sender, EventArgs e)
@@ -518,7 +552,8 @@ namespace SchoolManagementSystem
 
         private void addResult_class_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            addResult_student.Items.Clear();
+            addResult_mark.Text = "";
         }
 
         private void SearchResultByStudentID_TextChanged(object sender, EventArgs e)

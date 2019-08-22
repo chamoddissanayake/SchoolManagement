@@ -170,7 +170,7 @@ namespace SchoolManagementSystem
 					            ) 
                 */
 
-                command.CommandText = "SELECT sf.sID AS 'Student ID',std.fName AS 'First Name',std.mName AS 'Middle Name',std.lName AS 'Last Name',sf.sCode AS 'Subject Code', s.sName AS 'Subject Name',sf.mark AS 'Mark', sf.term AS 'Term', s.forGrade AS 'Grade',sf.examID AS 'ExamID' FROM Student_follow_subject sf, Subject s, Class_Student cs , Student std   WHERE s.sCode = sf.sCode AND sf.sID = cs.sid AND cs.sid = std.sID AND(std.fName LIKE @stdNameForSearchResult OR  std.mName LIKE @stdNameForSearchResult OR std.lName LIKE @stdNameForSearchResult)  AND cs.classID IN( SELECT classID  FROM Class_Teacher  WHERE stfID = @tid )";
+                command.CommandText = "SELECT sf.sID AS 'Student ID',std.fName AS 'First Name',std.mName AS 'Middle Name',std.lName AS 'Last Name',sf.sCode AS 'Subject Code', s.sName AS 'Subject Name',sf.mark AS 'Mark', sf.term AS 'Term', s.forGrade AS 'Grade',sf.examID AS 'ExamID' FROM Student_follow_subject sf, Subject s, Class_Student cs , Student std   WHERE s.sCode = sf.sCode AND sf.sID = cs.sid AND cs.sid = std.sID AND(std.fName LIKE @stdNameForSearchResult OR  std.mName LIKE @stdNameForSearchResult OR std.lName LIKE @stdNameForSearchResult)  AND cs.classID IN( SELECT classID  FROM Class_Teacher  WHERE stfID = @tid ) Order by sf.term, sf.sID";
 
                 SqlParameter sName = new SqlParameter("@stdNameForSearchResult", SqlDbType.VarChar, 100);
                 sName.Value = "%" + studentNameForSearchResult + "%";

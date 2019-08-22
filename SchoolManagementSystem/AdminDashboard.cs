@@ -20,6 +20,10 @@ namespace SchoolManagementSystem
 
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
+            
+            //MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            //WindowState = FormWindowState.Maximized;
+            
             User u = UserSessionStore.Instance.getUser();
             helloMsg.Text = "Hello " + u.getuserID();
 

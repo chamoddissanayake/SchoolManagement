@@ -173,12 +173,14 @@ namespace SchoolManagementSystem
                 command.Prepare();
                 SqlDataReader reader = command.ExecuteReader();
 
+                addResult_Year.Items.Clear();
+
                 while (reader.Read())
                 {
                     String year = reader["year"].ToString();
                     addResult_Year.Items.Add(year);
                 }
-                //addResult_Year.SelectedIndex = 0;
+                addResult_Year.SelectedIndex = 0;
             }
             
 
@@ -228,8 +230,12 @@ namespace SchoolManagementSystem
 
         private void addMark_Click(object sender, EventArgs e)
         {
+            int tempResult;
             if (addResult_class.SelectedIndex == -1 ||  addResult_subject.SelectedIndex == -1 || addResult_Year.SelectedIndex == -1 ||  addResult_ExamID.SelectedIndex == -1 || addResult_Term.SelectedIndex == -1 || addResult_student.SelectedIndex == -1 || addResult_mark.Text == "")  {
                 MessageBox.Show("All columns should be filled.");
+            }
+            else if (!(int.TryParse(addResult_mark.Text, out tempResult))) {
+                MessageBox.Show("Mark is not a valid number");
             }
             else if (int.Parse(addResult_mark.Text) > 100 || int.Parse(addResult_mark.Text) < 0){
                 MessageBox.Show("Mark should be in between 0 - 100");
