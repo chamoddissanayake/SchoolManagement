@@ -92,7 +92,7 @@ namespace SchoolManagementSystem
 
         private void goBack_Click(object sender, EventArgs e)
         {
-            this.Close();
+         
         }
 
         private void year_SelectedIndexChanged(object sender, EventArgs e)
@@ -244,6 +244,27 @@ namespace SchoolManagementSystem
 
         private void AverageBySubjectChart_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void backAA_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Academic_Staff_ManageResults_Dashboard obj = new Academic_Staff_ManageResults_Dashboard();
+            obj.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UserSessionStore.Instance.setUser(null);
+            frmLogin frmLoginObj = new frmLogin();
+            this.Hide();
+            frmLoginObj.Show();
 
         }
     }

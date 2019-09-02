@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             this.helloMsg = new System.Windows.Forms.Label();
-            this.logOut = new System.Windows.Forms.Button();
             this.Admin_Manage_Results = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblPath = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.Admin_Student_Management = new System.Windows.Forms.Button();
@@ -43,6 +43,7 @@
             this.Admin_Event_Management = new System.Windows.Forms.Button();
             this.Admin_OB_Management = new System.Windows.Forms.Button();
             this.Admin_Library_Management = new System.Windows.Forms.Button();
+            this.btnLoggedInUsers = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -53,25 +54,11 @@
             this.helloMsg.AutoSize = true;
             this.helloMsg.BackColor = System.Drawing.Color.Transparent;
             this.helloMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helloMsg.Location = new System.Drawing.Point(229, 129);
+            this.helloMsg.Location = new System.Drawing.Point(232, 142);
             this.helloMsg.Name = "helloMsg";
             this.helloMsg.Size = new System.Drawing.Size(48, 20);
             this.helloMsg.TabIndex = 0;
             this.helloMsg.Text = "Hello";
-            // 
-            // logOut
-            // 
-            this.logOut.BackColor = System.Drawing.Color.Chocolate;
-            this.logOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOut.ForeColor = System.Drawing.Color.Goldenrod;
-            this.logOut.Location = new System.Drawing.Point(827, 41);
-            this.logOut.Name = "logOut";
-            this.logOut.Size = new System.Drawing.Size(92, 30);
-            this.logOut.TabIndex = 1;
-            this.logOut.Text = "Log Out";
-            this.logOut.UseVisualStyleBackColor = false;
-            this.logOut.Click += new System.EventHandler(this.logOut_Click);
             // 
             // Admin_Manage_Results
             // 
@@ -80,7 +67,7 @@
             this.Admin_Manage_Results.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Admin_Manage_Results.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Admin_Manage_Results.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Manage_Results.Location = new System.Drawing.Point(279, 207);
+            this.Admin_Manage_Results.Location = new System.Drawing.Point(559, 339);
             this.Admin_Manage_Results.Name = "Admin_Manage_Results";
             this.Admin_Manage_Results.Size = new System.Drawing.Size(157, 130);
             this.Admin_Manage_Results.TabIndex = 2;
@@ -90,23 +77,28 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Maroon;
-            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 653);
+            this.panel1.Size = new System.Drawing.Size(200, 1078);
             this.panel1.TabIndex = 3;
             // 
-            // label11
+            // button2
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label11.Location = new System.Drawing.Point(5, 305);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(175, 20);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Admin Dashboard >";
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(71)))), ((int)(((byte)(57)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Orange;
+            this.button2.Location = new System.Drawing.Point(1, 308);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 54);
+            this.button2.TabIndex = 31;
+            this.button2.Text = "Logout";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -118,14 +110,26 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // lblPath
+            // 
+            this.lblPath.AutoSize = true;
+            this.lblPath.BackColor = System.Drawing.Color.Transparent;
+            this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblPath.Location = new System.Drawing.Point(215, 122);
+            this.lblPath.Name = "lblPath";
+            this.lblPath.Size = new System.Drawing.Size(69, 20);
+            this.lblPath.TabIndex = 7;
+            this.lblPath.Text = "<Path>";
+            this.lblPath.Click += new System.EventHandler(this.lblPath_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Maroon;
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.logOut);
             this.panel2.Location = new System.Drawing.Point(199, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(940, 100);
+            this.panel2.Size = new System.Drawing.Size(1741, 100);
             this.panel2.TabIndex = 4;
             // 
             // label1
@@ -133,7 +137,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label1.Location = new System.Drawing.Point(151, 27);
+            this.label1.Location = new System.Drawing.Point(468, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(536, 29);
             this.label1.TabIndex = 0;
@@ -146,11 +150,12 @@
             this.Admin_Student_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Admin_Student_Management.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Admin_Student_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Student_Management.Location = new System.Drawing.Point(587, 129);
+            this.Admin_Student_Management.Location = new System.Drawing.Point(867, 202);
             this.Admin_Student_Management.Name = "Admin_Student_Management";
             this.Admin_Student_Management.Size = new System.Drawing.Size(157, 130);
             this.Admin_Student_Management.TabIndex = 5;
             this.Admin_Student_Management.UseVisualStyleBackColor = false;
+            this.Admin_Student_Management.Click += new System.EventHandler(this.Admin_Student_Management_Click);
             // 
             // Admin_Subject_Management
             // 
@@ -159,11 +164,12 @@
             this.Admin_Subject_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Admin_Subject_Management.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Admin_Subject_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Subject_Management.Location = new System.Drawing.Point(874, 207);
+            this.Admin_Subject_Management.Location = new System.Drawing.Point(1154, 339);
             this.Admin_Subject_Management.Name = "Admin_Subject_Management";
             this.Admin_Subject_Management.Size = new System.Drawing.Size(157, 130);
             this.Admin_Subject_Management.TabIndex = 6;
             this.Admin_Subject_Management.UseVisualStyleBackColor = false;
+            this.Admin_Subject_Management.Click += new System.EventHandler(this.Admin_Subject_Management_Click);
             // 
             // Admin_Staff_Management
             // 
@@ -172,11 +178,12 @@
             this.Admin_Staff_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Admin_Staff_Management.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Admin_Staff_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Staff_Management.Location = new System.Drawing.Point(279, 410);
+            this.Admin_Staff_Management.Location = new System.Drawing.Point(559, 542);
             this.Admin_Staff_Management.Name = "Admin_Staff_Management";
             this.Admin_Staff_Management.Size = new System.Drawing.Size(157, 130);
             this.Admin_Staff_Management.TabIndex = 7;
             this.Admin_Staff_Management.UseVisualStyleBackColor = false;
+            this.Admin_Staff_Management.Click += new System.EventHandler(this.Admin_Staff_Management_Click);
             // 
             // Admin_Event_Management
             // 
@@ -185,11 +192,12 @@
             this.Admin_Event_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Admin_Event_Management.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Admin_Event_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Event_Management.Location = new System.Drawing.Point(883, 388);
+            this.Admin_Event_Management.Location = new System.Drawing.Point(1163, 520);
             this.Admin_Event_Management.Name = "Admin_Event_Management";
             this.Admin_Event_Management.Size = new System.Drawing.Size(157, 130);
             this.Admin_Event_Management.TabIndex = 8;
             this.Admin_Event_Management.UseVisualStyleBackColor = false;
+            this.Admin_Event_Management.Click += new System.EventHandler(this.Admin_Event_Management_Click);
             // 
             // Admin_OB_Management
             // 
@@ -198,11 +206,12 @@
             this.Admin_OB_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Admin_OB_Management.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Admin_OB_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_OB_Management.Location = new System.Drawing.Point(587, 458);
+            this.Admin_OB_Management.Location = new System.Drawing.Point(867, 641);
             this.Admin_OB_Management.Name = "Admin_OB_Management";
             this.Admin_OB_Management.Size = new System.Drawing.Size(157, 130);
             this.Admin_OB_Management.TabIndex = 9;
             this.Admin_OB_Management.UseVisualStyleBackColor = false;
+            this.Admin_OB_Management.Click += new System.EventHandler(this.Admin_OB_Management_Click);
             // 
             // Admin_Library_Management
             // 
@@ -211,11 +220,28 @@
             this.Admin_Library_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Admin_Library_Management.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Admin_Library_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Library_Management.Location = new System.Drawing.Point(587, 287);
+            this.Admin_Library_Management.Location = new System.Drawing.Point(867, 419);
             this.Admin_Library_Management.Name = "Admin_Library_Management";
             this.Admin_Library_Management.Size = new System.Drawing.Size(157, 130);
             this.Admin_Library_Management.TabIndex = 10;
             this.Admin_Library_Management.UseVisualStyleBackColor = false;
+            this.Admin_Library_Management.Click += new System.EventHandler(this.Admin_Library_Management_Click);
+            // 
+            // btnLoggedInUsers
+            // 
+            this.btnLoggedInUsers.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLoggedInUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(12)))), ((int)(((byte)(2)))));
+            this.btnLoggedInUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoggedInUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoggedInUsers.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnLoggedInUsers.Location = new System.Drawing.Point(760, 912);
+            this.btnLoggedInUsers.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnLoggedInUsers.Name = "btnLoggedInUsers";
+            this.btnLoggedInUsers.Size = new System.Drawing.Size(467, 36);
+            this.btnLoggedInUsers.TabIndex = 78;
+            this.btnLoggedInUsers.Text = "Details of Logged in users";
+            this.btnLoggedInUsers.UseVisualStyleBackColor = false;
+            this.btnLoggedInUsers.Click += new System.EventHandler(this.btnLoggedInUsers_Click);
             // 
             // AdminDashboard
             // 
@@ -224,7 +250,9 @@
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1132, 649);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.btnLoggedInUsers);
+            this.Controls.Add(this.lblPath);
             this.Controls.Add(this.Admin_Library_Management);
             this.Controls.Add(this.Admin_OB_Management);
             this.Controls.Add(this.Admin_Event_Management);
@@ -242,9 +270,9 @@
             this.Name = "AdminDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Dashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -256,18 +284,19 @@
         #endregion
 
         private System.Windows.Forms.Label helloMsg;
-        private System.Windows.Forms.Button logOut;
         private System.Windows.Forms.Button Admin_Manage_Results;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblPath;
         private System.Windows.Forms.Button Admin_Student_Management;
         private System.Windows.Forms.Button Admin_Subject_Management;
         private System.Windows.Forms.Button Admin_Staff_Management;
         private System.Windows.Forms.Button Admin_Event_Management;
         private System.Windows.Forms.Button Admin_OB_Management;
         private System.Windows.Forms.Button Admin_Library_Management;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLoggedInUsers;
     }
 }

@@ -12,6 +12,9 @@ namespace SchoolManagementSystem.Model
         private String sID; private String fName;
         private String mName; private String lName;
         private String email;
+        private String dob;
+        private int yor;
+        private String address, tel, bloodgroup, parent_Name, nationalism, religion;
 
 
         private String subjectCode;
@@ -21,6 +24,55 @@ namespace SchoolManagementSystem.Model
         private int mark; 
         private int term;
 
+        
+        public String Religion
+        {
+            get { return religion; }
+            set { religion = value; }
+        }
+
+        public String Nationalism
+        {
+            get { return nationalism; }
+            set { nationalism = value; }
+        }
+
+        public String Parent_Name
+        {
+            get { return parent_Name; }
+            set { parent_Name = value; }
+        }
+        
+        public String Bloodgroup
+        {
+            get { return bloodgroup; }
+            set { bloodgroup = value; }
+        }
+
+        public String Tel
+        {
+            get { return tel; }
+            set { tel = value; }
+        }
+
+
+        public String Address
+        {
+            get { return address; }
+            set { address = value; }
+        }
+
+        public int Yor
+        {
+            get { return yor; }
+            set { yor = value; }
+        }
+
+        public string Dob
+        {
+            get { return dob; }
+            set { dob = value; }
+        }
 
         public string SID
         {

@@ -122,7 +122,7 @@ namespace SchoolManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
         private void addResult_class_SelectedIndexChanged(object sender, EventArgs e)
@@ -360,11 +360,6 @@ namespace SchoolManagementSystem
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void updateRes_Click(object sender, EventArgs e)
         {
             int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
@@ -407,6 +402,22 @@ namespace SchoolManagementSystem
 
         private void label11_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void backASM_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            AdminDashboard obj = new AdminDashboard();
+            obj.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            UserSessionStore.Instance.setUser(null);
+            frmLogin frmLoginObj = new frmLogin();
+            this.Hide();
+            frmLoginObj.Show();
 
         }
     }

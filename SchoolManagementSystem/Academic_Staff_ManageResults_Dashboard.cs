@@ -71,6 +71,8 @@ namespace SchoolManagementSystem
         private void goBack_Click(object sender, EventArgs e)
         {
             this.Close();
+            AcademicStaffDashBoard obj = new AcademicStaffDashBoard();
+            obj.Show();
         }
 
         private void sendMessage_Click(object sender, EventArgs e)
@@ -81,6 +83,7 @@ namespace SchoolManagementSystem
 
         private void summaryOfResults_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Academic_Staff_Summary_Of_Results ObjAcdStfSumResult = new Academic_Staff_Summary_Of_Results();
             ObjAcdStfSumResult.Show();
         }
@@ -190,6 +193,24 @@ namespace SchoolManagementSystem
                 connection.Close();
             }
             //Teacher seratch Student Result By ID - end
+        }
+
+        private void backAA_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            AcademicStaffDashBoard obj = new AcademicStaffDashBoard();
+            obj.Show();
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UserSessionStore.Instance.setUser(null);
+            frmLogin frmLoginObj = new frmLogin();
+            this.Hide();
+            frmLoginObj.Show();
+
         }
     }
 }

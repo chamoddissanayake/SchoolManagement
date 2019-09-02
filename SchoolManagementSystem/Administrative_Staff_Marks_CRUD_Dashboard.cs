@@ -85,7 +85,7 @@ namespace SchoolManagementSystem
 
         private void goBack_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
         }
 
         private void addMark_Click(object sender, EventArgs e)
@@ -593,7 +593,21 @@ namespace SchoolManagementSystem
             //Search Result By Student ID - end
         }
 
-       
+        private void backASM_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Administrative_Staff_ManageResults_Dashboard obj = new Administrative_Staff_ManageResults_Dashboard();
+            obj.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UserSessionStore.Instance.setUser(null);
+            frmLogin frmLoginObj = new frmLogin();
+            this.Hide();
+            frmLoginObj.Show();
+
+        }
     }
 
 

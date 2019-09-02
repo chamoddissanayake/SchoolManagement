@@ -175,18 +175,14 @@ namespace SchoolManagementSystem
         {
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void goBack_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
         private void ASTFMarksAddUpdateDelete_Click(object sender, EventArgs e)
         {
+            this.Close();
             Administrative_Staff_Marks_CRUD_Dashboard objAstfCrudDashboard = new Administrative_Staff_Marks_CRUD_Dashboard();
             objAstfCrudDashboard.Show();
         }
@@ -351,7 +347,20 @@ namespace SchoolManagementSystem
 
         }
 
+        private void backASM_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            AdministrativeStaffDashboard obj = new AdministrativeStaffDashboard();
+            obj.Show();
+        }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            UserSessionStore.Instance.setUser(null);
+            frmLogin frmLoginObj = new frmLogin();
+            this.Hide();
+            frmLoginObj.Show();
 
+        }
     }
 }

@@ -9,7 +9,10 @@ namespace SchoolManagementSystem
     class CommonConstants
     {
 
-        public const string connnectionString = "Data Source=DESKTOP-6UT7SKT;Initial Catalog=SchoolManagementSystem;Integrated Security=True";
+        // previous connection string -  public const string connnectionString = "Data Source=DESKTOP-6UT7SKT;Initial Catalog=SchoolManagementSystem;Integrated Security=True";
+          public const string connnectionString = "Data Source=DESKTOP-6UT7SKT;Initial Catalog=SchoolManagement;Integrated Security=True";
+        
+
 
     }
 }

@@ -40,6 +40,7 @@ namespace SchoolManagementSystem
             this.lblUserType = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.passwordMissing = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -147,12 +148,24 @@ namespace SchoolManagementSystem
             this.pictureBox1.BackgroundImage = global::SchoolManagementSystem.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.ImageLocation = "";
-            this.pictureBox1.Location = new System.Drawing.Point(185, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(190, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(207, 164);
+            this.pictureBox1.Size = new System.Drawing.Size(170, 164);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            // 
+            // passwordMissing
+            // 
+            this.passwordMissing.AutoSize = true;
+            this.passwordMissing.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordMissing.ForeColor = System.Drawing.Color.Goldenrod;
+            this.passwordMissing.Location = new System.Drawing.Point(153, 350);
+            this.passwordMissing.Name = "passwordMissing";
+            this.passwordMissing.Size = new System.Drawing.Size(293, 17);
+            this.passwordMissing.TabIndex = 10;
+            this.passwordMissing.Text = "Forgotten your username or password?";
+            this.passwordMissing.Click += new System.EventHandler(this.passwordMissing_Click);
             // 
             // frmLogin
             // 
@@ -161,6 +174,7 @@ namespace SchoolManagementSystem
             this.BackColor = System.Drawing.Color.Maroon;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(553, 402);
+            this.Controls.Add(this.passwordMissing);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblUserType);
@@ -200,5 +214,6 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox userType;
+        private System.Windows.Forms.Label passwordMissing;
     }
 }
