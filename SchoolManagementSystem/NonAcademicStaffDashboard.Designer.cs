@@ -38,7 +38,7 @@
             this.NonAcademic_Staff_OB_Management = new System.Windows.Forms.Button();
             this.Academic_Staff_Staff_Management = new System.Windows.Forms.Button();
             this.lblPath = new System.Windows.Forms.Label();
-            this.Admin_Library_Management = new System.Windows.Forms.Button();
+            this.Non_Academic_Library_Management = new System.Windows.Forms.Button();
             this.Admin_Event_Management = new System.Windows.Forms.Button();
             this.Admin_Subject_Management = new System.Windows.Forms.Button();
             this.Admin_Student_Management = new System.Windows.Forms.Button();
@@ -154,19 +154,19 @@
             this.lblPath.TabIndex = 29;
             this.lblPath.Text = "<Path>";
             // 
-            // Admin_Library_Management
+            // Non_Academic_Library_Management
             // 
-            this.Admin_Library_Management.BackColor = System.Drawing.Color.Transparent;
-            this.Admin_Library_Management.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Admin_Library_Management.BackgroundImage")));
-            this.Admin_Library_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Admin_Library_Management.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Admin_Library_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Library_Management.Location = new System.Drawing.Point(870, 668);
-            this.Admin_Library_Management.Name = "Admin_Library_Management";
-            this.Admin_Library_Management.Size = new System.Drawing.Size(157, 130);
-            this.Admin_Library_Management.TabIndex = 33;
-            this.Admin_Library_Management.UseVisualStyleBackColor = false;
-            this.Admin_Library_Management.Click += new System.EventHandler(this.Admin_Library_Management_Click);
+            this.Non_Academic_Library_Management.BackColor = System.Drawing.Color.Transparent;
+            this.Non_Academic_Library_Management.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Non_Academic_Library_Management.BackgroundImage")));
+            this.Non_Academic_Library_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Non_Academic_Library_Management.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Non_Academic_Library_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Non_Academic_Library_Management.Location = new System.Drawing.Point(870, 668);
+            this.Non_Academic_Library_Management.Name = "Non_Academic_Library_Management";
+            this.Non_Academic_Library_Management.Size = new System.Drawing.Size(157, 130);
+            this.Non_Academic_Library_Management.TabIndex = 33;
+            this.Non_Academic_Library_Management.UseVisualStyleBackColor = false;
+            this.Non_Academic_Library_Management.Click += new System.EventHandler(this.Admin_Library_Management_Click);
             // 
             // Admin_Event_Management
             // 
@@ -217,7 +217,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
-            this.Controls.Add(this.Admin_Library_Management);
+            this.Controls.Add(this.Non_Academic_Library_Management);
             this.Controls.Add(this.Admin_Event_Management);
             this.Controls.Add(this.Admin_Subject_Management);
             this.Controls.Add(this.Admin_Student_Management);
@@ -255,7 +255,7 @@
         private System.Windows.Forms.Button Academic_Staff_Staff_Management;
         private System.Windows.Forms.Label lblPath;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button Admin_Library_Management;
+        private System.Windows.Forms.Button Non_Academic_Library_Management;
         private System.Windows.Forms.Button Admin_Event_Management;
         private System.Windows.Forms.Button Admin_Subject_Management;
         private System.Windows.Forms.Button Admin_Student_Management;

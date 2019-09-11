@@ -62,6 +62,42 @@
     <Compile Include="AcademicToDash.Designer.cs">
       <DependentUpon>AcademicToDash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Add_Books.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Books.Designer.cs">
+      <DependentUpon>Add_Books.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BooksDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BooksDetails.Designer.cs">
+      <DependentUpon>BooksDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Book_Issue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Book_Issue.Designer.cs">
+      <DependentUpon>Book_Issue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Last.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Last.Designer.cs">
+      <DependentUpon>Last.cs</DependentUpon>
+    </Compile>
+    <Compile Include="library_StudentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="library_StudentDetails.Designer.cs">
+      <DependentUpon>library_StudentDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginTrack.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +109,18 @@
     </Compile>
     <Compile Include="LibraryDashBoard.Designer.cs">
       <DependentUpon>LibraryDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberDetails.Designer.cs">
+      <DependentUpon>MemberDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Removed_Books.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Removed_Books.Designer.cs">
+      <DependentUpon>Removed_Books.cs</DependentUpon>
     </Compile>
     <Compile Include="Staff_Email.cs">
       <SubType>Form</SubType>
@@ -309,17 +357,47 @@
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserSessionStore.cs" />
+    <Compile Include="ViewBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewBooks.Designer.cs">
+      <DependentUpon>ViewBooks.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AcademicStaffDashBoard.resx">
       <DependentUpon>AcademicStaffDashBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AcademicToDash.resx">
       <DependentUpon>AcademicToDash.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Add_Books.resx">
+      <DependentUpon>Add_Books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BooksDetails.resx">
+      <DependentUpon>BooksDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Book_Issue.resx">
+      <DependentUpon>Book_Issue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Last.resx">
+      <DependentUpon>Last.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="library_StudentDetails.resx">
+      <DependentUpon>library_StudentDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginTrack.resx">
       <DependentUpon>LoginTrack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LibraryDashBoard.resx">
       <DependentUpon>LibraryDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberDetails.resx">
+      <DependentUpon>MemberDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Removed_Books.resx">
+      <DependentUpon>Removed_Books.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Staff_Email.resx">
       <DependentUpon>Staff_Email.cs</DependentUpon>
@@ -441,6 +519,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="updateResults.resx">
       <DependentUpon>updateResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewBooks.resx">
+      <DependentUpon>ViewBooks.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

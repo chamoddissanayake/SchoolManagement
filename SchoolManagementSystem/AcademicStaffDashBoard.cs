@@ -21,6 +21,8 @@ namespace SchoolManagementSystem
 
         private void AcademicStaffDashBoard_Load(object sender, EventArgs e)
         {
+            Academic_Staff_Library_Management.Visible = false;
+
             u = UserSessionStore.Instance.getUser();
             helloMsg.Text = "Hello "+u.getuserID();
 

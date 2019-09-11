@@ -20,6 +20,8 @@ namespace SchoolManagementSystem
 
         private void AdministrativeStaffDashboard_Load(object sender, EventArgs e)
         {
+            Admin_Library_Management.Visible = false;
+
             User u = UserSessionStore.Instance.getUser();
             helloMsg.Text = "Hello " + u.getuserID();
             if (u.Type == "Admin")

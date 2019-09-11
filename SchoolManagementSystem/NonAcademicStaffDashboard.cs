@@ -25,6 +25,8 @@ namespace SchoolManagementSystem
 
         private void OBMemberDashboard_Load(object sender, EventArgs e)
         {
+            Non_Academic_Library_Management.Visible = false;
+
             User u = UserSessionStore.Instance.getUser();
             helloMsg.Text = "Hello " + u.getuserID();
 

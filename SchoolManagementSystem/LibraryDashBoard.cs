@@ -61,9 +61,9 @@ namespace SchoolManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //BooksDetails bk = new BooksDetails();
-            //bk.Show();
+            this.Hide();
+            BooksDetails bk = new BooksDetails();
+            bk.Show();
 
         }
 
@@ -73,13 +73,24 @@ namespace SchoolManagementSystem
             //this.Hide();
             //library_StudentDetails lsd1 = new library_StudentDetails();
             //lsd1.Show();
+
+            //temporary Connection
+            this.Hide();
+            library_StudentDetails libStudentOb = new library_StudentDetails();
+            libStudentOb.Show();
+
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //MemberDetails mbrD = new MemberDetails();
-            //mbrD.Show();
+            // this.hide();
+            // memberdetails mbrd = new memberdetails();
+            //mbrd.show();
+
+            this.Close();
+            MemberDetails memberDetailsObj = new MemberDetails();
+            memberDetailsObj.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
