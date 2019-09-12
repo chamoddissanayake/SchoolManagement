@@ -297,6 +297,7 @@ namespace SchoolManagementSystem
                // adding student results end
 
             }
+            fillDataGridView();
         }
 
 
