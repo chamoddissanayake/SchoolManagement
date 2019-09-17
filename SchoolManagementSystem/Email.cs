@@ -14,6 +14,15 @@ namespace SchoolManagementSystem
 {
     public partial class Email : Form
     {
+        SubEmail s1;
+
+        internal SubEmail S1
+        {
+            get { return s1; }
+            set { s1 = value; }
+        }
+
+
         public Email()
         {
             InitializeComponent();
@@ -55,6 +64,11 @@ namespace SchoolManagementSystem
 
         private void Email_Load(object sender, EventArgs e)
         {
+
+            RecMail.Text = s1.Email;
+            RecMail.ReadOnly = true;
+
+
             User u = UserSessionStore.Instance.getUser();
 
             if (u.Type == "Admin")

@@ -14,7 +14,11 @@ namespace SchoolManagementSystem
 {
     public partial class Book_Issue : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\AsokaCollegeDB\School_DataBase.mdf;Integrated Security=True;Connect Timeout=30");
+        //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\AsokaCollegeDB\School_DataBase.mdf;Integrated Security=True;Connect Timeout=30");
+        public string constring = "Data Source=DESKTOP-83SSJ0U;Initial Catalog=ConnectionDb;Integrated Security=True ";
+
+        SqlConnection con = new SqlConnection(CommonConstants.connnectionString);
+
 
         public Book_Issue()
         {
@@ -25,7 +29,7 @@ namespace SchoolManagementSystem
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from BookIssue";
+            cmd.CommandText = "select * from Books_Issued";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -49,7 +53,7 @@ namespace SchoolManagementSystem
                     con.Open();
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "Insert into BookIssue values('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + dateTimePicker1.Text + "','" + dateTimePicker2.Text + "')";
+                    cmd.CommandText = "Insert into Books_Issued values('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + dateTimePicker1.Text + "','" + dateTimePicker2.Text + "')";
                     cmd.ExecuteNonQuery();
                     con.Close();
                     textBox1.Text = "";
@@ -83,7 +87,7 @@ private void button1_Click(object sender, EventArgs e)
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from BookIssue where Student_Id='" + textBox6.Text.Trim() + "'";
+            cmd.CommandText = "select * from Books_Issued where admissionNo='" + textBox6.Text.Trim() + "'";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -109,7 +113,7 @@ private void button1_Click(object sender, EventArgs e)
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "update BookIssue set Due_Date='" + dateTimePicker2.Text.Trim() + "' where Student_Id ='" + textBox1.Text.Trim() + "'";
+                cmd.CommandText = "update Books_Issued set Due_Date='" + dateTimePicker2.Text.Trim() + "' where admissionNo ='" + textBox1.Text.Trim() + "'";
                 cmd.ExecuteNonQuery();
                 con.Close();
                 textBox1.Text = "";
@@ -134,7 +138,7 @@ private void button1_Click(object sender, EventArgs e)
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "delete from BookIssue where Student_Id ='" + textBox1.Text + "'";
+                cmd.CommandText = "delete from BookIssue where admissionNo ='" + textBox1.Text + "'";
                 cmd.ExecuteNonQuery();
                 con.Close();
                 textBox1.Text = "";

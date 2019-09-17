@@ -9,6 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+using System.Text.RegularExpressions;
+
 
 namespace SchoolManagementSystem
 {
@@ -25,9 +30,24 @@ namespace SchoolManagementSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string pattern = null;
+            pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+
+
+            int tempResult;
             if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
             {
                 MessageBox.Show("Please fill all feilds!");
+            }else if(!(int.TryParse(textBox5.Text, out tempResult)))
+            {
+                MessageBox.Show("Not a valid number for no of teachers");
+            }
+            else if(!(int.TryParse(textBox6.Text, out tempResult)))
+            {
+                MessageBox.Show("Not a valid number for grade");
+            }else if (!(Regex.IsMatch(textBox4.Text, pattern)))
+            {
+                MessageBox.Show("Email pattern is incorrect");
             }
             else
             {
@@ -67,17 +87,30 @@ namespace SchoolManagementSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            int tempResult;
+
             if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
             {
                 MessageBox.Show("Please fill all feilds!");
             }
-            else{
+            else if(!(int.TryParse(textBox5.Text, out tempResult)))
+            {
+                MessageBox.Show("Not a valid number for No of teachers");
+            }
+            else if (!(int.TryParse(textBox6.Text, out tempResult)))
+            {
+                MessageBox.Show("Not a valid number for Grade");
+            }
+            else
+            {
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "update Subject set sName = '" + textBox2.Text + "',teacherIncharge = '" + textBox3.Text + "',email = '" + textBox4.Text + "',noOfTeachers =" + textBox5.Text + " ,forGrade= " + textBox6.Text + " where sCode = '" + textBox1.Text + "' ";
                 cmd.ExecuteNonQuery();
                 con.Close();
+                textBox1.ReadOnly = false;
+            
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
@@ -103,6 +136,9 @@ namespace SchoolManagementSystem
                 cmd.CommandText = "delete from Subject where sCode = '" + textBox1.Text + "'";
                 cmd.ExecuteNonQuery();
                 con.Close();
+
+                textBox1.ReadOnly = false;
+
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
@@ -125,6 +161,8 @@ namespace SchoolManagementSystem
             textBox5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             textBox6.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
 
+            textBox1.ReadOnly = true;
+
 
 
         }
@@ -145,17 +183,69 @@ namespace SchoolManagementSystem
 
         private void btnSendMail_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Email email = new Email();
-            email.ShowDialog();
+            if (textBox4.Text == "")
+            {
+                MessageBox.Show("Email field must be filled!");
+            }
+            else
+            {
+                SubEmail obj = new SubEmail();
+
+                obj.Email = textBox4.Text;
+
+                Email emailInterfaceObj = new Email();
+                emailInterfaceObj.S1 = obj;
+
+
+                this.Close();
+                emailInterfaceObj.ShowDialog();
+            }
+
+               
 
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Report re = new Report();
-            re.ShowDialog();
+            documentcreate();
+
+        }
+
+        private void documentcreate()
+        {
+            //  Document document = new Document();
+            iTextSharp.text.Document document = new iTextSharp.text.Document();
+
+
+            PdfWriter.GetInstance(document, new FileStream("D:/test123.pdf", FileMode.Create));
+            document.Open();
+
+            Document open;
+            Paragraph p = new Paragraph("--- Reprot ---");
+
+            
+
+
+
+
+            PdfPTable pdfTable1 = new PdfPTable(6);
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                foreach (DataGridViewCell celli in row.Cells)
+                {
+                    try
+                    {
+                        pdfTable1.AddCell(celli.Value.ToString());
+                    }
+                    catch { }
+                }
+            }
+
+            document.Add(pdfTable1);
+
+            document.Close();
+
+            MessageBox.Show("Report Saved Successfully");
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)

@@ -14,7 +14,11 @@ namespace SchoolManagementSystem
 {
     public partial class Last : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\AsokaCollegeDB\School_DataBase.mdf;Integrated Security=True;Connect Timeout=30");
+        //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\AsokaCollegeDB\School_DataBase.mdf;Integrated Security=True;Connect Timeout=30");
+
+        public string constring = "Data Source=DESKTOP-83SSJ0U;Initial Catalog=ConnectionDb;Integrated Security=True ";
+
+        SqlConnection con = new SqlConnection(CommonConstants.connnectionString);
 
         public Last()
         {
@@ -28,7 +32,7 @@ namespace SchoolManagementSystem
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from Pay";
+                cmd.CommandText = "select * from Payment";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -105,7 +109,7 @@ namespace SchoolManagementSystem
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "delete from Pay where Book_Id ='" + textBox1.Text + "'";
+                cmd.CommandText = "delete from Payment where BookId ='" + textBox1.Text + "'";
                 cmd.ExecuteNonQuery();
                 con.Close();
                 textBox1.Text = "";
@@ -128,7 +132,7 @@ namespace SchoolManagementSystem
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Pay where Book_Id='" + textBox8.Text.Trim() + "'";
+            cmd.CommandText = "select * from Payment where BookId='" + textBox8.Text.Trim() + "'";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);

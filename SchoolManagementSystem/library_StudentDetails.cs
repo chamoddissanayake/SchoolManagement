@@ -15,8 +15,9 @@ namespace SchoolManagementSystem
     
     public partial class library_StudentDetails : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\AsokaCollegeDB\School_DataBase.mdf;Integrated Security=True;Connect Timeout=30");
+        public string constring = "Data Source=DESKTOP-83SSJ0U;Initial Catalog=ConnectionDb;Integrated Security=True ";
 
+        SqlConnection con = new SqlConnection(CommonConstants.connnectionString);
         public library_StudentDetails()
         {
             InitializeComponent();
@@ -48,7 +49,7 @@ namespace SchoolManagementSystem
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert into Student_details1 values(" +textBox1.Text + ",'" + textBox2.Text + "','" + textBox3.Text + "' )";
+            cmd.CommandText = "insert into Library_Member_Student values('" + textBox1.Text + "' )";
             cmd.ExecuteNonQuery();
             con.Close();
 
@@ -57,13 +58,14 @@ namespace SchoolManagementSystem
             textBox3.Text = "";
            
             MessageBox.Show("Student details added succesfully");
+            display();
         }
         public void display()
         {
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Student_details1 ";
+            cmd.CommandText = "select s.sID, s.fName, s.tel from Student s , Library_Member_Student lm where s.sID = lm.sid";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -79,29 +81,7 @@ namespace SchoolManagementSystem
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
 
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
-            {
-                MessageBox.Show("All should be filled.");
-            }
-            else
-            {
-
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-
-                cmd.CommandText = "update Student_details1 set SName='" + textBox2.Text + "',ContactNo='" + textBox3.Text+ "' where admissionNo='" + textBox1.Text + "'" ;
-                cmd.ExecuteNonQuery();
-
-                
-                con.Close();
-                display();
-                MessageBox.Show("Successfully updated");
-            }
-        }
         User u;
         private void StudentDetails_Load(object sender, EventArgs e)
         {
@@ -125,7 +105,10 @@ namespace SchoolManagementSystem
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from Student_details where admissionNo  = '" + textBox4.Text + "'";
+               // cmd.CommandText = "select * from Student_details where admissionNo  = '" + textBox4.Text + "'";
+                cmd.CommandText = "SELECT s.sID , s.fName, s.mName, s.lName, s.tel,s.email FROM Student s, Library_Member_Student lms WHERE s.sID = lms.sid and s.sID = '" + textBox4.Text + "'";
+
+
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -147,9 +130,9 @@ namespace SchoolManagementSystem
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
 
-            textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            //textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            //textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            //textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
 
 
         }
@@ -167,6 +150,49 @@ namespace SchoolManagementSystem
             this.Close();
             LibraryDashBoard LibDashObj = new LibraryDashBoard();
             LibDashObj.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            //cmd.CommandText = "select fName, tel from Student where sID  = '" + textBox1.Text + "'";
+
+            /*
+            SELECT DISTINCT Student.sID, Library_Member_Student.sid AS 'SSID' , Student.fName, Student.tel
+            FROM Library_Member_Student
+            RIGHT  JOIN Student
+            ON Student.sID = Library_Member_Student.sid
+            WHERE Student.sID = 'S00011'
+            GROUP BY Student.sID , Student.fName, Student.tel, Library_Member_Student.sid
+            HAVING Library_Member_Student.sid is NULL
+            */
+
+            cmd.CommandText = "SELECT DISTINCT Student.sID, Library_Member_Student.sid AS 'SSID' , Student.fName, Student.tel FROM Library_Member_Student RIGHT JOIN Student ON Student.sID = Library_Member_Student.sid  WHERE Student.sID = '" + textBox1.Text + "' GROUP BY Student.sID , Student.fName, Student.tel, Library_Member_Student.sid   HAVING Library_Member_Student.sid is NULL";
+
+            //  cmd.ExecuteNonQuery();
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            string name="", tel="";
+            while (reader.Read())
+            {
+                name= (string)(reader[2]);
+                tel = (string)(reader[3]);
+            }
+
+            textBox2.Text = name;
+            textBox3.Text = tel;
+
+            textBox2.ReadOnly = true;
+            textBox3.ReadOnly = true;
+
+
+            con.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
         }
     }
 }
