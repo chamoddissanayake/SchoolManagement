@@ -334,6 +334,15 @@ namespace SchoolManagementSystem
 
             //Table Add start
             PdfPTable pdfTable = new PdfPTable(6);
+            
+            //Adding Header row
+            foreach (DataGridViewColumn column in dataGridViewResultSheet.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                pdfTable.AddCell(cell);
+            }
+
             foreach (DataGridViewRow row in dataGridViewResultSheet.Rows)
             {
                 foreach (DataGridViewCell celli in row.Cells)

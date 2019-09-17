@@ -174,8 +174,13 @@ namespace SchoolManagementSystem
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "insert into DeleteBooks_details values(" + textBox7.Text + ",'" + textBox3.Text + "','" + textBox2.Text + "','" + textBox1.Text + "','" + textBox4.Text + "', " + textBox5.Text + ", " + textBox6.Text + " )";
                 cmd.ExecuteNonQuery();
-              
-                //textBox7.Text = "";
+
+            SqlCommand cmd2 = con.CreateCommand();
+            cmd2.CommandText = "Delete from books_info where Id  = '" + textBox7.Text + "'";
+            cmd2.ExecuteNonQuery();
+            MessageBox.Show("Deleted successfully.");
+            
+            //textBox7.Text = "";
                 textBox3.Text = "";
                 textBox2.Text = "";
                 textBox1.Text = "";
@@ -187,10 +192,8 @@ namespace SchoolManagementSystem
            // con.Open();
             //SqlCommand cmd1 = con.CreateCommand();
             //cmd1.CommandType = CommandType.Text;
+           
             
-            cmd.CommandText = "Delete from books_info where Id  = '" + textBox7.Text + "'";
-            MessageBox.Show("Deleted successfully.");
-            cmd.ExecuteNonQuery();
             con.Close();
 
         }

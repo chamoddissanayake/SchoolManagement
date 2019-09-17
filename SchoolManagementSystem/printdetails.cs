@@ -102,8 +102,19 @@ namespace SchoolManagementSystem
             document.Open();
             //Document open
 
+            //Add school logo code start
+            iTextSharp.text.Image image1 = iTextSharp.text.Image.GetInstance("C:/Users/User/Desktop/SchoolManagementSystem/SchoolManagementSystem/pictures/logo.png");
+            //Fixed Positioning
+            image1.SetAbsolutePosition(210, 650);
+            //Scale to new height and new width of image
+            image1.ScaleAbsolute(150, 150);
+            //Add to document
+            document.Add(image1);
+            //Add school logo code end
 
-            Paragraph p = new Paragraph(
+
+
+            Paragraph p = new Paragraph("\n\n\n\n\n\n\n\n\n\n\n" +
                 "Student ID   = " + s.SID + "\n" +
                 "First Name   = " + s.FName + "\n" +
                 "Middle Name   = " + s.MName + "\n" +

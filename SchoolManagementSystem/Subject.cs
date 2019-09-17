@@ -223,12 +223,29 @@ namespace SchoolManagementSystem
             Document open;
             Paragraph p = new Paragraph("--- Reprot ---");
 
-            
+            //Add school logo code start
+            iTextSharp.text.Image image1 = iTextSharp.text.Image.GetInstance("C:/Users/User/Desktop/SchoolManagementSystem/SchoolManagementSystem/pictures/logo.png");
+            //Fixed Positioning
+            image1.SetAbsolutePosition(210, 650);
+            //Scale to new height and new width of image
+            image1.ScaleAbsolute(150, 150);
+            //Add to document
+            document.Add(image1);
+            //Add school logo code end
 
-
-
+            Paragraph p1 = new Paragraph("\n\n\n\n\n\n\n\n\n\n\n");
+            document.Add(p1);
 
             PdfPTable pdfTable1 = new PdfPTable(6);
+            //Adding Header row
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                pdfTable1.AddCell(cell);
+            }
+
+           
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 foreach (DataGridViewCell celli in row.Cells)

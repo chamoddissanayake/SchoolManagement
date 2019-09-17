@@ -14,7 +14,10 @@ namespace SchoolManagementSystem
 {
     public partial class MemberDetails : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\AsokaCollegeDB\School_DataBase.mdf;Integrated Security=True;Connect Timeout=30");
+        public string constring = "Data Source=DESKTOP-83SSJ0U;Initial Catalog=ConnectionDb;Integrated Security=True ";
+
+        SqlConnection con = new SqlConnection(CommonConstants.connnectionString);
+        //  SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\AsokaCollegeDB\School_DataBase.mdf;Integrated Security=True;Connect Timeout=30");
         public MemberDetails()
         {
             InitializeComponent();
@@ -22,9 +25,9 @@ namespace SchoolManagementSystem
         //add
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" )
+            if (textBox1.Text == "" )
             {
-                MessageBox.Show("All should be filled");
+                MessageBox.Show("Staff ID should be filled");
 
             }
             else
@@ -32,7 +35,7 @@ namespace SchoolManagementSystem
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into  MemberDetails values(" + textBox1.Text + ",'" + textBox2.Text + "','" + textBox3.Text +" ')";
+                cmd.CommandText = "insert into  Library_Member_Staff values('"+ textBox1.Text+"')";
                 cmd.ExecuteNonQuery();
                 con.Close();
 
@@ -43,6 +46,8 @@ namespace SchoolManagementSystem
                 
                 MessageBox.Show("Data added succesfully");
             }
+            textBox2.ReadOnly = false;
+            textBox3.ReadOnly = false;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -62,6 +67,8 @@ namespace SchoolManagementSystem
         User u;
         private void MemberDetails_Load(object sender, EventArgs e)
         {
+            textBox2.ReadOnly = true;
+            textBox3.ReadOnly = true;
             u = UserSessionStore.Instance.getUser();
         }
 
@@ -83,6 +90,49 @@ namespace SchoolManagementSystem
             frmLogin frmLoginObj = new frmLogin();
             this.Hide();
             frmLoginObj.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            //cmd.CommandText = "select fName, tel from Student where sID  = '" + textBox1.Text + "'";
+
+            /*
+            SELECT DISTINCT Staff.stfID, Library_Member_Staff.stfID AS 'SSID' , Staff.fName , Staff.phone
+            FROM Library_Member_Staff
+            RIGHT  JOIN Staff
+            ON Staff.stfID = Library_Member_Staff.stfID
+            WHERE Staff.stfID = 'STF001'
+            GROUP BY Staff.stfID , Staff.fName, Staff.phone, Library_Member_Staff.stfID
+            HAVING Library_Member_Staff.stfID is NULL
+            */
+
+            cmd.CommandText = "SELECT DISTINCT Staff.stfID, Library_Member_Staff.stfID AS 'SSID' , Staff.fName , Staff.phone  FROM Library_Member_Staff  RIGHT JOIN Staff  ON Staff.stfID = Library_Member_Staff.stfID   WHERE Staff.stfID = '" + textBox1.Text + "'  GROUP BY Staff.stfID , Staff.fName, Staff.phone, Library_Member_Staff.stfID HAVING Library_Member_Staff.stfID is NULL ";
+
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            string name = "", tel = "";
+            while (reader.Read())
+            {
+                name = (string)(reader[2]);
+                tel = (string)(reader[3]);
+            }
+
+            textBox2.Text = name;
+            textBox3.Text = tel;
+
+            textBox2.ReadOnly = true;
+            textBox3.ReadOnly = true;
+
+
+            con.Close();
         }
     }
     
