@@ -34,11 +34,11 @@ namespace SchoolManagementSystem
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.sIDCombo = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -49,7 +49,6 @@ namespace SchoolManagementSystem
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
@@ -84,15 +83,6 @@ namespace SchoolManagementSystem
             this.label3.Size = new System.Drawing.Size(110, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contact Number";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(335, 90);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 22);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -130,9 +120,8 @@ namespace SchoolManagementSystem
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.sIDCombo);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.label2);
@@ -144,6 +133,16 @@ namespace SchoolManagementSystem
             this.panel1.Size = new System.Drawing.Size(777, 400);
             this.panel1.TabIndex = 12;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // sIDCombo
+            // 
+            this.sIDCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sIDCombo.FormattingEnabled = true;
+            this.sIDCombo.Location = new System.Drawing.Point(350, 26);
+            this.sIDCombo.Name = "sIDCombo";
+            this.sIDCombo.Size = new System.Drawing.Size(121, 24);
+            this.sIDCombo.TabIndex = 9;
+            this.sIDCombo.SelectedIndexChanged += new System.EventHandler(this.sIDCombo_SelectedIndexChanged);
             // 
             // flowLayoutPanel3
             // 
@@ -271,16 +270,6 @@ namespace SchoolManagementSystem
             this.label4.TabIndex = 0;
             this.label4.Text = "Asoka College - School Management System";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(512, 90);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Fill Details";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
             // MemberDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -315,7 +304,6 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button1;
@@ -332,6 +320,6 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox sIDCombo;
     }
 }

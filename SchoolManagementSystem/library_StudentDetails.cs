@@ -22,64 +22,66 @@ namespace SchoolManagementSystem
         {
             InitializeComponent();
         }
-         private void Student_details_Load(object sender, EventArgs e)
-        {
-           
-                
-        }
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void button1_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert into Library_Member_Student values('" + textBox1.Text + "' )";
-            cmd.ExecuteNonQuery();
-            con.Close();
+            if(textBox1.Text == "")
+            {
+                MessageBox.Show("Need Student ID for Register as a library member.");
+            }else
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "insert into Library_Member_Student values('" + textBox1.Text + "' )";
+                    cmd.ExecuteNonQuery();
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
 
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-           
-            MessageBox.Show("Student details added succesfully");
-            display();
+                    MessageBox.Show("Student details added succesfully");
+                }
+                catch(Exception exce)
+                {
+                    MessageBox.Show("Error: " + exce);
+                }
+                finally
+                {
+                    if (con.State == ConnectionState.Open)
+                        con.Close();
+                }
+      
+                display();
+            }
+            
         }
         public void display()
         {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select s.sID, s.fName, s.tel from Student s , Library_Member_Student lm where s.sID = lm.sid";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            con.Close();
-
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select s.sID, s.fName,s.mName, s.lName, s.tel, s.email from Student s , Library_Member_Student lm where s.sID = lm.sid";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error: " + exc);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
 
         User u;
@@ -88,15 +90,12 @@ namespace SchoolManagementSystem
             u = UserSessionStore.Instance.getUser();
 
             display();
-        }
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-        }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            textBox2.ReadOnly = true;
+            textBox3.ReadOnly = true;
 
+            btnDelete.Visible = false;
         }
-
+   
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
@@ -106,7 +105,7 @@ namespace SchoolManagementSystem
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                // cmd.CommandText = "select * from Student_details where admissionNo  = '" + textBox4.Text + "'";
-                cmd.CommandText = "SELECT s.sID , s.fName, s.mName, s.lName, s.tel,s.email FROM Student s, Library_Member_Student lms WHERE s.sID = lms.sid and s.sID = '" + textBox4.Text + "'";
+                cmd.CommandText = "SELECT s.sID , s.fName, s.mName, s.lName, s.tel,s.email FROM Student s, Library_Member_Student lms WHERE s.sID = lms.sid and s.sID like '%" + textBox4.Text + "%'";
 
 
                 cmd.ExecuteNonQuery();
@@ -118,23 +117,46 @@ namespace SchoolManagementSystem
             }
             catch (Exception ex)
             {
-                
+                MessageBox.Show("Error: "+ex);
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        String StudentIDForDelete;
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            btnDelete.Visible = true;
 
-            //textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            //textBox2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            //textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            StudentIDForDelete = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+     
+            btnDelete.Text = "Remove " + StudentIDForDelete;
 
+            
+      
+        }
 
+        private void deleteCurrentStudent(string studentID)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd2 = con.CreateCommand();
+                cmd2.CommandText = "Delete from Library_Member_Student where sid  = '" + studentID + "'" ;
+                cmd2.ExecuteNonQuery();
+                MessageBox.Show("Removed Library Membership successfully.");
+                btnDelete.Visible = false;
+            }
+            catch (Exception ex1)
+            {
+                MessageBox.Show("Error: " + ex1);
+                btnDelete.Visible = false;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            display();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -154,45 +176,74 @@ namespace SchoolManagementSystem
 
         private void button6_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            //cmd.CommandText = "select fName, tel from Student where sID  = '" + textBox1.Text + "'";
 
-            /*
-            SELECT DISTINCT Student.sID, Library_Member_Student.sid AS 'SSID' , Student.fName, Student.tel
-            FROM Library_Member_Student
-            RIGHT  JOIN Student
-            ON Student.sID = Library_Member_Student.sid
-            WHERE Student.sID = 'S00011'
-            GROUP BY Student.sID , Student.fName, Student.tel, Library_Member_Student.sid
-            HAVING Library_Member_Student.sid is NULL
-            */
-
-            cmd.CommandText = "SELECT DISTINCT Student.sID, Library_Member_Student.sid AS 'SSID' , Student.fName, Student.tel FROM Library_Member_Student RIGHT JOIN Student ON Student.sID = Library_Member_Student.sid  WHERE Student.sID = '" + textBox1.Text + "' GROUP BY Student.sID , Student.fName, Student.tel, Library_Member_Student.sid   HAVING Library_Member_Student.sid is NULL";
-
-            //  cmd.ExecuteNonQuery();
-
-            SqlDataReader reader = cmd.ExecuteReader();
-            string name="", tel="";
-            while (reader.Read())
+            try
             {
-                name= (string)(reader[2]);
-                tel = (string)(reader[3]);
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                //cmd.CommandText = "select fName, tel from Student where sID  = '" + textBox1.Text + "'";
+
+                /*
+                SELECT DISTINCT Student.sID, Library_Member_Student.sid AS 'SSID' , Student.fName, Student.tel
+                FROM Library_Member_Student
+                RIGHT  JOIN Student
+                ON Student.sID = Library_Member_Student.sid
+                WHERE Student.sID = 'S00011'
+                GROUP BY Student.sID , Student.fName, Student.tel, Library_Member_Student.sid
+                HAVING Library_Member_Student.sid is NULL
+                */
+
+                cmd.CommandText = "SELECT DISTINCT Student.sID, Library_Member_Student.sid AS 'SSID' , Student.fName, Student.tel FROM Library_Member_Student RIGHT JOIN Student ON Student.sID = Library_Member_Student.sid  WHERE Student.sID = '" + textBox1.Text + "' GROUP BY Student.sID , Student.fName, Student.tel, Library_Member_Student.sid   HAVING Library_Member_Student.sid is NULL";
+
+                //  cmd.ExecuteNonQuery();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                string name = "", tel = "";
+                int counter = 0;
+                while (reader.Read())
+                {
+                    name = (string)(reader[2]);
+                    tel = (string)(reader[3]);
+                    counter++;
+                }
+
+                if (counter == 0)
+                {
+                    MessageBox.Show("Not a valid student Number or Already a library member.");
+                }
+
+                textBox2.Text = name;
+                textBox3.Text = tel;
+
+                textBox2.ReadOnly = true;
+                textBox3.ReadOnly = true;
             }
-
-            textBox2.Text = name;
-            textBox3.Text = tel;
-
-            textBox2.ReadOnly = true;
-            textBox3.ReadOnly = true;
-
-
-            con.Close();
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error: "+ exc);
+            }
+            finally
+            {
+                if(con.State == ConnectionState.Open)
+                    con.Close();
+            }
+        
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
+            display();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            deleteCurrentStudent(StudentIDForDelete);
+        }
+
+        private void library_StudentDetails_MouseClick(object sender, MouseEventArgs e)
+        {
+            btnDelete.Visible = false;
         }
     }
 }

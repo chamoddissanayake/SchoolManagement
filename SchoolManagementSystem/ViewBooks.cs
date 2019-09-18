@@ -27,6 +27,14 @@ namespace SchoolManagementSystem
         private void ViewBooks_Load(object sender, EventArgs e)
         {
             u = UserSessionStore.Instance.getUser();
+            radioID.Checked = true;
+
+            loadAllBooksInfo();
+            
+        }
+
+        private void loadAllBooksInfo()
+        {
             try
             {
                 con.Open();
@@ -43,15 +51,9 @@ namespace SchoolManagementSystem
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
-
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -66,6 +68,58 @@ namespace SchoolManagementSystem
             frmLogin frmLoginObj = new frmLogin();
             this.Hide();
             frmLoginObj.Show();
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+            fillBySearchResults();
+        }
+
+        private void fillBySearchResults()
+        {
+            if(radioID.Checked == true)
+            {
+                fillResultsWithType("Id");
+            }else if(radioName.Checked == true)
+            {
+                fillResultsWithType("books_name");
+            }
+            else if(radioAuthor.Checked == true)
+            {
+                fillResultsWithType("books_author_name");
+            }
+            else if (radioPublication.Checked == true)
+            {
+                fillResultsWithType("books_publication_name");
+            }
+            else
+            {
+                MessageBox.Show("Plese select a category to search");
+            }
+
+         
+        }
+
+        private void fillResultsWithType(string type)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from books_info where "+ type + " like '%" + textBox9.Text + "%'";
+
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while searching: " + ex);
+            }
         }
     }
 }

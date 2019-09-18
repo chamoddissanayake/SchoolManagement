@@ -338,5 +338,10 @@ namespace SchoolManagementSystem
             this.Hide();
             frmLoginObj.Show();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            disp_data();
+        }
     }
 }

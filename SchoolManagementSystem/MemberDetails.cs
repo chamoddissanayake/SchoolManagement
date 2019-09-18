@@ -18,6 +18,7 @@ namespace SchoolManagementSystem
 
         SqlConnection con = new SqlConnection(CommonConstants.connnectionString);
         //  SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\AsokaCollegeDB\School_DataBase.mdf;Integrated Security=True;Connect Timeout=30");
+
         public MemberDetails()
         {
             InitializeComponent();
@@ -25,29 +26,18 @@ namespace SchoolManagementSystem
         //add
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" )
-            {
-                MessageBox.Show("Staff ID should be filled");
 
-            }
-            else
-            {
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into  Library_Member_Staff values('"+ textBox1.Text+"')";
+                cmd.CommandText = "insert into  Library_Member_Staff values('"+ sIDCombo.SelectedItem.ToString() + "')";
                 cmd.ExecuteNonQuery();
                 con.Close();
+                
+                MessageBox.Show("Member Registered succesfully");
+                fillToDropDown();
 
-                
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                
-                MessageBox.Show("Data added succesfully");
-            }
-            textBox2.ReadOnly = false;
-            textBox3.ReadOnly = false;
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -70,6 +60,44 @@ namespace SchoolManagementSystem
             textBox2.ReadOnly = true;
             textBox3.ReadOnly = true;
             u = UserSessionStore.Instance.getUser();
+
+            fillToDropDown();
+        }
+
+        private void fillToDropDown()
+        {
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            //cmd.CommandText = "select fName, tel from Student where sID  = '" + textBox1.Text + "'";
+
+            /*
+            SELECT DISTINCT Staff.stfID, Library_Member_Staff.stfID AS 'SSID' , Staff.fName , Staff.phone
+            FROM Library_Member_Staff
+            RIGHT  JOIN Staff
+            ON Staff.stfID = Library_Member_Staff.stfID
+            WHERE Staff.stfID = 'STF001'
+            GROUP BY Staff.stfID , Staff.fName, Staff.phone, Library_Member_Staff.stfID
+            HAVING Library_Member_Staff.stfID is NULL
+            */
+
+            cmd.CommandText = "SELECT DISTINCT Staff.stfID, Library_Member_Staff.stfID AS 'SSID' , Staff.fName , Staff.phone  FROM Library_Member_Staff  RIGHT JOIN Staff  ON Staff.stfID = Library_Member_Staff.stfID GROUP BY Staff.stfID , Staff.fName, Staff.phone, Library_Member_Staff.stfID HAVING Library_Member_Staff.stfID is NULL ";
+
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            //string name = "", tel = "";
+            String sid;
+            sIDCombo.Items.Clear();
+            while (reader.Read())
+            {
+                sid = (string)(reader[0]);
+                sIDCombo.Items.Add(sid);
+   
+            }
+            
+
+            con.Close();
+            sIDCombo.SelectedIndex = 0;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -97,8 +125,17 @@ namespace SchoolManagementSystem
 
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+
+
+        private void sIDCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            fillDetailsOfSelected();
+        }
+
+        private void fillDetailsOfSelected()
+        {
+
+            string selectedID = sIDCombo.SelectedItem.ToString();
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -113,8 +150,7 @@ namespace SchoolManagementSystem
             GROUP BY Staff.stfID , Staff.fName, Staff.phone, Library_Member_Staff.stfID
             HAVING Library_Member_Staff.stfID is NULL
             */
-
-            cmd.CommandText = "SELECT DISTINCT Staff.stfID, Library_Member_Staff.stfID AS 'SSID' , Staff.fName , Staff.phone  FROM Library_Member_Staff  RIGHT JOIN Staff  ON Staff.stfID = Library_Member_Staff.stfID   WHERE Staff.stfID = '" + textBox1.Text + "'  GROUP BY Staff.stfID , Staff.fName, Staff.phone, Library_Member_Staff.stfID HAVING Library_Member_Staff.stfID is NULL ";
+            cmd.CommandText = "SELECT DISTINCT Staff.stfID, Library_Member_Staff.stfID AS 'SSID' , Staff.fName , Staff.phone  FROM Library_Member_Staff  RIGHT JOIN Staff  ON Staff.stfID = Library_Member_Staff.stfID   WHERE Staff.stfID = '" + selectedID + "'  GROUP BY Staff.stfID , Staff.fName, Staff.phone, Library_Member_Staff.stfID HAVING Library_Member_Staff.stfID is NULL ";
 
 
             SqlDataReader reader = cmd.ExecuteReader();
@@ -133,6 +169,8 @@ namespace SchoolManagementSystem
 
 
             con.Close();
+
+
         }
     }
     

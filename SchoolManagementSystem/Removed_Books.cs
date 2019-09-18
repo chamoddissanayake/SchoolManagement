@@ -22,9 +22,7 @@ namespace SchoolManagementSystem
         {
             InitializeComponent();
         }
-        private void ViewBooks_Load(object sender, EventArgs e)
-        {
-        }
+        
 
         public void display()
         {
@@ -41,11 +39,6 @@ namespace SchoolManagementSystem
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-
-        }
         User u;
         private void Removed_Books_Load(object sender, EventArgs e)
         {
@@ -89,6 +82,40 @@ namespace SchoolManagementSystem
             frmLogin frmLoginObj = new frmLogin();
             this.Hide();
             frmLoginObj.Show();
+        }
+
+
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            display();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchBoojByID();
+        }
+
+        private void SearchBoojByID()
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                 cmd.CommandText = "select * from DeleteBooks_details where Id like '%" + textBox1.Text + "%'";
+
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while searching: " + ex);
+            }
         }
     }
 }

@@ -28,39 +28,62 @@ namespace SchoolManagementSystem
             u = UserSessionStore.Instance.getUser();
             display();        
         }
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+       
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "")
+            int j;
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "")
             {
                 MessageBox.Show("All should be filled.");
+            }else if (!(Int32.TryParse(textBox5.Text, out  j)))
+            {
+                MessageBox.Show("Price should be a number");
+            } else if (!(Int32.TryParse(textBox6.Text, out j)))
+            {
+                MessageBox.Show("Quantity should be a number");
             }
             else
             {
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into books_info values(" + textBox7.Text + ",'" + textBox3.Text + "','" + textBox2.Text + "','" + textBox1.Text + "','" + textBox4.Text + "', " + textBox5.Text + ", " + textBox6.Text + " )";
-                cmd.ExecuteNonQuery();
-                con.Close();
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "insert into books_info values(" + textBox7.Text + ",'" + textBox3.Text + "','" + textBox2.Text + "','" + textBox1.Text + "','" + purchasePicker.Value.ToShortDateString() + "', " + textBox5.Text + ", " + textBox6.Text + " )";
+                    cmd.ExecuteNonQuery();
+                    
 
-                textBox7.Text = "";
-                textBox3.Text = "";
-                textBox2.Text = "";
-                textBox1.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
+                    MessageBox.Show("Books added succesfully");
+                }
+                catch (SqlException ex) when (ex.Number == 2627)
+                {
+                    MessageBox.Show("This book id is already used.");
+                }
+                catch (Exception e001)
+                {
+                    MessageBox.Show("Error: " + e001);
+                }
+                finally{
+                    if (con.State == ConnectionState.Open)
+                            con.Close();
+                }
+
+                clearFields();
                 display();
-               
-                MessageBox.Show("Books added succesfully");
-
                 
             }
         }
+
+        private void clearFields()
+        {
+            textBox7.Text = "";
+            textBox3.Text = "";
+            textBox2.Text = "";
+            textBox1.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+        }
+
         public void display()
         {
             con.Open();
@@ -76,73 +99,58 @@ namespace SchoolManagementSystem
             con.Close();
 
         }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text=="" || textBox2.Text == ""|| textBox3.Text == ""|| textBox4.Text == ""|| textBox5.Text == ""|| textBox6.Text == ""|| textBox7.Text == "")
+            int j;
+            if(textBox1.Text=="" || textBox2.Text == ""|| textBox3.Text == ""|| textBox5.Text == ""|| textBox6.Text == ""|| textBox7.Text == "")
             {
                 MessageBox.Show("All should be filled.");
-            }else
+            }
+            else if (!(Int32.TryParse(textBox5.Text, out j)))
+            {
+                MessageBox.Show("Price should be a number");
+            }
+            else if (!(Int32.TryParse(textBox6.Text, out j)))
+            {
+                MessageBox.Show("Quantity should be a number");
+            }
+            else
             {
 
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
             
-                cmd.CommandText = "update books_info set books_name='" +textBox3.Text + "',books_author_name='" +textBox2.Text + "',books_publication_name='" + textBox1.Text + "',books_purchase_date='" + textBox4.Text + "',books_price=" + textBox5.Text + " ,books_quantity=" + textBox6.Text + " where Id='"+textBox7.Text+"'";
+                cmd.CommandText = "update books_info set books_name='" +textBox3.Text + "',books_author_name='" +textBox2.Text + "',books_publication_name='" + textBox1.Text + "',books_purchase_date='" + purchasePicker.Value.ToShortDateString() + "',books_price=" + textBox5.Text + " ,books_quantity=" + textBox6.Text + " where Id='"+textBox7.Text+"'";
                 cmd.ExecuteNonQuery();
                 con.Close();
                 display();
                 MessageBox.Show("Successfully updated");
+                clearFields();
             }
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            textBox7.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            textBox3.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            textBox1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            textBox4.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            textBox5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            textBox6.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged_1(object sender, EventArgs e)
-        {
+            try
+            {
+                textBox7.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                textBox3.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                textBox1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                purchasePicker.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textBox5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textBox6.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            }
+            catch (Exception ex1)
+            {
+                MessageBox.Show("Error while filling data."+ ex1);
+            }
             
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
 
         }
+
 
         //search
         private void textBox9_TextChanged(object sender, EventArgs e)
@@ -152,7 +160,7 @@ namespace SchoolManagementSystem
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from books_info where books_name  = '" + textBox9.Text + "'";
+                cmd.CommandText = "select * from books_info where books_name like '%" + textBox9.Text + "%'";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -161,53 +169,91 @@ namespace SchoolManagementSystem
                 con.Close();
             }
             catch (Exception ex)
-
             {
-
+                MessageBox.Show("Error while searching: "+ ex);
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+            Boolean succesfullyAdded = false;
+            Boolean succesfullyRemoved = false;
+
+            succesfullyAdded =  insertToDeleteBooks_detailsTbl();
+            if(succesfullyAdded == true)
+            {
+                //Remove Existing record.
+                succesfullyRemoved = removeExistingBook();
+            }
+
+            if(succesfullyAdded == true && succesfullyRemoved == true)
+            {
+                MessageBox.Show("Books Deleted Successfully.");
+                clearFields();
+            }
+            
+        }
+
+        private Boolean removeExistingBook()
+        {
+            Boolean success = false;
+
+            try
+            {
+                con.Open();
+                SqlCommand cmd2 = con.CreateCommand();
+                cmd2.CommandText = "Delete from books_info where Id  = '" + textBox7.Text + "'";
+                cmd2.ExecuteNonQuery();
+                success = true;
+            }
+            catch(Exception ex1)
+            {
+                MessageBox.Show("Error: " + ex1);
+                success = false;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+
+            return success;
+            
+        }
+
+        private Boolean insertToDeleteBooks_detailsTbl()
+        {
+
+            Boolean success = false;
+            try
+            {
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into DeleteBooks_details values(" + textBox7.Text + ",'" + textBox3.Text + "','" + textBox2.Text + "','" + textBox1.Text + "','" + textBox4.Text + "', " + textBox5.Text + ", " + textBox6.Text + " )";
+                cmd.CommandText = "insert into DeleteBooks_details values(" + textBox7.Text + ",'" + textBox3.Text + "','" + textBox2.Text + "','" + textBox1.Text + "','" + purchasePicker.Value.ToShortDateString() + "', " + textBox5.Text + ", " + textBox6.Text + " )";
                 cmd.ExecuteNonQuery();
-
-            SqlCommand cmd2 = con.CreateCommand();
-            cmd2.CommandText = "Delete from books_info where Id  = '" + textBox7.Text + "'";
-            cmd2.ExecuteNonQuery();
-            MessageBox.Show("Deleted successfully.");
+                success = true;
+            }
+            catch (SqlException ex) when (ex.Number == 2627)
+            {
+                MessageBox.Show("This book deleted already.");
+                success = false;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: "+ex);
+                success = false;
+            }
+            finally{
+                if(con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            return success;
             
-            //textBox7.Text = "";
-                textBox3.Text = "";
-                textBox2.Text = "";
-                textBox1.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
-                MessageBox.Show("Books Deleted succesfully");
-
-           // con.Open();
-            //SqlCommand cmd1 = con.CreateCommand();
-            //cmd1.CommandType = CommandType.Text;
-           
-            
-            con.Close();
-
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+  
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -223,9 +269,11 @@ namespace SchoolManagementSystem
             frmLoginObj.Show();
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+       
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-
+            display();
         }
+
     }
 }
