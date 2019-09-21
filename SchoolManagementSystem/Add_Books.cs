@@ -26,7 +26,27 @@ namespace SchoolManagementSystem
         private void Add_Books_Load(object sender, EventArgs e)
         {
             u = UserSessionStore.Instance.getUser();
-            display();        
+            display();
+            if (u.Type == "Admin")
+            {
+                lblPath.Text = "Admin Dashboard> Library> Books> Add Books>";
+            }
+            else if (u.Type == "Academic_Staff")
+            {
+                lblPath.Text = "Academic Staff Dashboard> Library> Books> Add Books>";
+            }
+            else if (u.Type == "Non_Academic_Staff")
+            {
+                lblPath.Text = "Non Academic Staff Dashboard> Library> Books> Add Books>";
+            }
+            else if (u.Type == "Administrative_Staff")
+            {
+                lblPath.Text = "Administrative Staff Dashboard> Library> Books> Add Books>";
+            }
+            else
+            {
+                lblPath.Text = "";
+            }
         }
        
         private void button1_Click(object sender, EventArgs e)
@@ -275,5 +295,9 @@ namespace SchoolManagementSystem
             display();
         }
 
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

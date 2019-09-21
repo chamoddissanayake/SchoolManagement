@@ -62,6 +62,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblPath = new System.Windows.Forms.Label();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -81,7 +82,7 @@
             this.flowLayoutPanel2.Controls.Add(this.button3);
             this.flowLayoutPanel2.Controls.Add(this.button4);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 149);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(151, 544);
             this.flowLayoutPanel2.TabIndex = 152;
@@ -91,7 +92,7 @@
             this.flowLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(12)))), ((int)(((byte)(2)))));
             this.flowLayoutPanel3.Location = new System.Drawing.Point(4, 4);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(147, 123);
             this.flowLayoutPanel3.TabIndex = 3;
@@ -104,7 +105,7 @@
             this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Orange;
             this.button3.Location = new System.Drawing.Point(4, 135);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(147, 50);
             this.button3.TabIndex = 5;
@@ -120,7 +121,7 @@
             this.button4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Orange;
             this.button4.Location = new System.Drawing.Point(4, 193);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(147, 50);
             this.button4.TabIndex = 7;
@@ -135,7 +136,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(12)))), ((int)(((byte)(2)))));
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Location = new System.Drawing.Point(153, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1156, 70);
             this.panel2.TabIndex = 154;
@@ -148,7 +149,7 @@
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(96, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(947, 70);
             this.flowLayoutPanel1.TabIndex = 32;
@@ -157,7 +158,7 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.Location = new System.Drawing.Point(4, 4);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(161, 63);
             this.panel3.TabIndex = 21;
@@ -168,7 +169,7 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(12)))), ((int)(((byte)(2)))));
             this.panel4.Controls.Add(this.label10);
             this.panel4.Location = new System.Drawing.Point(173, 4);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(636, 70);
             this.panel4.TabIndex = 1;
@@ -192,7 +193,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(3, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(151, 146);
             this.pictureBox1.TabIndex = 153;
@@ -204,6 +205,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Khaki;
+            this.panel1.Controls.Add(this.lblPath);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.groupBox1);
@@ -221,7 +223,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(153, 73);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1156, 620);
             this.panel1.TabIndex = 22;
@@ -235,7 +237,7 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.SeaShell;
             this.button2.Location = new System.Drawing.Point(204, 516);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(161, 50);
             this.button2.TabIndex = 27;
@@ -267,9 +269,9 @@
             this.groupBox1.Controls.Add(this.finedaysttb);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(59, 353);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(457, 128);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
@@ -321,7 +323,7 @@
             // fineratetb
             // 
             this.fineratetb.Location = new System.Drawing.Point(124, 32);
-            this.fineratetb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fineratetb.Margin = new System.Windows.Forms.Padding(4);
             this.fineratetb.Name = "fineratetb";
             this.fineratetb.Size = new System.Drawing.Size(80, 32);
             this.fineratetb.TabIndex = 1;
@@ -330,7 +332,7 @@
             // finedaysttb
             // 
             this.finedaysttb.Location = new System.Drawing.Point(337, 32);
-            this.finedaysttb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.finedaysttb.Margin = new System.Windows.Forms.Padding(4);
             this.finedaysttb.Name = "finedaysttb";
             this.finedaysttb.Size = new System.Drawing.Size(81, 32);
             this.finedaysttb.TabIndex = 0;
@@ -342,7 +344,7 @@
             this.dateTimePicker3.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker3.Location = new System.Drawing.Point(281, 300);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker3.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker3.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker3.Name = "dateTimePicker3";
@@ -356,7 +358,7 @@
             this.dateTimePicker2.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(281, 247);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker2.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
@@ -370,7 +372,7 @@
             this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(281, 196);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -382,7 +384,7 @@
             // 
             this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox7.Location = new System.Drawing.Point(668, 102);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(248, 22);
             this.textBox7.TabIndex = 21;
@@ -393,7 +395,7 @@
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(573, 140);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(569, 340);
             this.dataGridView1.TabIndex = 12;
@@ -408,7 +410,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Sienna;
             this.button1.Location = new System.Drawing.Point(925, 96);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 37);
             this.button1.TabIndex = 14;
@@ -420,7 +422,7 @@
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox1.Location = new System.Drawing.Point(281, 102);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(177, 22);
             this.textBox1.TabIndex = 5;
@@ -455,7 +457,7 @@
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox2.Location = new System.Drawing.Point(281, 151);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(177, 22);
             this.textBox2.TabIndex = 6;
@@ -496,6 +498,18 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Due Date       :";
             // 
+            // lblPath
+            // 
+            this.lblPath.AutoSize = true;
+            this.lblPath.BackColor = System.Drawing.Color.Transparent;
+            this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPath.ForeColor = System.Drawing.Color.Black;
+            this.lblPath.Location = new System.Drawing.Point(46, 34);
+            this.lblPath.Name = "lblPath";
+            this.lblPath.Size = new System.Drawing.Size(69, 20);
+            this.lblPath.TabIndex = 171;
+            this.lblPath.Text = "<Path>";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -506,7 +520,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -561,6 +575,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblPath;
     }
 }
 

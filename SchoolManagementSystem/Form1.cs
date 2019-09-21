@@ -90,7 +90,7 @@ namespace SchoolManagementSystem
         User u;
         private void Form1_Load(object sender, EventArgs e)
         {
-            u = UserSessionStore.Instance.getUser();
+          
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -132,6 +132,27 @@ namespace SchoolManagementSystem
         private void Form1_Load_1(object sender, EventArgs e)
         {
             disp_date();
+            u = UserSessionStore.Instance.getUser();
+            if (u.Type == "Admin")
+            {
+                lblPath.Text = "Admin Dashboard> Library> Books> Payments>";
+            }
+            else if (u.Type == "Academic_Staff")
+            {
+                lblPath.Text = "Academic Staff Dashboard> Library> Books> Payments>";
+            }
+            else if (u.Type == "Non_Academic_Staff")
+            {
+                lblPath.Text = "Non Academic Staff Dashboard> Library> Books> Payments>";
+            }
+            else if (u.Type == "Administrative_Staff")
+            {
+                lblPath.Text = "Administrative Staff Dashboard> Library> Books> Payments>";
+            }
+            else
+            {
+                lblPath.Text = "";
+            }
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)

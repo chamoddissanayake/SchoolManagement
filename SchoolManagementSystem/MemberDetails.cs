@@ -26,34 +26,31 @@ namespace SchoolManagementSystem
         //add
         private void button1_Click(object sender, EventArgs e)
         {
-
+            try
+            {
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into  Library_Member_Staff values('"+ sIDCombo.SelectedItem.ToString() + "')";
+                cmd.CommandText = "insert into  Library_Member_Staff values('" + sIDCombo.SelectedItem.ToString() + "')";
                 cmd.ExecuteNonQuery();
-                con.Close();
-                
                 MessageBox.Show("Member Registered succesfully");
-                fillToDropDown();
-
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
+            }
+            catch(Exception exc1)
+            {
+                MessageBox.Show("Error: "+exc1);
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+                
+            fillToDropDown();
+            fillDataGridView();
 
         }
+
+
         User u;
         private void MemberDetails_Load(object sender, EventArgs e)
         {
@@ -62,6 +59,60 @@ namespace SchoolManagementSystem
             u = UserSessionStore.Instance.getUser();
 
             fillToDropDown();
+            fillDataGridView();
+
+            btnDelete.Visible = false;
+
+            if (u.Type == "Admin")
+            {
+                lblPath.Text = "Admin Dashboard> Library> Member Details>";
+            }
+            else if (u.Type == "Academic_Staff")
+            {
+                lblPath.Text = "Academic Staff Dashboard> Library> Member Details>";
+            }
+            else if (u.Type == "Non_Academic_Staff")
+            {
+                lblPath.Text = "Non Academic Staff Dashboard> Library> Member Details>";
+            }
+            else if (u.Type == "Administrative_Staff")
+            {
+                lblPath.Text = "Administrative Staff Dashboard> Library> Member Details>";
+            }
+            else
+            {
+                lblPath.Text = "";
+            }
+        }
+
+        private void fillDataGridView()
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+
+                /*
+                select s.stfID, s.fName, s.lName, s.phone, s.email
+                from Staff s, Library_Member_Staff lm
+                where s.stfID = lm.stfID
+                */
+                cmd.CommandText = "select s.stfID, s.fName, s.lName, s.phone, s.email from Staff s, Library_Member_Staff lm where s.stfID = lm.stfID";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error: " + exc);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         private void fillToDropDown()
@@ -100,10 +151,6 @@ namespace SchoolManagementSystem
             sIDCombo.SelectedIndex = 0;
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -119,12 +166,6 @@ namespace SchoolManagementSystem
             this.Hide();
             frmLoginObj.Show();
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
 
 
         private void sIDCombo_SelectedIndexChanged(object sender, EventArgs e)
@@ -171,6 +212,81 @@ namespace SchoolManagementSystem
             con.Close();
 
 
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            fillDataGridView();
+        }
+
+        String StaffDForDelete;
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            btnDelete.Visible = true;
+
+            StaffDForDelete = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+
+            btnDelete.Text = "Remove " + StaffDForDelete;
+        }
+
+        private void MemberDetails_Click(object sender, EventArgs e)
+        {
+            btnDelete.Visible = false;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+          
+            try
+            {
+                con.Open();
+                SqlCommand cmd2 = con.CreateCommand();
+                cmd2.CommandText = "Delete from Library_Member_Staff where stfID  = '" + StaffDForDelete + "'";
+                cmd2.ExecuteNonQuery();
+                MessageBox.Show("Removed Library Membership successfully.");
+                btnDelete.Visible = false;
+                
+            }
+            catch (Exception ex1)
+            {
+                MessageBox.Show("Error: " + ex1);
+                btnDelete.Visible = false;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
+            fillToDropDown();
+            fillDataGridView();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT s.stfID , s.fName, s.lName, s.phone,s.email FROM Staff s, Library_Member_Staff lms WHERE s.stfID = lms.stfID and s.stfID like '%" + textBox4.Text + "%'";
+
+
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+            }
         }
     }
     

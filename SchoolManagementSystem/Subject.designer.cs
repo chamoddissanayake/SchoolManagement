@@ -60,6 +60,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblPath = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -395,7 +396,7 @@
             this.lblPath.AutoSize = true;
             this.lblPath.BackColor = System.Drawing.Color.Transparent;
             this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblPath.ForeColor = System.Drawing.Color.Black;
             this.lblPath.Location = new System.Drawing.Point(207, 170);
             this.lblPath.Name = "lblPath";
             this.lblPath.Size = new System.Drawing.Size(69, 20);
@@ -411,6 +412,17 @@
             this.label8.TabIndex = 170;
             this.label8.Text = "Search By ID";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.BackgroundImage")));
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefresh.Location = new System.Drawing.Point(1705, 273);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(37, 32);
+            this.btnRefresh.TabIndex = 171;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // Subject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -418,6 +430,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblPath);
             this.Controls.Add(this.label1);
@@ -485,6 +498,7 @@
         private System.Windows.Forms.Button backAE;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 

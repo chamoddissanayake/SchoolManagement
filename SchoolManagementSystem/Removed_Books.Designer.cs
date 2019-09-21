@@ -44,6 +44,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.lblPath = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -241,6 +242,18 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // lblPath
+            // 
+            this.lblPath.AutoSize = true;
+            this.lblPath.BackColor = System.Drawing.Color.Transparent;
+            this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPath.ForeColor = System.Drawing.Color.Black;
+            this.lblPath.Location = new System.Drawing.Point(179, 111);
+            this.lblPath.Name = "lblPath";
+            this.lblPath.Size = new System.Drawing.Size(69, 20);
+            this.lblPath.TabIndex = 173;
+            this.lblPath.Text = "<Path>";
+            // 
             // Removed_Books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -248,6 +261,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.lblPath);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnSearch);
@@ -291,5 +305,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label lblPath;
     }
 }

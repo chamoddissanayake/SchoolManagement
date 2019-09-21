@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(library_StudentDetails));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -53,7 +54,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.lblPath = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
@@ -80,6 +81,21 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(559, 391);
             this.panel2.TabIndex = 2;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Maroon;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(284, 299);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(248, 43);
+            this.btnDelete.TabIndex = 156;
+            this.btnDelete.Text = "Remove Selected Student";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // button6
             // 
@@ -341,20 +357,17 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // btnDelete
+            // lblPath
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.Maroon;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(284, 299);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(248, 43);
-            this.btnDelete.TabIndex = 156;
-            this.btnDelete.Text = "Remove Selected Student";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.lblPath.AutoSize = true;
+            this.lblPath.BackColor = System.Drawing.Color.Transparent;
+            this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPath.ForeColor = System.Drawing.Color.Black;
+            this.lblPath.Location = new System.Drawing.Point(200, 119);
+            this.lblPath.Name = "lblPath";
+            this.lblPath.Size = new System.Drawing.Size(69, 20);
+            this.lblPath.TabIndex = 170;
+            this.lblPath.Text = "<Path>";
             // 
             // library_StudentDetails
             // 
@@ -364,6 +377,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.lblPath);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.pictureBox1);
@@ -420,5 +434,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label lblPath;
     }
 }

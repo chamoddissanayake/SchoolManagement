@@ -44,6 +44,28 @@ namespace SchoolManagementSystem
         {
             u = UserSessionStore.Instance.getUser();
             display();
+
+            if (u.Type == "Admin")
+            {
+                lblPath.Text = "Admin Dashboard> Library> Books> Removed Books>";
+            }
+            else if (u.Type == "Academic_Staff")
+            {
+                lblPath.Text = "Academic Staff Dashboard> Library> Books> Removed Books>";
+            }
+            else if (u.Type == "Non_Academic_Staff")
+            {
+                lblPath.Text = "Non Academic Staff Dashboard> Library> Books> Removed Books>";
+            }
+            else if (u.Type == "Administrative_Staff")
+            {
+                lblPath.Text = "Administrative Staff Dashboard> Library> Books> Removed Books>";
+            }
+            else
+            {
+                lblPath.Text = "";
+            }
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

@@ -94,6 +94,27 @@ namespace SchoolManagementSystem
             textBox3.ReadOnly = true;
 
             btnDelete.Visible = false;
+
+            if (u.Type == "Admin")
+            {
+                lblPath.Text = "Admin Dashboard> Library> Student Details>";
+            }
+            else if (u.Type == "Academic_Staff")
+            {
+                lblPath.Text = "Academic Staff Dashboard> Library> Student Details>";
+            }
+            else if (u.Type == "Non_Academic_Staff")
+            {
+                lblPath.Text = "Non Academic Staff Dashboard> Library> Student Details>";
+            }
+            else if (u.Type == "Administrative_Staff")
+            {
+                lblPath.Text = "Administrative Staff Dashboard> Library> Student Details>";
+            }
+            else
+            {
+                lblPath.Text = "";
+            }
         }
    
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -104,7 +125,7 @@ namespace SchoolManagementSystem
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-               // cmd.CommandText = "select * from Student_details where admissionNo  = '" + textBox4.Text + "'";
+                // cmd.CommandText = "select * from Student_details where admissionNo  = '" + textBox4.Text + "'";
                 cmd.CommandText = "SELECT s.sID , s.fName, s.mName, s.lName, s.tel,s.email FROM Student s, Library_Member_Student lms WHERE s.sID = lms.sid and s.sID like '%" + textBox4.Text + "%'";
 
 
@@ -113,11 +134,14 @@ namespace SchoolManagementSystem
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
-                con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: "+ex);
+                MessageBox.Show("Error: " + ex);
+            }
+            finally
+            {
+                con.Close();
             }
         }
 

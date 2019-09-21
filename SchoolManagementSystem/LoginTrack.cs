@@ -41,7 +41,7 @@ namespace SchoolManagementSystem
         {
             u = UserSessionStore.Instance.getUser();
             helloMsg.Text = "Hello " + u.getuserID();
-            fillgrid();
+           fillgrid();
         }
 
         private void fillgrid()
@@ -54,7 +54,16 @@ namespace SchoolManagementSystem
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
+            dataGridView1.ColumnHeadersVisible = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
+            // or even better, use .DisableResizing. Most time consuming enum is DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
+
+            // set it to false if not needed
+            dataGridView1.RowHeadersVisible = false;
+
             dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             con.Close();
         }
     }

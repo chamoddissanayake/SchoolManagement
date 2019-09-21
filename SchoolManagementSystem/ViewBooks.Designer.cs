@@ -47,6 +47,9 @@
             this.radioName = new System.Windows.Forms.RadioButton();
             this.radioAuthor = new System.Windows.Forms.RadioButton();
             this.radioPublication = new System.Windows.Forms.RadioButton();
+            this.btnAllReport = new System.Windows.Forms.Button();
+            this.btnSpecificReport = new System.Windows.Forms.Button();
+            this.lblPath = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,6 +67,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(899, 458);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // label9
             // 
@@ -223,7 +227,7 @@
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label8.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Sienna;
-            this.label8.Location = new System.Drawing.Point(454, 132);
+            this.label8.Location = new System.Drawing.Point(732, 193);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(139, 29);
             this.label8.TabIndex = 158;
@@ -273,6 +277,38 @@
             this.radioPublication.Text = "Publication";
             this.radioPublication.UseVisualStyleBackColor = true;
             // 
+            // btnAllReport
+            // 
+            this.btnAllReport.Location = new System.Drawing.Point(1272, 342);
+            this.btnAllReport.Name = "btnAllReport";
+            this.btnAllReport.Size = new System.Drawing.Size(191, 74);
+            this.btnAllReport.TabIndex = 166;
+            this.btnAllReport.Text = "Get A Report of All Books";
+            this.btnAllReport.UseVisualStyleBackColor = true;
+            this.btnAllReport.Click += new System.EventHandler(this.btnAllReport_Click);
+            // 
+            // btnSpecificReport
+            // 
+            this.btnSpecificReport.Location = new System.Drawing.Point(1272, 437);
+            this.btnSpecificReport.Name = "btnSpecificReport";
+            this.btnSpecificReport.Size = new System.Drawing.Size(191, 74);
+            this.btnSpecificReport.TabIndex = 167;
+            this.btnSpecificReport.Text = "button1";
+            this.btnSpecificReport.UseVisualStyleBackColor = true;
+            this.btnSpecificReport.Click += new System.EventHandler(this.btnSpecificReport_Click);
+            // 
+            // lblPath
+            // 
+            this.lblPath.AutoSize = true;
+            this.lblPath.BackColor = System.Drawing.Color.Transparent;
+            this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPath.ForeColor = System.Drawing.Color.White;
+            this.lblPath.Location = new System.Drawing.Point(193, 100);
+            this.lblPath.Name = "lblPath";
+            this.lblPath.Size = new System.Drawing.Size(69, 20);
+            this.lblPath.TabIndex = 170;
+            this.lblPath.Text = "<Path>";
+            // 
             // ViewBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -280,6 +316,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.lblPath);
+            this.Controls.Add(this.btnSpecificReport);
+            this.Controls.Add(this.btnAllReport);
             this.Controls.Add(this.radioPublication);
             this.Controls.Add(this.radioAuthor);
             this.Controls.Add(this.radioName);
@@ -297,6 +336,7 @@
             this.Text = "ViewBooks";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ViewBooks_Load);
+            this.Click += new System.EventHandler(this.ViewBooks_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -329,5 +369,8 @@
         private System.Windows.Forms.RadioButton radioName;
         private System.Windows.Forms.RadioButton radioAuthor;
         private System.Windows.Forms.RadioButton radioPublication;
+        private System.Windows.Forms.Button btnAllReport;
+        private System.Windows.Forms.Button btnSpecificReport;
+        private System.Windows.Forms.Label lblPath;
     }
 }

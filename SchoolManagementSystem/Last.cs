@@ -100,6 +100,27 @@ namespace SchoolManagementSystem
         {
             u = UserSessionStore.Instance.getUser();
             disp_date();
+
+            if (u.Type == "Admin")
+            {
+                lblPath.Text = "Admin Dashboard> Library> Books> Payments> Payments Done>";
+            }
+            else if (u.Type == "Academic_Staff")
+            {
+                lblPath.Text = "Academic Staff Dashboard> Library> Books> Payments> Payments Done>";
+            }
+            else if (u.Type == "Non_Academic_Staff")
+            {
+                lblPath.Text = "Non Academic Staff Dashboard> Library> Books> Payments> Payments Done>";
+            }
+            else if (u.Type == "Administrative_Staff")
+            {
+                lblPath.Text = "Administrative Staff Dashboard> Library> Books> Payments> Payments Done>";
+            }
+            else
+            {
+                lblPath.Text = "";
+            }
         }
 
         private void delete_Click(object sender, EventArgs e)

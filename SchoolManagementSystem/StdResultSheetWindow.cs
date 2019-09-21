@@ -307,70 +307,98 @@ namespace SchoolManagementSystem
 
         private void documentCreate()
         {
-            Document document = new Document();
 
-            PdfWriter.GetInstance(document, new FileStream("E:/" + studentIDForSearchResult.Text + " - ResultSheet.pdf", FileMode.Create));
-            document.Open();
-            //Document open
-
-
-            //Add school logo code start
-            iTextSharp.text.Image image1 = iTextSharp.text.Image.GetInstance("C:/Users/User/Desktop/SchoolManagementSystem/SchoolManagementSystem/pictures/logo.png");
-            //Fixed Positioning
-            image1.SetAbsolutePosition(210, 650);
-            //Scale to new height and new width of image
-            image1.ScaleAbsolute(150, 150);
-            //Add to document
-            document.Add(image1);
-            //Add school logo code end
-
-            //Add school logo code end
-            Paragraph p = new Paragraph("\n\n\n\n\n\n\n\n\n\n\n" +
-                                        "Student ID   = " + studentIDForSearchResult.Text + "\n" +
-                                        "Full Name    = " + fName_from_db + " " + mName_from_db + " " + lName_from_db + "\n" +
-                                        "Email         = " + email_from_db + "\n\n");
-            document.Add(p);
-
-
-            //Table Add start
-            PdfPTable pdfTable = new PdfPTable(6);
-            
-            //Adding Header row
-            foreach (DataGridViewColumn column in dataGridViewResultSheet.Columns)
+            try
             {
-                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                pdfTable.AddCell(cell);
-            }
+                var savefiledialog = new SaveFileDialog();
+                savefiledialog.FileName = studentIDForSearchResult.Text + " - ResultSheet";
+                savefiledialog.DefaultExt = ".pdf";
 
-            foreach (DataGridViewRow row in dataGridViewResultSheet.Rows)
-            {
-                foreach (DataGridViewCell celli in row.Cells)
+                if (savefiledialog.ShowDialog() == DialogResult.OK)
                 {
-                    try
+                    using (FileStream stream = new FileStream(savefiledialog.FileName, FileMode.Create))
                     {
-                        pdfTable.AddCell(celli.Value.ToString());
+
+                        Document document = new Document();
+
+                        PdfWriter.GetInstance(document, stream);
+
+                        // PdfWriter.GetInstance(document, new FileStream("E:/" + studentIDForSearchResult.Text + " - ResultSheet.pdf", FileMode.Create));
+                        document.Open();
+                        //Document open
+
+
+                        //Add school logo code start
+                        iTextSharp.text.Image image1 = iTextSharp.text.Image.GetInstance("C:/Users/User/Desktop/SchoolManagementSystem/SchoolManagementSystem/pictures/logo.png");
+                        //Fixed Positioning
+                        image1.SetAbsolutePosition(210, 650);
+                        //Scale to new height and new width of image
+                        image1.ScaleAbsolute(150, 150);
+                        //Add to document
+                        document.Add(image1);
+                        //Add school logo code end
+
+                        //Add school logo code end
+                        Paragraph p = new Paragraph("\n\n\n\n\n\n\n\n\n\n\n" +
+                                                    "Student ID   = " + studentIDForSearchResult.Text + "\n" +
+                                                    "Full Name    = " + fName_from_db + " " + mName_from_db + " " + lName_from_db + "\n" +
+                                                    "Email         = " + email_from_db + "\n\n");
+                        document.Add(p);
+
+
+                        //Table Add start
+                        PdfPTable pdfTable = new PdfPTable(6);
+
+                        //Adding Header row
+                        foreach (DataGridViewColumn column in dataGridViewResultSheet.Columns)
+                        {
+                            PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                            pdfTable.AddCell(cell);
+                        }
+
+                        foreach (DataGridViewRow row in dataGridViewResultSheet.Rows)
+                        {
+                            foreach (DataGridViewCell celli in row.Cells)
+                            {
+                                try
+                                {
+                                    pdfTable.AddCell(celli.Value.ToString());
+                                }
+                                catch { }
+                            }
+                        }
+                        document.Add(pdfTable);
+
+                        //Table add end
+
+
+
+                        //Final note start
+                        DateTime now = DateTime.Now;
+                        Paragraph pEnd = new Paragraph("- System generated result sheet on " + now + " - ");
+                        document.Add(pEnd);
+                        //Final note end
+
+
+                        //Document close
+                        document.Close();
+
+                        stream.Close();
                     }
-                    catch { }
                 }
+
+                MessageBox.Show(studentIDForSearchResult.Text + " - ResultSheet.pdf saved successfully.");
             }
-            document.Add(pdfTable);
-
-            //Table add end
-
-
-
-            //Final note start
-            DateTime now = DateTime.Now;
-            Paragraph pEnd = new Paragraph("- System generated result sheet on " + now + " - ");
-            document.Add(pEnd);
-            //Final note end
+            catch(IOException ex1)
+            {
+                MessageBox.Show("File Already open, Please close it.");
+            }catch(Exception e1)
+            {
+                MessageBox.Show("Error: " + e1);
+            }
 
 
-            //Document close
-            document.Close();
-
-            MessageBox.Show("Result sheet saved on E:/" + studentIDForSearchResult.Text + " - ResultSheet.pdf");
         }
 
         private void studentGrade_SelectedIndexChanged(object sender, EventArgs e)

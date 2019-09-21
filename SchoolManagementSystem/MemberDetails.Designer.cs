@@ -49,12 +49,19 @@ namespace SchoolManagementSystem
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.lblPath = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,7 +98,6 @@ namespace SchoolManagementSystem
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(279, 22);
             this.textBox2.TabIndex = 4;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -100,7 +106,6 @@ namespace SchoolManagementSystem
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(145, 22);
             this.textBox3.TabIndex = 5;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // button1
             // 
@@ -132,7 +137,6 @@ namespace SchoolManagementSystem
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(777, 400);
             this.panel1.TabIndex = 12;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // sIDCombo
             // 
@@ -209,7 +213,7 @@ namespace SchoolManagementSystem
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 149);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(151, 544);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(151, 904);
             this.flowLayoutPanel2.TabIndex = 161;
             // 
             // panel2
@@ -221,7 +225,7 @@ namespace SchoolManagementSystem
             this.panel2.Location = new System.Drawing.Point(153, 2);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1156, 70);
+            this.panel2.Size = new System.Drawing.Size(1768, 70);
             this.panel2.TabIndex = 163;
             // 
             // flowLayoutPanel1
@@ -231,7 +235,7 @@ namespace SchoolManagementSystem
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(96, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(402, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(947, 70);
@@ -270,13 +274,91 @@ namespace SchoolManagementSystem
             this.label4.TabIndex = 0;
             this.label4.Text = "Asoka College - School Management System";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.BackgroundImage")));
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefresh.Location = new System.Drawing.Point(1684, 253);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(35, 36);
+            this.btnRefresh.TabIndex = 167;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox4.Location = new System.Drawing.Point(1402, 254);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(221, 22);
+            this.textBox4.TabIndex = 166;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1174, 255);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(141, 25);
+            this.label5.TabIndex = 165;
+            this.label5.Text = "Enter Staff ID";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(1180, 308);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(565, 352);
+            this.dataGridView1.TabIndex = 164;
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Maroon;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(838, 506);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(248, 43);
+            this.btnDelete.TabIndex = 168;
+            this.btnDelete.Text = "Remove Selected Student";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // lblPath
+            // 
+            this.lblPath.AutoSize = true;
+            this.lblPath.BackColor = System.Drawing.Color.Transparent;
+            this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPath.ForeColor = System.Drawing.Color.Black;
+            this.lblPath.Location = new System.Drawing.Point(189, 109);
+            this.lblPath.Name = "lblPath";
+            this.lblPath.Size = new System.Drawing.Size(69, 20);
+            this.lblPath.TabIndex = 170;
+            this.lblPath.Text = "<Path>";
+            // 
             // MemberDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1312, 695);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.lblPath);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.panel2);
@@ -287,6 +369,7 @@ namespace SchoolManagementSystem
             this.Text = "MemberDetails";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MemberDetails_Load);
+            this.Click += new System.EventHandler(this.MemberDetails_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -295,7 +378,9 @@ namespace SchoolManagementSystem
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -321,5 +406,11 @@ namespace SchoolManagementSystem
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox sIDCombo;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label lblPath;
     }
 }

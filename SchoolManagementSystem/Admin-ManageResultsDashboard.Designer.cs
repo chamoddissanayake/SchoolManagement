@@ -66,6 +66,7 @@
             this.deleteRes = new System.Windows.Forms.Button();
             this.updateRes = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnReportAll = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -456,6 +457,19 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
+            // btnReportAll
+            // 
+            this.btnReportAll.BackColor = System.Drawing.Color.Maroon;
+            this.btnReportAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportAll.ForeColor = System.Drawing.Color.White;
+            this.btnReportAll.Location = new System.Drawing.Point(1127, 871);
+            this.btnReportAll.Name = "btnReportAll";
+            this.btnReportAll.Size = new System.Drawing.Size(271, 38);
+            this.btnReportAll.TabIndex = 32;
+            this.btnReportAll.Text = "Results Report Of All Students";
+            this.btnReportAll.UseVisualStyleBackColor = false;
+            this.btnReportAll.Click += new System.EventHandler(this.btnReportAll_Click);
+            // 
             // Admin_ManageResults_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -463,6 +477,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.btnReportAll);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.updateRes);
@@ -551,6 +566,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button backASM;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReportAll;
         // private System.Windows.Forms.PictureBox refresh;
     }
 }

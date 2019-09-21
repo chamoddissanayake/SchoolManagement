@@ -24,7 +24,7 @@ namespace SchoolManagementSystem
             User u = UserSessionStore.Instance.getUser();
             helloMsg.Text = "Hello " + u.getuserID();
 
-            btnLoggedInUsers.Visible = false;
+         //   btnLoggedInUsers.Visible = false;
             if (u.Type == "Admin"){
                 lblPath.Text = "Admin Dashboard>";
             }
