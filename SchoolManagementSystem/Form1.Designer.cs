@@ -40,6 +40,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblPath = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -62,7 +63,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblPath = new System.Windows.Forms.Label();
+            this.btnReport = new System.Windows.Forms.Button();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -205,6 +206,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Khaki;
+            this.panel1.Controls.Add(this.btnReport);
             this.panel1.Controls.Add(this.lblPath);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label9);
@@ -228,6 +230,18 @@
             this.panel1.Size = new System.Drawing.Size(1156, 620);
             this.panel1.TabIndex = 22;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblPath
+            // 
+            this.lblPath.AutoSize = true;
+            this.lblPath.BackColor = System.Drawing.Color.Transparent;
+            this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPath.ForeColor = System.Drawing.Color.Black;
+            this.lblPath.Location = new System.Drawing.Point(46, 34);
+            this.lblPath.Name = "lblPath";
+            this.lblPath.Size = new System.Drawing.Size(69, 20);
+            this.lblPath.TabIndex = 171;
+            this.lblPath.Text = "<Path>";
             // 
             // button2
             // 
@@ -498,17 +512,21 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Due Date       :";
             // 
-            // lblPath
+            // btnReport
             // 
-            this.lblPath.AutoSize = true;
-            this.lblPath.BackColor = System.Drawing.Color.Transparent;
-            this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPath.ForeColor = System.Drawing.Color.Black;
-            this.lblPath.Location = new System.Drawing.Point(46, 34);
-            this.lblPath.Name = "lblPath";
-            this.lblPath.Size = new System.Drawing.Size(69, 20);
-            this.lblPath.TabIndex = 171;
-            this.lblPath.Text = "<Path>";
+            this.btnReport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnReport.BackColor = System.Drawing.Color.Maroon;
+            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnReport.Location = new System.Drawing.Point(596, 488);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(161, 50);
+            this.btnReport.TabIndex = 172;
+            this.btnReport.Text = "Report";
+            this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // Form1
             // 
@@ -576,6 +594,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblPath;
+        private System.Windows.Forms.Button btnReport;
     }
 }
 

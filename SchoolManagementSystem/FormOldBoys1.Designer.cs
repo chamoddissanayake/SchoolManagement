@@ -40,6 +40,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDocument = new System.Windows.Forms.Button();
+            this.lblPath = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -60,7 +62,6 @@
             this.txtMobileNumber = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblPath = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -206,6 +207,7 @@
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.btnDocument);
             this.panel1.Controls.Add(this.lblPath);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -233,6 +235,33 @@
             this.panel1.Size = new System.Drawing.Size(1157, 623);
             this.panel1.TabIndex = 16;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnDocument
+            // 
+            this.btnDocument.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDocument.BackColor = System.Drawing.Color.Maroon;
+            this.btnDocument.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDocument.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnDocument.Location = new System.Drawing.Point(520, 485);
+            this.btnDocument.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDocument.Name = "btnDocument";
+            this.btnDocument.Size = new System.Drawing.Size(120, 43);
+            this.btnDocument.TabIndex = 174;
+            this.btnDocument.Text = "Document";
+            this.btnDocument.UseVisualStyleBackColor = false;
+            this.btnDocument.Click += new System.EventHandler(this.btnDocument_Click);
+            // 
+            // lblPath
+            // 
+            this.lblPath.AutoSize = true;
+            this.lblPath.BackColor = System.Drawing.Color.Transparent;
+            this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblPath.Location = new System.Drawing.Point(63, 19);
+            this.lblPath.Name = "lblPath";
+            this.lblPath.Size = new System.Drawing.Size(69, 20);
+            this.lblPath.TabIndex = 173;
+            this.lblPath.Text = "<Path>";
             // 
             // pictureBox2
             // 
@@ -490,18 +519,6 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Mobile Number";
             // 
-            // lblPath
-            // 
-            this.lblPath.AutoSize = true;
-            this.lblPath.BackColor = System.Drawing.Color.Transparent;
-            this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblPath.Location = new System.Drawing.Point(63, 19);
-            this.lblPath.Name = "lblPath";
-            this.lblPath.Size = new System.Drawing.Size(69, 20);
-            this.lblPath.TabIndex = 173;
-            this.lblPath.Text = "<Path>";
-            // 
             // FormOldBoys1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -567,6 +584,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblPath;
+        private System.Windows.Forms.Button btnDocument;
     }
 }
 

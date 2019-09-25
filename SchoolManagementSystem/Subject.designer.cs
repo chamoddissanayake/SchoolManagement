@@ -79,6 +79,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(164, 949);
             this.panel4.TabIndex = 21;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // button3
             // 
@@ -156,6 +157,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(159, 150);
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // textBox5
             // 

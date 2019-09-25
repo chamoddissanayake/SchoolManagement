@@ -91,57 +91,77 @@ namespace SchoolManagementSystem
 
         private void generateReport(Student s)
         {
+            try
+            {
+                var savefiledialog = new SaveFileDialog();
+                savefiledialog.FileName = "SubjectsReport";
+                savefiledialog.DefaultExt = ".pdf";
+
+                if (savefiledialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (FileStream stream = new FileStream(savefiledialog.FileName, FileMode.Create))
+                    {
+                        Document document = new Document();
+
+                        PdfWriter.GetInstance(document, stream);
+
+                        document.Open();
+                        //Document open
+
+                        //Add school logo code start
+                        iTextSharp.text.Image image1 = iTextSharp.text.Image.GetInstance("C:/Users/User/Desktop/SchoolManagementSystem/SchoolManagementSystem/pictures/logo.png");
+                        //Fixed Positioning
+                        image1.SetAbsolutePosition(210, 650);
+                        //Scale to new height and new width of image
+                        image1.ScaleAbsolute(150, 150);
+                        //Add to document
+                        document.Add(image1);
+                        //Add school logo code end
 
 
 
+                        Paragraph p = new Paragraph("\n\n\n\n\n\n\n\n\n\n\n" +
+                            "Student ID   = " + s.SID + "\n" +
+                            "First Name   = " + s.FName + "\n" +
+                            "Middle Name   = " + s.MName + "\n" +
+                            "Last Name   = " + s.LName + "\n" +
+                            "Date of Birth   = " + s.Dob + "\n" +
+                            "Year of Register   = " + s.Yor + "\n" +
+                            "Address   = " + s.Address + "\n" +
+                            "Telephone No   = " + s.Tel + "\n" +
+                            "Email   = " + s.Email + "\n" +
+                            "Blood Group   = " + s.Bloodgroup + "\n" +
+                            "Parent Name  = " + s.Parent_Name + "\n" +
+                            "Nationalism   = " + s.Nationalism + "\n" +
+                            "Religion   = " + s.Religion + "\n"
 
 
-            Document document = new Document();
+                            );
+                        document.Add(p);
 
-            PdfWriter.GetInstance(document, new FileStream("E:/" + s.SID + " - Student Information Sheet.pdf", FileMode.Create));
-            document.Open();
-            //Document open
+                        //Document close
+                        document.Close();
 
-            //Add school logo code start
-            iTextSharp.text.Image image1 = iTextSharp.text.Image.GetInstance("C:/Users/User/Desktop/SchoolManagementSystem/SchoolManagementSystem/pictures/logo.png");
-            //Fixed Positioning
-            image1.SetAbsolutePosition(210, 650);
-            //Scale to new height and new width of image
-            image1.ScaleAbsolute(150, 150);
-            //Add to document
-            document.Add(image1);
-            //Add school logo code end
+                        MessageBox.Show(savefiledialog.FileName + "saved successfully.");
 
 
+                        stream.Close();
+                    }
+                }
+            }
+            catch (IOException ex1)
+            {
+                MessageBox.Show("File Already open, Please close it.");
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show("Error: " + e1);
+            }
+            finally
+            {
 
-            Paragraph p = new Paragraph("\n\n\n\n\n\n\n\n\n\n\n" +
-                "Student ID   = " + s.SID + "\n" +
-                "First Name   = " + s.FName + "\n" +
-                "Middle Name   = " + s.MName + "\n" +
-                "Last Name   = " + s.LName + "\n" +
-                "Date of Birth   = " + s.Dob + "\n" +
-                "Year of Register   = " + s.Yor + "\n" +
-                "Address   = " + s.Address + "\n"+
-                "Telephone No   = " + s.Tel + "\n" +
-                "Email   = " + s.Email + "\n" +
-                "Blood Group   = " + s.Bloodgroup + "\n" +
-                "Parent Name  = " + s.Parent_Name + "\n" +
-                "Nationalism   = " + s.Nationalism + "\n" +
-                "Religion   = " + s.Religion + "\n" 
-
-
-                );
-            document.Add(p);
+            }
             
-            //Document close
-            document.Close();
-
-            MessageBox.Show("Result sheet saved on "+ "E:/" + s.SID + " - Student Information Sheet.pdf");
-
-
-
-
-
         }
 
         private void label1_Click(object sender, EventArgs e)

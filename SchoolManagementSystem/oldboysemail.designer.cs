@@ -271,7 +271,7 @@
             this.lblPath.BackColor = System.Drawing.Color.Transparent;
             this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblPath.Location = new System.Drawing.Point(330, 100);
+            this.lblPath.Location = new System.Drawing.Point(413, 74);
             this.lblPath.Name = "lblPath";
             this.lblPath.Size = new System.Drawing.Size(69, 20);
             this.lblPath.TabIndex = 174;

@@ -55,8 +55,11 @@ namespace SchoolManagementSystem
 
         private void NonAcademic_Staff_OB_Management_Click(object sender, EventArgs e)
         {
-            FormOldBoys1 obj = new FormOldBoys1();
-            obj.Show();
+            this.Close();
+            //FormOldBoys1 obj = new FormOldBoys1();
+            //obj.Show();
+            OldBoysDashboard oldBoysDashObj = new OldBoysDashboard();
+            oldBoysDashObj.Show();
         }
 
         private void Academic_Staff_Staff_Management_Click(object sender, EventArgs e)

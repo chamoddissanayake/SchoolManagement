@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using SchoolManagementSystem.Model;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace SchoolManagementSystem
 {
@@ -293,6 +296,93 @@ namespace SchoolManagementSystem
             frmLogin frmLoginObj = new frmLogin();
             this.Hide();
             frmLoginObj.Show();
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            documentcreate();
+        }
+
+        private void documentcreate()
+        {
+
+            try
+            {
+                var savefiledialog = new SaveFileDialog();
+                savefiledialog.FileName = "Library Payment Report";
+                savefiledialog.DefaultExt = ".pdf";
+
+                if (savefiledialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (FileStream stream = new FileStream(savefiledialog.FileName, FileMode.Create))
+                    {
+                        Document document = new Document();
+
+                        PdfWriter.GetInstance(document, stream);
+                        document.Open();
+
+                        Paragraph p = new Paragraph("--- Report ---");
+
+                        //Add school logo code start
+                        iTextSharp.text.Image image1 = iTextSharp.text.Image.GetInstance("C:/Users/User/Desktop/SchoolManagementSystem/SchoolManagementSystem/pictures/logo.png");
+                        //Fixed Positioning
+                        image1.SetAbsolutePosition(210, 650);
+                        //Scale to new height and new width of image
+                        image1.ScaleAbsolute(150, 150);
+                        //Add to document
+                        document.Add(image1);
+                        //Add school logo code end
+
+                        Paragraph p1 = new Paragraph("\n\n\n\n\n\n\n\n\n\n\n");
+                        document.Add(p1);
+
+                        PdfPTable pdfTable1 = new PdfPTable(4);
+                        //Adding Header row
+                        foreach (DataGridViewColumn column in dataGridView1.Columns)
+                        {
+                            PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                            pdfTable1.AddCell(cell);
+                        }
+
+
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            foreach (DataGridViewCell celli in row.Cells)
+                            {
+                                try
+                                {
+                                    pdfTable1.AddCell(celli.Value.ToString());
+                                }
+                                catch { }
+                            }
+                        }
+
+                        document.Add(pdfTable1);
+
+                        document.Close();
+
+                        stream.Close();
+                    }
+                }
+
+                MessageBox.Show(savefiledialog.FileName + " saved successfully.");
+
+            }
+            catch (IOException ex1)
+            {
+                MessageBox.Show("File Already open, Please close it.");
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show("Error: " + e1);
+            }
+            finally
+            {
+
+            }
+
+
         }
     }
     }

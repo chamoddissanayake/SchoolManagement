@@ -113,8 +113,10 @@ namespace SchoolManagementSystem
         private void Academic_Staff_OB_Management_Click(object sender, EventArgs e)
         {
             this.Close();
-            FormOldBoys1 obj = new FormOldBoys1();
-            obj.Show();
+            //FormOldBoys1 obj = new FormOldBoys1();
+            //obj.Show();
+            OldBoysDashboard oldBoysDashObj = new OldBoysDashboard();
+            oldBoysDashObj.Show();
         }
 
         private void Academic_Staff_Library_Management_Click(object sender, EventArgs e)

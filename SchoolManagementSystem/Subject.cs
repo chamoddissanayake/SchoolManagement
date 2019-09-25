@@ -213,56 +213,82 @@ namespace SchoolManagementSystem
 
         private void documentcreate()
         {
-            //  Document document = new Document();
-            iTextSharp.text.Document document = new iTextSharp.text.Document();
-
-
-            PdfWriter.GetInstance(document, new FileStream("D:/test123.pdf", FileMode.Create));
-            document.Open();
-
-            Document open;
-            Paragraph p = new Paragraph("--- Reprot ---");
-
-            //Add school logo code start
-            iTextSharp.text.Image image1 = iTextSharp.text.Image.GetInstance("C:/Users/User/Desktop/SchoolManagementSystem/SchoolManagementSystem/pictures/logo.png");
-            //Fixed Positioning
-            image1.SetAbsolutePosition(210, 650);
-            //Scale to new height and new width of image
-            image1.ScaleAbsolute(150, 150);
-            //Add to document
-            document.Add(image1);
-            //Add school logo code end
-
-            Paragraph p1 = new Paragraph("\n\n\n\n\n\n\n\n\n\n\n");
-            document.Add(p1);
-
-            PdfPTable pdfTable1 = new PdfPTable(6);
-            //Adding Header row
-            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            try
             {
-                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                pdfTable1.AddCell(cell);
-            }
+                var savefiledialog = new SaveFileDialog();
+                savefiledialog.FileName = "SubjectsReport";
+                savefiledialog.DefaultExt = ".pdf";
 
-           
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                foreach (DataGridViewCell celli in row.Cells)
+                if (savefiledialog.ShowDialog() == DialogResult.OK)
                 {
-                    try
+                    using (FileStream stream = new FileStream(savefiledialog.FileName, FileMode.Create))
                     {
-                        pdfTable1.AddCell(celli.Value.ToString());
+                        Document document = new Document();
+
+                        PdfWriter.GetInstance(document, stream);
+                        document.Open();
+                        
+                        Paragraph p = new Paragraph("--- Reprot ---");
+
+                        //Add school logo code start
+                        iTextSharp.text.Image image1 = iTextSharp.text.Image.GetInstance("C:/Users/User/Desktop/SchoolManagementSystem/SchoolManagementSystem/pictures/logo.png");
+                        //Fixed Positioning
+                        image1.SetAbsolutePosition(210, 650);
+                        //Scale to new height and new width of image
+                        image1.ScaleAbsolute(150, 150);
+                        //Add to document
+                        document.Add(image1);
+                        //Add school logo code end
+
+                        Paragraph p1 = new Paragraph("\n\n\n\n\n\n\n\n\n\n\n");
+                        document.Add(p1);
+
+                        PdfPTable pdfTable1 = new PdfPTable(6);
+                        //Adding Header row
+                        foreach (DataGridViewColumn column in dataGridView1.Columns)
+                        {
+                            PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                            pdfTable1.AddCell(cell);
+                        }
+
+
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            foreach (DataGridViewCell celli in row.Cells)
+                            {
+                                try
+                                {
+                                    pdfTable1.AddCell(celli.Value.ToString());
+                                }
+                                catch { }
+                            }
+                        }
+
+                        document.Add(pdfTable1);
+
+                        document.Close();
+                        
+                        stream.Close();
                     }
-                    catch { }
                 }
+
+                MessageBox.Show(savefiledialog.FileName + " saved successfully.");
+
             }
+            catch (IOException ex1)
+            {
+                MessageBox.Show("File Already open, Please close it.");
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show("Error: " + e1);
+            }
+            finally
+            {
 
-            document.Add(pdfTable1);
-
-            document.Close();
-
-            MessageBox.Show("Report Saved Successfully");
+            }
+            
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -359,6 +385,16 @@ namespace SchoolManagementSystem
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             diplay();
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using SchoolManagementSystem.Model;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace SchoolManagementSystem
 {
@@ -179,19 +182,19 @@ namespace SchoolManagementSystem
 
             if (u.Type == "Admin")
             {
-                lblPath.Text = "Admin Dashboard> Old Boys Management>";
+                lblPath.Text = "Admin Dashboard> Old Boys> Manage Old Boys>";
             }
             else if (u.Type == "Academic_Staff")
             {
-                lblPath.Text = "Academic Staff Dashboard> Old Boys Management>";
+                lblPath.Text = "Academic Staff Dashboard> Old Boys> Manage Old Boys>";
             }
             else if (u.Type == "Non_Academic_Staff")
             {
-                lblPath.Text = "Non Academic Staff Dashboard> Old Boys Management> ";
+                lblPath.Text = "Non Academic Staff Dashboard> Old Boys> Manage Old Boys>";
             }
             else if (u.Type == "Administrative_Staff")
             {
-                lblPath.Text = "Administrative Staff Dashboard> Old Boys Management> ";
+                lblPath.Text = "Administrative Staff Dashboard> Old Boys> Manage Old Boys>";
             }
             else
             {
@@ -252,30 +255,9 @@ namespace SchoolManagementSystem
         private void button2_Click(object sender, EventArgs e)
         {
 
-            if (u.Type == "Admin")
-            {
-                this.Close();
-                AdminDashboard obj = new AdminDashboard();
-                obj.Show();
-            }
-            else if (u.Type == "Academic_Staff")
-            {
-                this.Close();
-                AcademicStaffDashBoard obj = new AcademicStaffDashBoard();
-                obj.Show();
-            }
-            else if (u.Type == "Non_Academic_Staff")
-            {
-                this.Close();
-                NonAcademicStaffDashboard obj = new NonAcademicStaffDashboard();
-                obj.Show();
-            }
-            else if (u.Type == "Administrative_Staff")
-            {
-                this.Close();
-                AdministrativeStaffDashboard obj = new AdministrativeStaffDashboard();
-                obj.Show();
-            }
+            this.Close();
+            OldBoysDashboard obdbObj = new OldBoysDashboard();
+            obdbObj.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -284,6 +266,109 @@ namespace SchoolManagementSystem
             frmLogin frmLoginObj = new frmLogin();
             this.Hide();
             frmLoginObj.Show();
+        }
+
+        private void btnDocument_Click(object sender, EventArgs e)
+        {
+            documentcreate();
+        }
+
+        private void documentcreate()
+        {
+            try
+            {
+                var savefiledialog = new SaveFileDialog();
+                savefiledialog.FileName = "Old Boys Report";
+                savefiledialog.DefaultExt = ".pdf";
+
+                if (savefiledialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (FileStream stream = new FileStream(savefiledialog.FileName, FileMode.Create))
+                    {
+
+                        Document document = new Document();
+
+                        PdfWriter.GetInstance(document, stream);
+                        
+                        document.Open();
+                        //Document open
+
+
+                        //Add school logo code start
+                        iTextSharp.text.Image image1 = iTextSharp.text.Image.GetInstance("C:/Users/User/Desktop/SchoolManagementSystem/SchoolManagementSystem/pictures/logo.png");
+                        //Fixed Positioning
+                        image1.SetAbsolutePosition(210, 650);
+                        //Scale to new height and new width of image
+                        image1.ScaleAbsolute(150, 150);
+                        //Add to document
+                        document.Add(image1);
+                        //Add school logo code end
+
+                        //Add school logo code end
+                        Paragraph p = new Paragraph("\n\n\n\n\n\n\n\n\n\n\n");
+                        document.Add(p);
+
+
+                        //Table Add start
+                        PdfPTable pdfTable = new PdfPTable(6);
+
+                        //Adding Header row
+                        foreach (DataGridViewColumn column in dgvMembers.Columns)
+                        {
+                            PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                            pdfTable.AddCell(cell);
+                        }
+
+                        foreach (DataGridViewRow row in dgvMembers.Rows)
+                        {
+                            foreach (DataGridViewCell celli in row.Cells)
+                            {
+                                try
+                                {
+                                    pdfTable.AddCell(celli.Value.ToString());
+                                }
+                                catch { }
+                            }
+                        }
+                        document.Add(pdfTable);
+
+                        //Table add end
+
+                        Paragraph p1 = new Paragraph("\n\n\n\n\n\n\n\n\n\n\n");
+                        document.Add(p1);
+
+                        //Final note start
+                        DateTime now = DateTime.Now;
+                        Paragraph pEnd = new Paragraph("- System generated result sheet on " + now + " - ");
+                        document.Add(pEnd);
+                        //Final note end
+
+
+                        //Document close
+                        document.Close();
+
+                        stream.Close();
+                    }
+                }
+
+                MessageBox.Show(savefiledialog.FileName+ "Saved successfully");
+            }
+            catch (IOException ex1)
+            {
+                MessageBox.Show("File Already open, Please close it.");
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show("Error: " + e1);
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            OldBoysPayment payObj = new OldBoysPayment();
+            this.Close();
+            payObj.Show();
         }
     }
 }

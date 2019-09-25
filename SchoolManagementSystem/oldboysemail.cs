@@ -53,19 +53,19 @@ namespace SchoolManagementSystem
 
             if (u.Type == "Admin")
             {
-                lblPath.Text = "Admin Dashboard> Old Boys Management> Email";
+                lblPath.Text = "Admin Dashboard> Old Boys> Manage Old Boys> Email>";
             }
             else if (u.Type == "Academic_Staff")
             {
-                lblPath.Text = "Academic Staff Dashboard> Old Boys Management> Email";
+                lblPath.Text = "Academic Staff Dashboard> Old Boys> Manage Old Boys> Email>";
             }
             else if (u.Type == "Non_Academic_Staff")
             {
-                lblPath.Text = "Non Academic Staff Dashboard> Old Boys Management> Email";
+                lblPath.Text = "Non Academic Staff Dashboard> Old Boys> Manage Old Boys> Email>";
             }
             else if (u.Type == "Administrative_Staff")
             {
-                lblPath.Text = "Administrative Staff Dashboard> Old Boys Management> Email";
+                lblPath.Text = "Administrative Staff Dashboard> Old Boys> Manage Old Boys> Email>";
             }
             else
             {
