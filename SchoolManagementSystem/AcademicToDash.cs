@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace SchoolManagementSystem
 {
@@ -39,6 +40,10 @@ namespace SchoolManagementSystem
             string jdate = jDatePicker.Value.ToShortDateString();
             string gender = "";
             string password = txtPassword.Text;
+
+            string pattern = null;
+            pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+
             if (rBtnMale.Checked)
             {
                 gender = "M";
@@ -51,42 +56,53 @@ namespace SchoolManagementSystem
             if(!(stfID ==""|| fName==""|| lName==""|| email==""|| phone==""|| nic==""|| qualification==""|| spsubject==""||
                 dob==""|| appdate==""|| jdate==""|| gender==""|| password==""))
             {
-                try
+                if(!(Regex.IsMatch(txtEmail.Text, pattern)))
                 {
-                    sqlCon.Open();
-
-                    SqlCommand cmd1 = sqlCon.CreateCommand();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "INSERT INTO Staff VALUES('" + stfID + "', '" + phone + "', '" + fName + "', '" + lName
-                        + "','" + email + "','" + nic + "','" + appdate + "','" + jdate + "','" + qualification + "','" + gender + "','" + dob + "')";
-                    cmd1.ExecuteNonQuery();
-
-                    SqlCommand cmd2 = sqlCon.CreateCommand();
-                    cmd2.CommandType = CommandType.Text;
-                    cmd2.CommandText = "INSERT INTO Academic_Staff VALUES('" + stfID + "', '" + spsubject + "')";
-                    cmd2.ExecuteNonQuery();
-
-                    string saltpwd = PasswordUtil.getSalt(30);
-                    string secpwd = PasswordUtil.generateSecurePassword(password, saltpwd);
-
-                    SqlCommand cmd3 = sqlCon.CreateCommand();
-                    cmd3.CommandType = CommandType.Text;
-                    cmd3.CommandText = "INSERT INTO Academic_Staff_Credentials VALUES('" + stfID + "','" + secpwd + "','" + saltpwd + "')";
-                    cmd3.ExecuteNonQuery();
-
-                }
-                catch (Exception ex1)
+                    MessageBox.Show("Email is not correct.");
+                }else if(txtNIC.Text.Length ==10)
                 {
-                    MessageBox.Show("Error: " + ex1);
-                }
-                finally
+                    MessageBox.Show("NIC is incorrect.");
+                }else
                 {
-                    sqlCon.Close();
+                    try
+                    {
+                        sqlCon.Open();
+
+                        SqlCommand cmd1 = sqlCon.CreateCommand();
+                        cmd1.CommandType = CommandType.Text;
+                       cmd1.CommandText = "INSERT INTO Staff VALUES('" + stfID + "', '" + phone + "', '" + fName + "', '" + lName
+                            + "','" + email  + "','" + nic + "','" + appdate + "','" + jdate + "','" + qualification + "','" + gender + "','" + dob + "')";
+                        cmd1.ExecuteNonQuery();
+
+                        SqlCommand cmd2 = sqlCon.CreateCommand();
+                        cmd2.CommandType = CommandType.Text;
+                        cmd2.CommandText = "INSERT INTO Academic_Staff VALUES('" + stfID + "', '" + spsubject + "')";
+                        cmd2.ExecuteNonQuery();
+
+                        string saltpwd = PasswordUtil.getSalt(30);
+                        string secpwd = PasswordUtil.generateSecurePassword(password, saltpwd);
+
+                        SqlCommand cmd3 = sqlCon.CreateCommand();
+                        cmd3.CommandType = CommandType.Text;
+                        cmd3.CommandText = "INSERT INTO Academic_Staff_Credentials VALUES('" + stfID + "','" + secpwd + "','" + saltpwd + "')";
+                        cmd3.ExecuteNonQuery();
+                        MessageBox.Show("Successfully Inserted!");
+
+                    }
+                    catch (Exception ex1)
+                    {
+                        MessageBox.Show("Error: " + ex1);
+                    }
+                    finally
+                    {
+                        sqlCon.Close();
+                    }
                 }
+              
 
 
                 FillDataGridView();
-                MessageBox.Show("Successfully Inserted!");
+
                 clearDetails();
             }
             else

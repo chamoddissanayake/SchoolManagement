@@ -48,7 +48,7 @@
             this.back.Cursor = System.Windows.Forms.Cursors.Hand;
             this.back.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.back.ForeColor = System.Drawing.Color.Goldenrod;
-            this.back.Location = new System.Drawing.Point(499, 46);
+            this.back.Location = new System.Drawing.Point(604, 46);
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(114, 31);
             this.back.TabIndex = 0;
@@ -70,9 +70,9 @@
             // 
             // emailBody
             // 
-            this.emailBody.Location = new System.Drawing.Point(39, 185);
+            this.emailBody.Location = new System.Drawing.Point(68, 189);
             this.emailBody.Name = "emailBody";
-            this.emailBody.Size = new System.Drawing.Size(558, 197);
+            this.emailBody.Size = new System.Drawing.Size(622, 197);
             this.emailBody.TabIndex = 2;
             this.emailBody.Text = "";
             // 
@@ -81,7 +81,7 @@
             this.sendEmail.BackColor = System.Drawing.Color.Chocolate;
             this.sendEmail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sendEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sendEmail.Location = new System.Drawing.Point(251, 402);
+            this.sendEmail.Location = new System.Drawing.Point(347, 406);
             this.sendEmail.Name = "sendEmail";
             this.sendEmail.Size = new System.Drawing.Size(85, 46);
             this.sendEmail.TabIndex = 4;
@@ -107,7 +107,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label2.Location = new System.Drawing.Point(39, 144);
+            this.label2.Location = new System.Drawing.Point(66, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 18);
             this.label2.TabIndex = 6;
@@ -115,9 +115,9 @@
             // 
             // emailSubject
             // 
-            this.emailSubject.Location = new System.Drawing.Point(119, 138);
+            this.emailSubject.Location = new System.Drawing.Point(146, 142);
             this.emailSubject.Name = "emailSubject";
-            this.emailSubject.Size = new System.Drawing.Size(478, 22);
+            this.emailSubject.Size = new System.Drawing.Size(544, 22);
             this.emailSubject.TabIndex = 7;
             // 
             // label9
@@ -173,7 +173,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(625, 482);
+            this.ClientSize = new System.Drawing.Size(730, 482);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label11);

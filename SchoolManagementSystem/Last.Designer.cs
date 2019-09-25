@@ -37,7 +37,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.delete = new System.Windows.Forms.Button();
-            this.generate = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.search = new System.Windows.Forms.Button();
@@ -158,20 +157,6 @@
             this.delete.Text = "Delete";
             this.delete.UseVisualStyleBackColor = false;
             this.delete.Click += new System.EventHandler(this.delete_Click);
-            // 
-            // generate
-            // 
-            this.generate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.generate.BackColor = System.Drawing.Color.Maroon;
-            this.generate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.generate.ForeColor = System.Drawing.Color.SeaShell;
-            this.generate.Location = new System.Drawing.Point(969, 567);
-            this.generate.Margin = new System.Windows.Forms.Padding(4);
-            this.generate.Name = "generate";
-            this.generate.Size = new System.Drawing.Size(133, 55);
-            this.generate.TabIndex = 13;
-            this.generate.Text = "Report";
-            this.generate.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -437,7 +422,6 @@
             this.Controls.Add(this.search);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.generate);
             this.Controls.Add(this.delete);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -474,7 +458,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button delete;
-        private System.Windows.Forms.Button generate;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button search;

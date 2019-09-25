@@ -230,17 +230,101 @@ namespace SchoolManagementSystem
 
         private void createDocument()
         {
-            Document document = new Document();
+            //Document document = new Document();
 
-            PdfWriter.GetInstance(document, new FileStream("F:/1.pdf", FileMode.Create));
-            document.Open();
+            //PdfWriter.GetInstance(document, new FileStream("F:/1.pdf", FileMode.Create));
+            //document.Open();
 
-            Paragraph p = new Paragraph("abc");
-            document.Add(p);
+            //Paragraph p = new Paragraph("abc");
+            //document.Add(p);
 
-            document.Close();
+            //document.Close();
 
-            MessageBox.Show("Document Created.");
+            //MessageBox.Show("Document Created.");
+
+
+
+
+
+            var savefiledialog = new SaveFileDialog();
+            savefiledialog.FileName = "Non Academic Staff Report";
+            savefiledialog.DefaultExt = ".pdf";
+
+            if (savefiledialog.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream stream = new FileStream(savefiledialog.FileName, FileMode.Create))
+                {
+
+                    Document document = new Document();
+                    document.SetPageSize(iTextSharp.text.PageSize.A3.Rotate());
+
+                    PdfWriter.GetInstance(document, stream);
+
+                    // PdfWriter.GetInstance(document, new FileStream("E:/" + studentIDForSearchResult.Text + " - ResultSheet.pdf", FileMode.Create));
+                    document.Open();
+                    //Document open
+
+
+                    //Add school logo code start
+                    iTextSharp.text.Image image1 = iTextSharp.text.Image.GetInstance("C:/Users/User/Desktop/SchoolManagementSystem/SchoolManagementSystem/pictures/logo.png");
+                    //Fixed Positioning
+                    image1.SetAbsolutePosition(210, 650);
+                    //Scale to new height and new width of image
+                    image1.ScaleAbsolute(150, 150);
+                    //Add to document
+                    document.Add(image1);
+                    //Add school logo code end
+
+                    //Add school logo code end
+                    Paragraph p = new Paragraph("\n\n\n\n\n\n\n\n\n\n\n");
+                    document.Add(p);
+
+
+                    //Table Add start
+                    PdfPTable pdfTable = new PdfPTable(13);
+
+                    //Adding Header row
+                    foreach (DataGridViewColumn column in dataGridView1.Columns)
+                    {
+                        PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                        cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                        pdfTable.AddCell(cell);
+                    }
+
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        foreach (DataGridViewCell celli in row.Cells)
+                        {
+                            try
+                            {
+                                pdfTable.AddCell(celli.Value.ToString());
+                            }
+                            catch { }
+                        }
+                    }
+                    document.Add(pdfTable);
+
+                    //Table add end
+
+
+
+                    //Final note start
+                    DateTime now = DateTime.Now;
+                    Paragraph pEnd = new Paragraph("- System generated result sheet on " + now + " - ");
+                    document.Add(pEnd);
+                    //Final note end
+
+
+                    //Document close
+                    document.Close();
+
+                    stream.Close();
+                }
+            }
+
+            MessageBox.Show("Administrative Staff Report saved successfully.");
+
+
         }
 
         private void Non_Academic_Staff_Mng_Load(object sender, EventArgs e)

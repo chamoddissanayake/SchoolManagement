@@ -246,9 +246,17 @@ namespace SchoolManagementSystem
         private void button2_Click(object sender, EventArgs e)
         {
             {
+                int number;
                 if (textBox1.Text == "" || textBox2.Text == "")
                 {
                     MessageBox.Show("All Should be Filled!");
+                }else if (!(Int32.TryParse(fineratetb.Text, out number)))
+                {
+                    MessageBox.Show("Fine Rate must be numbers");
+                }
+                else if (!(Int32.TryParse(finedaysttb.Text, out number)))
+                {
+                    MessageBox.Show("Days must be numbers");
                 }
                 else
                 {
@@ -265,6 +273,11 @@ namespace SchoolManagementSystem
                         textBox2.Text = "";
                         disp_date();
                         MessageBox.Show("Record Inserted Successfully");
+
+                        this.Hide();
+                        Last d1 = new Last();
+                        d1.Show();
+
                         con.Close();
 
                     }
@@ -277,9 +290,7 @@ namespace SchoolManagementSystem
                     }
 
                 }
-                this.Hide();
-                Last d1 = new Last();
-                d1.Show();
+                
             }
         }
 

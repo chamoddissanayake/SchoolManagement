@@ -94,7 +94,7 @@ namespace SchoolManagementSystem
             try
             {
                 var savefiledialog = new SaveFileDialog();
-                savefiledialog.FileName = "SubjectsReport";
+                savefiledialog.FileName = "StudentsReport";
                 savefiledialog.DefaultExt = ".pdf";
 
                 if (savefiledialog.ShowDialog() == DialogResult.OK)

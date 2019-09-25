@@ -33,7 +33,6 @@
             this.txtFnmae = new System.Windows.Forms.TextBox();
             this.txtMname = new System.Windows.Forms.TextBox();
             this.txtLname = new System.Windows.Forms.TextBox();
-            this.txtDOB = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -75,6 +74,8 @@
             this.txtReligion = new System.Windows.Forms.TextBox();
             this.lblPath = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnDemo = new System.Windows.Forms.Button();
+            this.birthPicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -112,13 +113,6 @@
             this.txtLname.Name = "txtLname";
             this.txtLname.Size = new System.Drawing.Size(184, 22);
             this.txtLname.TabIndex = 3;
-            // 
-            // txtDOB
-            // 
-            this.txtDOB.Location = new System.Drawing.Point(400, 332);
-            this.txtDOB.Name = "txtDOB";
-            this.txtDOB.Size = new System.Drawing.Size(184, 22);
-            this.txtDOB.TabIndex = 4;
             // 
             // button1
             // 
@@ -596,6 +590,28 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // btnDemo
+            // 
+            this.btnDemo.BackColor = System.Drawing.Color.Maroon;
+            this.btnDemo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDemo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnDemo.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnDemo.Location = new System.Drawing.Point(386, 774);
+            this.btnDemo.Name = "btnDemo";
+            this.btnDemo.Size = new System.Drawing.Size(120, 43);
+            this.btnDemo.TabIndex = 171;
+            this.btnDemo.Text = "Demo";
+            this.btnDemo.UseVisualStyleBackColor = false;
+            this.btnDemo.Click += new System.EventHandler(this.btnDemo_Click);
+            // 
+            // birthPicker
+            // 
+            this.birthPicker.Location = new System.Drawing.Point(400, 330);
+            this.birthPicker.Name = "birthPicker";
+            this.birthPicker.Size = new System.Drawing.Size(161, 22);
+            this.birthPicker.TabIndex = 172;
+            this.birthPicker.ValueChanged += new System.EventHandler(this.purchasePicker_ValueChanged);
+            // 
             // StuDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -604,6 +620,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.birthPicker);
+            this.Controls.Add(this.btnDemo);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lblPath);
             this.Controls.Add(this.txtReligion);
@@ -637,7 +655,6 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtDOB);
             this.Controls.Add(this.txtLname);
             this.Controls.Add(this.txtMname);
             this.Controls.Add(this.txtFnmae);
@@ -665,7 +682,6 @@
         private System.Windows.Forms.TextBox txtFnmae;
         private System.Windows.Forms.TextBox txtMname;
         private System.Windows.Forms.TextBox txtLname;
-        private System.Windows.Forms.TextBox txtDOB;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -707,6 +723,8 @@
         private System.Windows.Forms.Button backASM;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnDemo;
+        private System.Windows.Forms.DateTimePicker birthPicker;
     }
 }
 

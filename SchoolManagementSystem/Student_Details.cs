@@ -72,7 +72,7 @@ namespace SchoolManagementSystem
         private void button1_Click(object sender, EventArgs e)
         {
             int j;
-            if(txtSid.Text =="" || txtFnmae.Text==""|| txtMname.Text==""|| txtLname.Text==""|| txtDOB.Text==""|| txtYOR.Text==""|| txtAddress.Text==""|| txtTel.Text==""|| txtEmail.Text==""|| txtBloodGroup.Text==""|| txtParentName.Text==""|| txtNationalism.Text==""|| txtReligion.Text=="")
+            if(txtSid.Text =="" || txtFnmae.Text==""|| txtMname.Text==""|| txtLname.Text==""|| txtYOR.Text==""|| txtAddress.Text==""|| txtTel.Text==""|| txtEmail.Text==""|| txtBloodGroup.Text==""|| txtParentName.Text==""|| txtNationalism.Text==""|| txtReligion.Text=="")
             {
                 MessageBox.Show("All fields must be filled");
             }else if(! Int32.TryParse(txtYOR.Text, out  j))
@@ -96,19 +96,20 @@ namespace SchoolManagementSystem
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into Student values('" + txtSid.Text + "','" + txtFnmae.Text + "','" + txtMname.Text + "','" + txtLname.Text + "', '" + txtDOB.Text + "'," + txtYOR.Text + ",'" + txtAddress.Text + "','" + txtTel.Text + "','" + txtEmail.Text + "','" + txtBloodGroup.Text + "','" + txtParentName.Text + "','" + txtNationalism.Text + "','" + txtReligion.Text + "')";
-                
+                string theDate = birthPicker.Value.ToString("yyyy-MM-dd");
+                cmd.CommandText = "insert into Student values('" + txtSid.Text + "','" + txtFnmae.Text + "','" + txtMname.Text + "','" + txtLname.Text + "', '" + theDate + "'," + txtYOR.Text + ",'" + txtAddress.Text + "','" + txtTel.Text + "','" + txtEmail.Text + "','" + txtBloodGroup.Text + "','" + txtParentName.Text + "','" + txtNationalism.Text + "','" + txtReligion.Text + "')";
+
                 try
                 {
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Details added Successfully!");
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Something went wrong.");
-                }
+            }
+                catch (Exception ex)
+            {
+                MessageBox.Show("Something went wrong. " + ex);
+            }
 
-                con.Close();
+            con.Close();
                 disp_data();
                 
             }
@@ -186,7 +187,7 @@ namespace SchoolManagementSystem
             txtFnmae.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             txtMname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             txtLname.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            txtDOB.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            birthPicker.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             txtYOR.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             txtAddress.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             txtTel.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
@@ -205,7 +206,7 @@ namespace SchoolManagementSystem
         private void button3_Click(object sender, EventArgs e)
         {
             int j;
-            if (txtSid.Text == "" || txtFnmae.Text == "" || txtMname.Text == "" || txtLname.Text == "" || txtDOB.Text == "" || txtYOR.Text == "" || txtAddress.Text == "" || txtTel.Text == "" || txtEmail.Text == "" || txtBloodGroup.Text == "" || txtParentName.Text == "" || txtNationalism.Text == "" || txtReligion.Text == "")
+            if (txtSid.Text == "" || txtFnmae.Text == "" || txtMname.Text == "" || txtLname.Text == "" || txtYOR.Text == "" || txtAddress.Text == "" || txtTel.Text == "" || txtEmail.Text == "" || txtBloodGroup.Text == "" || txtParentName.Text == "" || txtNationalism.Text == "" || txtReligion.Text == "")
             {
                 MessageBox.Show("All fields must be filled");
             }
@@ -237,7 +238,9 @@ namespace SchoolManagementSystem
                         con.Open();
                         SqlCommand cmd = con.CreateCommand();
                         cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = "Update Student set fName ='" + txtFnmae.Text + "',mName='" + txtMname.Text + "',lName='" + txtLname.Text + "',dob= '" + txtDOB.Text + "',yor=" + txtYOR.Text + ",address='" + txtAddress.Text + "',tel='" + txtTel.Text + "',email='" + txtEmail.Text + "',bloodgroup='" + txtBloodGroup.Text + "',parent_Name='" + txtParentName.Text + "',nationalism='" + txtNationalism.Text + "',religion='" + txtReligion.Text + "'where sID='" + txtSid.Text + "'";
+                    cmd.CommandType = CommandType.Text;
+                    string theDate = birthPicker.Value.ToString("yyyy-MM-dd");
+                    cmd.CommandText = "Update Student set fName ='" + txtFnmae.Text + "',mName='" + txtMname.Text + "',lName='" + txtLname.Text + "',dob= '" + theDate + "',yor=" + txtYOR.Text + ",address='" + txtAddress.Text + "',tel='" + txtTel.Text + "',email='" + txtEmail.Text + "',bloodgroup='" + txtBloodGroup.Text + "',parent_Name='" + txtParentName.Text + "',nationalism='" + txtNationalism.Text + "',religion='" + txtReligion.Text + "'where sID='" + txtSid.Text + "'";
                         
                         cmd.ExecuteNonQuery();
                         con.Close();
@@ -342,6 +345,33 @@ namespace SchoolManagementSystem
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             disp_data();
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
+
+        private void btnDemo_Click(object sender, EventArgs e)
+        {
+            txtSid.Text = "S00252";
+            txtFnmae.Text = "Sapthaka";
+            txtMname.Text = "Nisal";
+            txtLname.Text = "Godage";
+            birthPicker.Value =  DateTime.ParseExact("25/03/2008", "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            txtYOR.Text = "2019";
+            txtAddress.Text = "Kandy";
+            txtTel.Text = "0771234567";
+            txtEmail.Text = "sapthaka@gmail.com";
+            txtBloodGroup.Text = "A+";
+            txtParentName.Text = "Ananda";
+            txtNationalism.Text = "Sinhala";
+            txtReligion.Text = "Buddhism";
+        }
+
+        private void purchasePicker_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,6 +32,8 @@ namespace SchoolManagementSystem
                 {
                     MessageBox.Show("Please fill all feilds!");
                 }
+               
+              
                 else if (sqlConn.State == ConnectionState.Closed)
                 {
                     sqlConn.Open();
@@ -42,6 +44,7 @@ namespace SchoolManagementSystem
                 sqlCmd.Parameters.AddWithValue("@EventID", 0);
                 sqlCmd.Parameters.AddWithValue("@EventName", txtName.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@Date", dateTimePicker1.Value);
+
                 sqlCmd.Parameters.AddWithValue("@Time", txtTime.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@Venue", txtVenue.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@Teacher", txtTeacher.Text.Trim());

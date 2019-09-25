@@ -51,6 +51,22 @@ namespace SchoolManagementSystem
         {
             try
             {
+                //    this.Cursor = Cursors.WaitCursor;
+                //    MailMessage mail = new MailMessage("asokacollegecolombo10@gmail.com", txtEmailAddress.Text, txtAdmissionNo.Text, txtDetails.Text);
+                //    //SmtpClient client = new SmtpClient(smtp.Text);
+                //    SmtpClient client = new SmtpClient("smtp.gmail.com");
+
+                //    client.Port = 587;
+                //    client.Credentials = new System.Net.NetworkCredential("asokacollegecolombo10@gmail.com", "itpproject");
+                //    client.EnableSsl = true;
+                //    client.Send(mail);
+
+                //    this.Cursor = Cursors.Default;
+
+                //    MessageBox.Show("Mail sent successfully");
+
+   
+
                 this.Cursor = Cursors.WaitCursor;
                 MailMessage mail = new MailMessage("asokacollegecolombo10@gmail.com", txtEmailAddress.Text, txtAdmissionNo.Text, txtDetails.Text);
                 //SmtpClient client = new SmtpClient(smtp.Text);
@@ -60,16 +76,20 @@ namespace SchoolManagementSystem
                 client.EnableSsl = true;
                 client.Send(mail);
 
+            
                 this.Cursor = Cursors.Default;
 
                 MessageBox.Show("Mail sent successfully");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error Occured "+ex);
+                MessageBox.Show("Error Occured " + ex);
+                this.Cursor = Cursors.Default;
             }
-            
-        }
+
+
+
+}
 
         private void button6_Click(object sender, EventArgs e)
         {

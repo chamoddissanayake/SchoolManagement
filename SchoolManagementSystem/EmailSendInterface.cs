@@ -36,21 +36,35 @@ namespace SchoolManagementSystem
         private void sendEmail_Click(object sender, EventArgs e)
         {
             try
-            {      
-                sendEmail.Enabled = false;
-                
-                this.Cursor = Cursors.WaitCursor;
-                     MailMessage mail = new MailMessage("asokacollegecolombo10@gmail.com", "dissanayakechamod@gmail.com", emailSubject.Text+"  FROM: " + u.getuserID(), emailBody.Text);
-                    //SmtpClient client = new SmtpClient(smtp.Text);
-                    SmtpClient client = new SmtpClient("smtp.gmail.com");
-                    client.Port = 587;
-                    client.Credentials = new System.Net.NetworkCredential("asokacollegecolombo10@gmail.com", "itpproject");
-                    client.EnableSsl = true;
-                    client.Send(mail);
+            {
+                //sendEmail.Enabled = false;
 
-                sendEmail.Enabled = true;
+                //this.Cursor = Cursors.WaitCursor;
+                //     MailMessage mail = new MailMessage("asokacollegecolombo10@gmail.com", "dissanayakechamod@gmail.com", emailSubject.Text+"  FROM: " + u.getuserID(), emailBody.Text);
+                //    //SmtpClient client = new SmtpClient(smtp.Text);
+                //    SmtpClient client = new SmtpClient("smtp.gmail.com");
+                //    client.Port = 587;
+                //    client.Credentials = new System.Net.NetworkCredential("asokacollegecolombo10@gmail.com", "itpproject");
+                //    client.EnableSsl = true;
+                //    client.Send(mail);
+
+                //sendEmail.Enabled = true;
+                //this.Cursor = Cursors.Default;
+
+                //MessageBox.Show("Mail sent successfully");
+
+                this.Cursor = Cursors.WaitCursor;
+                MailMessage mail = new MailMessage("asokacollegecolombo10@gmail.com", "dissanayakechamod@gmail.com", emailSubject.Text + "  FROM: " + u.getuserID(), emailBody.Text);
+                //SmtpClient client = new SmtpClient(smtp.Text);
+                SmtpClient client = new SmtpClient("smtp.gmail.com");
+                client.Port = 587;
+                client.Credentials = new System.Net.NetworkCredential("asokacollegecolombo10@gmail.com", "itpproject");
+                client.EnableSsl = true;
+                client.Send(mail);
+
+
                 this.Cursor = Cursors.Default;
-                
+
                 MessageBox.Show("Mail sent successfully");
             }
             catch(Exception ex) {
