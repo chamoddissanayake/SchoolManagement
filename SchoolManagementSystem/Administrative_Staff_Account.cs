@@ -159,6 +159,9 @@ namespace SchoolManagementSystem
             {
                 lblPath.Text = "";
             }
+            txtNIC.ReadOnly = true;
+            txtDesignation.ReadOnly = true;
+            txtQualification.ReadOnly = true;
         }
 
         private void btnEmail_Click(object sender, EventArgs e)

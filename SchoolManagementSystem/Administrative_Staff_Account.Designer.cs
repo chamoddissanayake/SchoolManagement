@@ -68,6 +68,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.btnEmail = new System.Windows.Forms.Button();
             this.lblPath = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -128,7 +130,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(12)))), ((int)(((byte)(2)))));
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnUpdate.Location = new System.Drawing.Point(770, 790);
+            this.btnUpdate.Location = new System.Drawing.Point(482, 790);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(115, 47);
@@ -326,7 +328,7 @@
             // txtQualification
             // 
             this.txtQualification.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtQualification.Location = new System.Drawing.Point(716, 633);
+            this.txtQualification.Location = new System.Drawing.Point(713, 633);
             this.txtQualification.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtQualification.Multiline = true;
             this.txtQualification.Name = "txtQualification";
@@ -340,7 +342,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(422, 633);
+            this.label7.Location = new System.Drawing.Point(419, 633);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(243, 22);
             this.label7.TabIndex = 178;
@@ -417,7 +419,7 @@
             // txtNIC
             // 
             this.txtNIC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNIC.Location = new System.Drawing.Point(710, 461);
+            this.txtNIC.Location = new System.Drawing.Point(708, 461);
             this.txtNIC.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtNIC.Name = "txtNIC";
             this.txtNIC.Size = new System.Drawing.Size(267, 22);
@@ -430,7 +432,7 @@
             this.txtNiclabel.BackColor = System.Drawing.Color.Transparent;
             this.txtNiclabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNiclabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtNiclabel.Location = new System.Drawing.Point(422, 461);
+            this.txtNiclabel.Location = new System.Drawing.Point(420, 461);
             this.txtNiclabel.Name = "txtNiclabel";
             this.txtNiclabel.Size = new System.Drawing.Size(118, 22);
             this.txtNiclabel.TabIndex = 171;
@@ -452,7 +454,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(418, 329);
+            this.label9.Location = new System.Drawing.Point(416, 329);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(154, 22);
             this.label9.TabIndex = 169;
@@ -465,7 +467,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(422, 414);
+            this.label10.Location = new System.Drawing.Point(419, 417);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 22);
             this.label10.TabIndex = 168;
@@ -534,7 +536,7 @@
             this.btnEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(12)))), ((int)(((byte)(2)))));
             this.btnEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmail.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnEmail.Location = new System.Drawing.Point(913, 790);
+            this.btnEmail.Location = new System.Drawing.Point(736, 790);
             this.btnEmail.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnEmail.Name = "btnEmail";
             this.btnEmail.Size = new System.Drawing.Size(115, 47);
@@ -555,16 +557,43 @@
             this.lblPath.TabIndex = 190;
             this.lblPath.Text = "<Path>";
             // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label14.Location = new System.Drawing.Point(419, 541);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(117, 22);
+            this.label14.TabIndex = 173;
+            this.label14.Text = "Joined Date";
+            // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label15.Location = new System.Drawing.Point(419, 585);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(116, 22);
+            this.label15.TabIndex = 186;
+            this.label15.Text = "Designation";
+            // 
             // Administrative_Staff_Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::SchoolManagementSystem.Properties.Resources.back_basic;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1312, 943);
             this.Controls.Add(this.lblPath);
             this.Controls.Add(this.btnEmail);
             this.Controls.Add(this.txtDesignation);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.appdatePicker);
             this.Controls.Add(this.label5);
@@ -578,6 +607,7 @@
             this.Controls.Add(this.dobPicker);
             this.Controls.Add(this.rBtnFemale);
             this.Controls.Add(this.rBtnMale);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtNIC);
             this.Controls.Add(this.txtNiclabel);
@@ -651,5 +681,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnEmail;
         private System.Windows.Forms.Label lblPath;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
     }
 }

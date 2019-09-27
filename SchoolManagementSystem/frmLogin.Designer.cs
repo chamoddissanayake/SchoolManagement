@@ -50,7 +50,7 @@ namespace SchoolManagementSystem
             this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.SandyBrown;
-            this.btnLogin.Location = new System.Drawing.Point(219, 302);
+            this.btnLogin.Location = new System.Drawing.Point(151, 422);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(94, 35);
             this.btnLogin.TabIndex = 0;
@@ -64,7 +64,7 @@ namespace SchoolManagementSystem
             this.lblUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lblUsername.Location = new System.Drawing.Point(103, 220);
+            this.lblUsername.Location = new System.Drawing.Point(85, 251);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(97, 24);
             this.lblUsername.TabIndex = 1;
@@ -76,15 +76,16 @@ namespace SchoolManagementSystem
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lblPassword.Location = new System.Drawing.Point(109, 260);
+            this.lblPassword.Location = new System.Drawing.Point(85, 327);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(91, 20);
             this.lblPassword.TabIndex = 2;
             this.lblPassword.Text = "Password";
+            this.lblPassword.Click += new System.EventHandler(this.lblPassword_Click);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(219, 258);
+            this.txtPassword.Location = new System.Drawing.Point(219, 325);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(163, 22);
@@ -96,9 +97,9 @@ namespace SchoolManagementSystem
             // 
             this.btnExit.BackColor = System.Drawing.Color.Firebrick;
             this.btnExit.ForeColor = System.Drawing.Color.SandyBrown;
-            this.btnExit.Location = new System.Drawing.Point(319, 302);
+            this.btnExit.Location = new System.Drawing.Point(317, 422);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(63, 35);
+            this.btnExit.Size = new System.Drawing.Size(87, 35);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -128,7 +129,7 @@ namespace SchoolManagementSystem
             this.lblUserType.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblUserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserType.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lblUserType.Location = new System.Drawing.Point(105, 179);
+            this.lblUserType.Location = new System.Drawing.Point(87, 179);
             this.lblUserType.Name = "lblUserType";
             this.lblUserType.Size = new System.Drawing.Size(95, 20);
             this.lblUserType.TabIndex = 7;
@@ -136,10 +137,11 @@ namespace SchoolManagementSystem
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(219, 222);
+            this.txtUsername.Location = new System.Drawing.Point(219, 253);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(163, 22);
             this.txtUsername.TabIndex = 8;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
             // 
             // pictureBox1
@@ -148,7 +150,7 @@ namespace SchoolManagementSystem
             this.pictureBox1.BackgroundImage = global::SchoolManagementSystem.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.ImageLocation = "";
-            this.pictureBox1.Location = new System.Drawing.Point(190, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(219, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(170, 164);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -160,7 +162,7 @@ namespace SchoolManagementSystem
             this.passwordMissing.AutoSize = true;
             this.passwordMissing.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordMissing.ForeColor = System.Drawing.Color.Goldenrod;
-            this.passwordMissing.Location = new System.Drawing.Point(153, 350);
+            this.passwordMissing.Location = new System.Drawing.Point(129, 511);
             this.passwordMissing.Name = "passwordMissing";
             this.passwordMissing.Size = new System.Drawing.Size(293, 17);
             this.passwordMissing.TabIndex = 10;
@@ -173,7 +175,7 @@ namespace SchoolManagementSystem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(553, 402);
+            this.ClientSize = new System.Drawing.Size(569, 572);
             this.Controls.Add(this.passwordMissing);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtUsername);

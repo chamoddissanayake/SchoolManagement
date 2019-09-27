@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace SchoolManagementSystem
 {
@@ -51,47 +52,61 @@ namespace SchoolManagementSystem
             {
                 gender = "F";
             }
+            string pattern = null;
+            pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+
 
             if (!(stfID == "" || fName == "" || lName == "" || email == "" || phone == "" || nic == "" || qualification == "" || designation == "" ||
                 dob == "" || appdate == "" || jdate == "" || gender == "" || password == ""))
             {
-                try
+                if (!(Regex.IsMatch(txtEmail.Text, pattern)))
                 {
-                    sqlCon.Open();
-
-                    SqlCommand cmd1 = sqlCon.CreateCommand();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "INSERT INTO Staff VALUES('" + stfID + "', '" + phone + "', '" + fName + "', '" + lName
-                        + "','" + email + "','" + nic + "','" + appdate + "','" + jdate + "','" + qualification + "','" + gender + "','" + dob + "')";
-                    cmd1.ExecuteNonQuery();
-
-                    SqlCommand cmd2 = sqlCon.CreateCommand();
-                    cmd2.CommandType = CommandType.Text;
-                    cmd2.CommandText = "INSERT INTO Administrative_Staff VALUES('" + stfID + "', '" + designation + "')";
-                    cmd2.ExecuteNonQuery();
-
-                    string saltpwd = PasswordUtil.getSalt(30);
-                    string secpwd = PasswordUtil.generateSecurePassword(password, saltpwd);
-
-                    SqlCommand cmd3 = sqlCon.CreateCommand();
-                    cmd3.CommandType = CommandType.Text;
-                    cmd3.CommandText = "INSERT INTO Administrative_Staff_credentials VALUES('" + stfID + "','" + secpwd + "','" + saltpwd + "')";
-                    cmd3.ExecuteNonQuery();
-
+                    MessageBox.Show("Email is not correct.");
                 }
-                catch (Exception ex1)
+                else if (txtNIC.Text.Length != 10)
                 {
-                    MessageBox.Show("Error: " + ex1);
+                    MessageBox.Show("NIC is incorrect.");
                 }
-                finally
+                else
                 {
-                    sqlCon.Close();
+                    try
+                    {
+                        sqlCon.Open();
+
+                        SqlCommand cmd1 = sqlCon.CreateCommand();
+                        cmd1.CommandType = CommandType.Text;
+                        cmd1.CommandText = "INSERT INTO Staff VALUES('" + stfID + "', '" + phone + "', '" + fName + "', '" + lName
+                            + "','" + email + "','" + nic + "','" + appdate + "','" + jdate + "','" + qualification + "','" + gender + "','" + dob + "')";
+                        cmd1.ExecuteNonQuery();
+
+                        SqlCommand cmd2 = sqlCon.CreateCommand();
+                        cmd2.CommandType = CommandType.Text;
+                        cmd2.CommandText = "INSERT INTO Administrative_Staff VALUES('" + stfID + "', '" + designation + "')";
+                        cmd2.ExecuteNonQuery();
+
+                        string saltpwd = PasswordUtil.getSalt(30);
+                        string secpwd = PasswordUtil.generateSecurePassword(password, saltpwd);
+
+                        SqlCommand cmd3 = sqlCon.CreateCommand();
+                        cmd3.CommandType = CommandType.Text;
+                        cmd3.CommandText = "INSERT INTO Administrative_Staff_credentials VALUES('" + stfID + "','" + secpwd + "','" + saltpwd + "')";
+                        cmd3.ExecuteNonQuery();
+
+                    }
+                    catch (Exception ex1)
+                    {
+                        MessageBox.Show("Error: " + ex1);
+                    }
+                    finally
+                    {
+                        sqlCon.Close();
+                    }
+
+
+                    FillDataGridView();
+                    MessageBox.Show("Successfully Inserted!");
+                    clearDetails();
                 }
-
-
-                FillDataGridView();
-                MessageBox.Show("Successfully Inserted!");
-                clearDetails();
             }
             else
             {
@@ -251,11 +266,11 @@ namespace SchoolManagementSystem
 
 
                     //Add school logo code start
-                    iTextSharp.text.Image image1 = iTextSharp.text.Image.GetInstance("C:/Users/User/Desktop/SchoolManagementSystem/SchoolManagementSystem/pictures/logo.png");
+                    iTextSharp.text.Image image1 = iTextSharp.text.Image.GetInstance("C:/Users/User/Desktop/SchoolManagementSystem/SchoolManagementSystem/pictures/Administrative staff report header.png");
                     //Fixed Positioning
-                    image1.SetAbsolutePosition(210, 650);
+                    image1.SetAbsolutePosition(0, 750);
                     //Scale to new height and new width of image
-                    image1.ScaleAbsolute(150, 150);
+                    image1.ScaleAbsolute(600, 90);
                     //Add to document
                     document.Add(image1);
                     //Add school logo code end
@@ -454,6 +469,19 @@ namespace SchoolManagementSystem
         {
             rBtnMale.Checked = true;
             FillDataGridView();
+        }
+
+        private void btnDemo_Click(object sender, EventArgs e)
+        {
+            txtStfId.Text = "STF553";
+            txtFName.Text = "Shaishinka";
+            txtLName.Text = "Kumarage";
+            txtEmail.Text = "sashi@gmail.com";
+            txtPhone.Text = "0715439940";
+            txtNIC.Text = "968241214V";
+            txtDesignation.Text = "Maths";
+            txtQualification.Text = "Degree";
+            txtPassword.Text = "sasi";
         }
     }
 }

@@ -76,6 +76,7 @@
             this.txtLstName = new System.Windows.Forms.Label();
             this.txtStfId = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.Label();
+            this.btnDemo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -112,9 +113,9 @@
             this.label2.Location = new System.Drawing.Point(648, 102);
             this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(514, 31);
+            this.label2.Size = new System.Drawing.Size(444, 31);
             this.label2.TabIndex = 92;
-            this.label2.Text = "Administrative Staff Staff Management";
+            this.label2.Text = "Administrative Staff Management";
             // 
             // backNASM
             // 
@@ -250,7 +251,7 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(503, 84);
+            this.pictureBox2.Location = new System.Drawing.Point(423, 84);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(135, 65);
@@ -328,7 +329,8 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(12)))), ((int)(((byte)(2)))));
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
@@ -376,7 +378,7 @@
             // txtDesignation
             // 
             this.txtDesignation.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDesignation.Location = new System.Drawing.Point(620, 632);
+            this.txtDesignation.Location = new System.Drawing.Point(618, 632);
             this.txtDesignation.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtDesignation.Name = "txtDesignation";
             this.txtDesignation.Size = new System.Drawing.Size(264, 22);
@@ -389,7 +391,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(332, 632);
+            this.label6.Location = new System.Drawing.Point(329, 632);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(116, 22);
             this.label6.TabIndex = 188;
@@ -415,7 +417,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(328, 540);
+            this.label5.Location = new System.Drawing.Point(327, 541);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 22);
             this.label5.TabIndex = 186;
@@ -482,7 +484,7 @@
             this.txtEdu.BackColor = System.Drawing.Color.Transparent;
             this.txtEdu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEdu.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtEdu.Location = new System.Drawing.Point(332, 679);
+            this.txtEdu.Location = new System.Drawing.Point(330, 679);
             this.txtEdu.Name = "txtEdu";
             this.txtEdu.Size = new System.Drawing.Size(243, 22);
             this.txtEdu.TabIndex = 180;
@@ -550,7 +552,7 @@
             this.txtYerReg.BackColor = System.Drawing.Color.Transparent;
             this.txtYerReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYerReg.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtYerReg.Location = new System.Drawing.Point(338, 586);
+            this.txtYerReg.Location = new System.Drawing.Point(329, 586);
             this.txtYerReg.Name = "txtYerReg";
             this.txtYerReg.Size = new System.Drawing.Size(117, 22);
             this.txtYerReg.TabIndex = 175;
@@ -559,7 +561,7 @@
             // txtNIC
             // 
             this.txtNIC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNIC.Location = new System.Drawing.Point(620, 506);
+            this.txtNIC.Location = new System.Drawing.Point(617, 506);
             this.txtNIC.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtNIC.Name = "txtNIC";
             this.txtNIC.Size = new System.Drawing.Size(267, 22);
@@ -572,7 +574,7 @@
             this.txtNiclabel.BackColor = System.Drawing.Color.Transparent;
             this.txtNiclabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNiclabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtNiclabel.Location = new System.Drawing.Point(332, 506);
+            this.txtNiclabel.Location = new System.Drawing.Point(327, 506);
             this.txtNiclabel.Name = "txtNiclabel";
             this.txtNiclabel.Size = new System.Drawing.Size(118, 22);
             this.txtNiclabel.TabIndex = 173;
@@ -594,7 +596,7 @@
             this.txtcont.BackColor = System.Drawing.Color.Transparent;
             this.txtcont.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcont.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtcont.Location = new System.Drawing.Point(328, 374);
+            this.txtcont.Location = new System.Drawing.Point(327, 374);
             this.txtcont.Name = "txtcont";
             this.txtcont.Size = new System.Drawing.Size(154, 22);
             this.txtcont.TabIndex = 171;
@@ -607,7 +609,7 @@
             this.txtSex.BackColor = System.Drawing.Color.Transparent;
             this.txtSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSex.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtSex.Location = new System.Drawing.Point(332, 459);
+            this.txtSex.Location = new System.Drawing.Point(327, 463);
             this.txtSex.Name = "txtSex";
             this.txtSex.Size = new System.Drawing.Size(82, 22);
             this.txtSex.TabIndex = 170;
@@ -670,13 +672,30 @@
             this.txtName.TabIndex = 165;
             this.txtName.Text = "First Name";
             // 
+            // btnDemo
+            // 
+            this.btnDemo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDemo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(12)))), ((int)(((byte)(2)))));
+            this.btnDemo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDemo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDemo.ForeColor = System.Drawing.SystemColors.Info;
+            this.btnDemo.Location = new System.Drawing.Point(823, 935);
+            this.btnDemo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnDemo.Name = "btnDemo";
+            this.btnDemo.Size = new System.Drawing.Size(120, 43);
+            this.btnDemo.TabIndex = 192;
+            this.btnDemo.Text = "Demo";
+            this.btnDemo.UseVisualStyleBackColor = false;
+            this.btnDemo.Click += new System.EventHandler(this.btnDemo_Click);
+            // 
             // Adm_Stf_Staff_Mng
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::SchoolManagementSystem.Properties.Resources.back_basic;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1542, 1055);
+            this.Controls.Add(this.btnDemo);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtDesignation);
@@ -787,5 +806,6 @@
         private System.Windows.Forms.Label txtLstName;
         private System.Windows.Forms.TextBox txtStfId;
         private System.Windows.Forms.Label txtName;
+        private System.Windows.Forms.Button btnDemo;
     }
 }

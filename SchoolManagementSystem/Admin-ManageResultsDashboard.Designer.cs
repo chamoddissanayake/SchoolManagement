@@ -88,10 +88,11 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(318, 258);
+            this.label1.Location = new System.Drawing.Point(314, 341);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(181, 20);
             this.label1.TabIndex = 1;
@@ -99,9 +100,10 @@
             // 
             // addResult_class
             // 
+            this.addResult_class.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addResult_class.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.addResult_class.FormattingEnabled = true;
-            this.addResult_class.Location = new System.Drawing.Point(365, 294);
+            this.addResult_class.Location = new System.Drawing.Point(361, 377);
             this.addResult_class.Name = "addResult_class";
             this.addResult_class.Size = new System.Drawing.Size(142, 24);
             this.addResult_class.TabIndex = 3;
@@ -109,9 +111,10 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(274, 294);
+            this.label2.Location = new System.Drawing.Point(270, 377);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 17);
             this.label2.TabIndex = 4;
@@ -119,18 +122,20 @@
             // 
             // addResult_subject
             // 
+            this.addResult_subject.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addResult_subject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.addResult_subject.FormattingEnabled = true;
-            this.addResult_subject.Location = new System.Drawing.Point(365, 334);
+            this.addResult_subject.Location = new System.Drawing.Point(361, 417);
             this.addResult_subject.Name = "addResult_subject";
             this.addResult_subject.Size = new System.Drawing.Size(142, 24);
             this.addResult_subject.TabIndex = 5;
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(261, 337);
+            this.label3.Location = new System.Drawing.Point(257, 420);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 17);
             this.label3.TabIndex = 6;
@@ -138,9 +143,10 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(259, 494);
+            this.label4.Location = new System.Drawing.Point(255, 577);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 17);
             this.label4.TabIndex = 7;
@@ -148,9 +154,10 @@
             // 
             // addResult_student
             // 
+            this.addResult_student.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addResult_student.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.addResult_student.FormattingEnabled = true;
-            this.addResult_student.Location = new System.Drawing.Point(368, 494);
+            this.addResult_student.Location = new System.Drawing.Point(364, 577);
             this.addResult_student.Name = "addResult_student";
             this.addResult_student.Size = new System.Drawing.Size(139, 24);
             this.addResult_student.TabIndex = 8;
@@ -158,9 +165,10 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(321, 371);
+            this.label5.Location = new System.Drawing.Point(317, 454);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 17);
             this.label5.TabIndex = 9;
@@ -168,9 +176,10 @@
             // 
             // addResult_Year
             // 
+            this.addResult_Year.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addResult_Year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.addResult_Year.FormattingEnabled = true;
-            this.addResult_Year.Location = new System.Drawing.Point(368, 368);
+            this.addResult_Year.Location = new System.Drawing.Point(364, 451);
             this.addResult_Year.Name = "addResult_Year";
             this.addResult_Year.Size = new System.Drawing.Size(139, 24);
             this.addResult_Year.TabIndex = 10;
@@ -178,9 +187,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(300, 410);
+            this.label6.Location = new System.Drawing.Point(296, 493);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 17);
             this.label6.TabIndex = 11;
@@ -188,31 +198,34 @@
             // 
             // addResult_ExamID
             // 
+            this.addResult_ExamID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addResult_ExamID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.addResult_ExamID.FormattingEnabled = true;
-            this.addResult_ExamID.Location = new System.Drawing.Point(368, 407);
+            this.addResult_ExamID.Location = new System.Drawing.Point(364, 490);
             this.addResult_ExamID.Name = "addResult_ExamID";
             this.addResult_ExamID.Size = new System.Drawing.Size(139, 24);
             this.addResult_ExamID.TabIndex = 12;
             // 
             // addResult_Term
             // 
+            this.addResult_Term.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addResult_Term.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.addResult_Term.FormattingEnabled = true;
             this.addResult_Term.Items.AddRange(new object[] {
             "1",
             "2",
             "3"});
-            this.addResult_Term.Location = new System.Drawing.Point(368, 450);
+            this.addResult_Term.Location = new System.Drawing.Point(364, 533);
             this.addResult_Term.Name = "addResult_Term";
             this.addResult_Term.Size = new System.Drawing.Size(139, 24);
             this.addResult_Term.TabIndex = 13;
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(318, 450);
+            this.label7.Location = new System.Drawing.Point(314, 533);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 17);
             this.label7.TabIndex = 14;
@@ -220,17 +233,19 @@
             // 
             // addResult_mark
             // 
-            this.addResult_mark.Location = new System.Drawing.Point(368, 536);
+            this.addResult_mark.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addResult_mark.Location = new System.Drawing.Point(364, 619);
             this.addResult_mark.Name = "addResult_mark";
             this.addResult_mark.Size = new System.Drawing.Size(139, 22);
             this.addResult_mark.TabIndex = 15;
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label8.Location = new System.Drawing.Point(316, 536);
+            this.label8.Location = new System.Drawing.Point(312, 619);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(39, 17);
             this.label8.TabIndex = 16;
@@ -238,11 +253,12 @@
             // 
             // addMark
             // 
+            this.addMark.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addMark.BackColor = System.Drawing.Color.Maroon;
             this.addMark.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addMark.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addMark.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addMark.Location = new System.Drawing.Point(350, 582);
+            this.addMark.Location = new System.Drawing.Point(346, 665);
             this.addMark.Name = "addMark";
             this.addMark.Size = new System.Drawing.Size(157, 43);
             this.addMark.TabIndex = 17;
@@ -255,7 +271,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1171, 241);
+            this.label9.Location = new System.Drawing.Point(1183, 239);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(176, 29);
             this.label9.TabIndex = 18;
@@ -263,11 +279,12 @@
             // 
             // SearchStudent
             // 
+            this.SearchStudent.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SearchStudent.BackColor = System.Drawing.Color.Maroon;
             this.SearchStudent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SearchStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchStudent.ForeColor = System.Drawing.Color.White;
-            this.SearchStudent.Location = new System.Drawing.Point(822, 288);
+            this.SearchStudent.Location = new System.Drawing.Point(816, 293);
             this.SearchStudent.Name = "SearchStudent";
             this.SearchStudent.Size = new System.Drawing.Size(844, 42);
             this.SearchStudent.TabIndex = 21;
@@ -363,6 +380,7 @@
             // 
             // label13
             // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -392,6 +410,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(1175, 146);
@@ -402,6 +421,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -413,8 +433,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(740, 342);
+            this.dataGridView1.Location = new System.Drawing.Point(734, 347);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1005, 401);
@@ -422,10 +443,11 @@
             // 
             // deleteRes
             // 
+            this.deleteRes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.deleteRes.BackColor = System.Drawing.Color.Maroon;
             this.deleteRes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteRes.ForeColor = System.Drawing.Color.White;
-            this.deleteRes.Location = new System.Drawing.Point(740, 776);
+            this.deleteRes.Location = new System.Drawing.Point(734, 802);
             this.deleteRes.Name = "deleteRes";
             this.deleteRes.Size = new System.Drawing.Size(498, 40);
             this.deleteRes.TabIndex = 29;
@@ -435,10 +457,11 @@
             // 
             // updateRes
             // 
+            this.updateRes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.updateRes.BackColor = System.Drawing.Color.Maroon;
             this.updateRes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateRes.ForeColor = System.Drawing.Color.White;
-            this.updateRes.Location = new System.Drawing.Point(1244, 778);
+            this.updateRes.Location = new System.Drawing.Point(1238, 804);
             this.updateRes.Name = "updateRes";
             this.updateRes.Size = new System.Drawing.Size(501, 38);
             this.updateRes.TabIndex = 30;
@@ -448,9 +471,10 @@
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(1710, 295);
+            this.button2.Location = new System.Drawing.Point(1682, 300);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(35, 35);
             this.button2.TabIndex = 31;
@@ -462,7 +486,7 @@
             this.btnReportAll.BackColor = System.Drawing.Color.Maroon;
             this.btnReportAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportAll.ForeColor = System.Drawing.Color.White;
-            this.btnReportAll.Location = new System.Drawing.Point(1127, 871);
+            this.btnReportAll.Location = new System.Drawing.Point(1121, 897);
             this.btnReportAll.Name = "btnReportAll";
             this.btnReportAll.Size = new System.Drawing.Size(271, 38);
             this.btnReportAll.TabIndex = 32;
@@ -474,7 +498,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::SchoolManagementSystem.Properties.Resources.back_basic;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.btnReportAll);

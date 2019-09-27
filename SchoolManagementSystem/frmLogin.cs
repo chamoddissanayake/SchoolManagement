@@ -613,5 +613,14 @@ namespace SchoolManagementSystem
             obj.Show();
         }
 
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPassword_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

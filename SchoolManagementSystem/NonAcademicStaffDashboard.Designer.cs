@@ -96,6 +96,8 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Maroon;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(199, 0);
@@ -116,28 +118,30 @@
             // 
             // NonAcademic_Staff_OB_Management
             // 
+            this.NonAcademic_Staff_OB_Management.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NonAcademic_Staff_OB_Management.BackColor = System.Drawing.Color.Transparent;
             this.NonAcademic_Staff_OB_Management.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NonAcademic_Staff_OB_Management.BackgroundImage")));
             this.NonAcademic_Staff_OB_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.NonAcademic_Staff_OB_Management.Cursor = System.Windows.Forms.Cursors.Hand;
             this.NonAcademic_Staff_OB_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NonAcademic_Staff_OB_Management.Location = new System.Drawing.Point(568, 363);
+            this.NonAcademic_Staff_OB_Management.Location = new System.Drawing.Point(446, 317);
             this.NonAcademic_Staff_OB_Management.Name = "NonAcademic_Staff_OB_Management";
-            this.NonAcademic_Staff_OB_Management.Size = new System.Drawing.Size(157, 130);
+            this.NonAcademic_Staff_OB_Management.Size = new System.Drawing.Size(270, 200);
             this.NonAcademic_Staff_OB_Management.TabIndex = 15;
             this.NonAcademic_Staff_OB_Management.UseVisualStyleBackColor = false;
             this.NonAcademic_Staff_OB_Management.Click += new System.EventHandler(this.NonAcademic_Staff_OB_Management_Click);
             // 
             // Academic_Staff_Staff_Management
             // 
+            this.Academic_Staff_Staff_Management.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Academic_Staff_Staff_Management.BackColor = System.Drawing.Color.Transparent;
             this.Academic_Staff_Staff_Management.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Academic_Staff_Staff_Management.BackgroundImage")));
             this.Academic_Staff_Staff_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Academic_Staff_Staff_Management.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Academic_Staff_Staff_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Academic_Staff_Staff_Management.Location = new System.Drawing.Point(568, 553);
+            this.Academic_Staff_Staff_Management.Location = new System.Drawing.Point(446, 618);
             this.Academic_Staff_Staff_Management.Name = "Academic_Staff_Staff_Management";
-            this.Academic_Staff_Staff_Management.Size = new System.Drawing.Size(157, 130);
+            this.Academic_Staff_Staff_Management.Size = new System.Drawing.Size(270, 200);
             this.Academic_Staff_Staff_Management.TabIndex = 17;
             this.Academic_Staff_Staff_Management.UseVisualStyleBackColor = false;
             this.Academic_Staff_Staff_Management.Click += new System.EventHandler(this.Academic_Staff_Staff_Management_Click);
@@ -156,56 +160,60 @@
             // 
             // Non_Academic_Library_Management
             // 
+            this.Non_Academic_Library_Management.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Non_Academic_Library_Management.BackColor = System.Drawing.Color.Transparent;
             this.Non_Academic_Library_Management.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Non_Academic_Library_Management.BackgroundImage")));
             this.Non_Academic_Library_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Non_Academic_Library_Management.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Non_Academic_Library_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Non_Academic_Library_Management.Location = new System.Drawing.Point(870, 668);
+            this.Non_Academic_Library_Management.Location = new System.Drawing.Point(857, 726);
             this.Non_Academic_Library_Management.Name = "Non_Academic_Library_Management";
-            this.Non_Academic_Library_Management.Size = new System.Drawing.Size(157, 130);
+            this.Non_Academic_Library_Management.Size = new System.Drawing.Size(270, 200);
             this.Non_Academic_Library_Management.TabIndex = 33;
             this.Non_Academic_Library_Management.UseVisualStyleBackColor = false;
             this.Non_Academic_Library_Management.Click += new System.EventHandler(this.Admin_Library_Management_Click);
             // 
             // Admin_Event_Management
             // 
+            this.Admin_Event_Management.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Admin_Event_Management.BackColor = System.Drawing.Color.Transparent;
             this.Admin_Event_Management.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Admin_Event_Management.BackgroundImage")));
             this.Admin_Event_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Admin_Event_Management.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Admin_Event_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Event_Management.Location = new System.Drawing.Point(1140, 544);
+            this.Admin_Event_Management.Location = new System.Drawing.Point(1275, 618);
             this.Admin_Event_Management.Name = "Admin_Event_Management";
-            this.Admin_Event_Management.Size = new System.Drawing.Size(157, 130);
+            this.Admin_Event_Management.Size = new System.Drawing.Size(270, 200);
             this.Admin_Event_Management.TabIndex = 32;
             this.Admin_Event_Management.UseVisualStyleBackColor = false;
             this.Admin_Event_Management.Click += new System.EventHandler(this.Admin_Event_Management_Click);
             // 
             // Admin_Subject_Management
             // 
+            this.Admin_Subject_Management.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Admin_Subject_Management.BackColor = System.Drawing.Color.Transparent;
             this.Admin_Subject_Management.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Admin_Subject_Management.BackgroundImage")));
             this.Admin_Subject_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Admin_Subject_Management.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Admin_Subject_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Subject_Management.Location = new System.Drawing.Point(1131, 363);
+            this.Admin_Subject_Management.Location = new System.Drawing.Point(1275, 317);
             this.Admin_Subject_Management.Name = "Admin_Subject_Management";
-            this.Admin_Subject_Management.Size = new System.Drawing.Size(157, 130);
+            this.Admin_Subject_Management.Size = new System.Drawing.Size(270, 200);
             this.Admin_Subject_Management.TabIndex = 31;
             this.Admin_Subject_Management.UseVisualStyleBackColor = false;
             this.Admin_Subject_Management.Click += new System.EventHandler(this.Admin_Subject_Management_Click);
             // 
             // Admin_Student_Management
             // 
+            this.Admin_Student_Management.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Admin_Student_Management.BackColor = System.Drawing.Color.Transparent;
             this.Admin_Student_Management.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Admin_Student_Management.BackgroundImage")));
             this.Admin_Student_Management.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Admin_Student_Management.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Admin_Student_Management.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Student_Management.Location = new System.Drawing.Point(857, 254);
+            this.Admin_Student_Management.Location = new System.Drawing.Point(857, 210);
             this.Admin_Student_Management.Name = "Admin_Student_Management";
-            this.Admin_Student_Management.Size = new System.Drawing.Size(157, 130);
+            this.Admin_Student_Management.Size = new System.Drawing.Size(270, 200);
             this.Admin_Student_Management.TabIndex = 30;
             this.Admin_Student_Management.UseVisualStyleBackColor = false;
             this.Admin_Student_Management.Click += new System.EventHandler(this.Admin_Student_Management_Click);

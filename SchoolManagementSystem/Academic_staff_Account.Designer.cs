@@ -128,7 +128,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(12)))), ((int)(((byte)(2)))));
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnUpdate.Location = new System.Drawing.Point(770, 790);
+            this.btnUpdate.Location = new System.Drawing.Point(490, 789);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(115, 47);
@@ -247,7 +247,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(422, 587);
+            this.label6.Location = new System.Drawing.Point(420, 587);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(185, 22);
             this.label6.TabIndex = 186;
@@ -326,7 +326,7 @@
             // txtQualification
             // 
             this.txtQualification.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtQualification.Location = new System.Drawing.Point(716, 633);
+            this.txtQualification.Location = new System.Drawing.Point(712, 633);
             this.txtQualification.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtQualification.Multiline = true;
             this.txtQualification.Name = "txtQualification";
@@ -340,7 +340,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(428, 633);
+            this.label7.Location = new System.Drawing.Point(421, 633);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(243, 22);
             this.label7.TabIndex = 178;
@@ -408,7 +408,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(428, 541);
+            this.label8.Location = new System.Drawing.Point(416, 541);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 22);
             this.label8.TabIndex = 173;
@@ -417,11 +417,12 @@
             // txtNIC
             // 
             this.txtNIC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNIC.Location = new System.Drawing.Point(710, 461);
+            this.txtNIC.Location = new System.Drawing.Point(706, 461);
             this.txtNIC.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtNIC.Name = "txtNIC";
             this.txtNIC.Size = new System.Drawing.Size(267, 22);
             this.txtNIC.TabIndex = 172;
+            this.txtNIC.TextChanged += new System.EventHandler(this.txtNIC_TextChanged);
             // 
             // txtNiclabel
             // 
@@ -430,7 +431,7 @@
             this.txtNiclabel.BackColor = System.Drawing.Color.Transparent;
             this.txtNiclabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNiclabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtNiclabel.Location = new System.Drawing.Point(422, 461);
+            this.txtNiclabel.Location = new System.Drawing.Point(417, 461);
             this.txtNiclabel.Name = "txtNiclabel";
             this.txtNiclabel.Size = new System.Drawing.Size(118, 22);
             this.txtNiclabel.TabIndex = 171;
@@ -465,7 +466,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(422, 414);
+            this.label10.Location = new System.Drawing.Point(418, 417);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 22);
             this.label10.TabIndex = 168;
@@ -478,7 +479,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(418, 380);
+            this.label11.Location = new System.Drawing.Point(418, 377);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(127, 22);
             this.label11.TabIndex = 167;
@@ -534,7 +535,7 @@
             this.btnEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(12)))), ((int)(((byte)(2)))));
             this.btnEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmail.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnEmail.Location = new System.Drawing.Point(943, 789);
+            this.btnEmail.Location = new System.Drawing.Point(771, 789);
             this.btnEmail.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btnEmail.Name = "btnEmail";
             this.btnEmail.Size = new System.Drawing.Size(115, 47);
@@ -559,7 +560,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::SchoolManagementSystem.Properties.Resources.back_basic;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1312, 943);
             this.Controls.Add(this.lblPath);

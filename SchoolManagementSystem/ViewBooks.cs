@@ -203,11 +203,11 @@ namespace SchoolManagementSystem
 
 
                         //Add school logo code start
-                        iTextSharp.text.Image image1 = iTextSharp.text.Image.GetInstance("C:/Users/User/Desktop/SchoolManagementSystem/SchoolManagementSystem/pictures/logo.png");
+                        iTextSharp.text.Image image1 = iTextSharp.text.Image.GetInstance("C:/Users/User/Desktop/SchoolManagementSystem/SchoolManagementSystem/pictures/Library book details report header.png");
                         //Fixed Positioning
-                        image1.SetAbsolutePosition(510, 650);
+                        image1.SetAbsolutePosition(0, 750);
                         //Scale to new height and new width of image
-                        image1.ScaleAbsolute(150, 150);
+                        image1.ScaleAbsolute(600, 90);
                         //Add to document
                         document.Add(image1);
                         //Add school logo code end

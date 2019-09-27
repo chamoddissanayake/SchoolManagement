@@ -69,6 +69,7 @@
             // 
             this.Bookid.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Bookid.AutoSize = true;
+            this.Bookid.BackColor = System.Drawing.Color.Transparent;
             this.Bookid.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bookid.Location = new System.Drawing.Point(205, 196);
             this.Bookid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -81,6 +82,7 @@
             // 
             this.Studentid.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Studentid.AutoSize = true;
+            this.Studentid.BackColor = System.Drawing.Color.Transparent;
             this.Studentid.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Studentid.Location = new System.Drawing.Point(204, 257);
             this.Studentid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -93,6 +95,7 @@
             // 
             this.Issuedate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Issuedate.AutoSize = true;
+            this.Issuedate.BackColor = System.Drawing.Color.Transparent;
             this.Issuedate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Issuedate.Location = new System.Drawing.Point(204, 309);
             this.Issuedate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -105,6 +108,7 @@
             // 
             this.Duedate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Duedate.AutoSize = true;
+            this.Duedate.BackColor = System.Drawing.Color.Transparent;
             this.Duedate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Duedate.Location = new System.Drawing.Point(204, 364);
             this.Duedate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -117,6 +121,7 @@
             // 
             this.Returndate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Returndate.AutoSize = true;
+            this.Returndate.BackColor = System.Drawing.Color.Transparent;
             this.Returndate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Returndate.Location = new System.Drawing.Point(204, 418);
             this.Returndate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -236,6 +241,7 @@
             // 
             this.fineifany.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.fineifany.AutoSize = true;
+            this.fineifany.BackColor = System.Drawing.Color.Transparent;
             this.fineifany.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fineifany.Location = new System.Drawing.Point(208, 484);
             this.fineifany.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -257,7 +263,9 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(592, 91);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -408,6 +416,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = global::SchoolManagementSystem.Properties.Resources.back_basic;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1312, 695);
             this.Controls.Add(this.lblPath);
             this.Controls.Add(this.flowLayoutPanel2);

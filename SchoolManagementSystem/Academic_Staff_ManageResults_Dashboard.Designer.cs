@@ -144,10 +144,11 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(627, 196);
+            this.label5.Location = new System.Drawing.Point(695, 292);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(326, 20);
             this.label5.TabIndex = 8;
@@ -155,8 +156,9 @@
             // 
             // dataGridViewClassResult
             // 
+            this.dataGridViewClassResult.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridViewClassResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewClassResult.Location = new System.Drawing.Point(256, 322);
+            this.dataGridViewClassResult.Location = new System.Drawing.Point(324, 418);
             this.dataGridViewClassResult.Name = "dataGridViewClassResult";
             this.dataGridViewClassResult.RowTemplate.Height = 24;
             this.dataGridViewClassResult.Size = new System.Drawing.Size(1074, 493);
@@ -164,9 +166,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(262, 256);
+            this.label6.Location = new System.Drawing.Point(305, 354);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(155, 17);
             this.label6.TabIndex = 10;
@@ -174,9 +177,10 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(753, 256);
+            this.label7.Location = new System.Drawing.Point(821, 352);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 17);
             this.label7.TabIndex = 11;
@@ -184,7 +188,8 @@
             // 
             // teacherSearchStudentResultByID
             // 
-            this.teacherSearchStudentResultByID.Location = new System.Drawing.Point(423, 256);
+            this.teacherSearchStudentResultByID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.teacherSearchStudentResultByID.Location = new System.Drawing.Point(491, 352);
             this.teacherSearchStudentResultByID.Name = "teacherSearchStudentResultByID";
             this.teacherSearchStudentResultByID.Size = new System.Drawing.Size(297, 22);
             this.teacherSearchStudentResultByID.TabIndex = 12;
@@ -192,7 +197,8 @@
             // 
             // teacherSearchStudentResultByName
             // 
-            this.teacherSearchStudentResultByName.Location = new System.Drawing.Point(864, 253);
+            this.teacherSearchStudentResultByName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.teacherSearchStudentResultByName.Location = new System.Drawing.Point(932, 349);
             this.teacherSearchStudentResultByName.Name = "teacherSearchStudentResultByName";
             this.teacherSearchStudentResultByName.Size = new System.Drawing.Size(466, 22);
             this.teacherSearchStudentResultByName.TabIndex = 13;
@@ -252,10 +258,11 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(1008, 122);
+            this.pictureBox2.Location = new System.Drawing.Point(798, 148);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 50);
             this.pictureBox2.TabIndex = 30;
@@ -263,9 +270,10 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(1339, 120);
+            this.pictureBox3.Location = new System.Drawing.Point(1129, 146);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(50, 50);
             this.pictureBox3.TabIndex = 29;
@@ -273,10 +281,11 @@
             // 
             // label13
             // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(1073, 135);
+            this.label13.Location = new System.Drawing.Point(863, 161);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(257, 29);
             this.label13.TabIndex = 28;
@@ -286,7 +295,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::SchoolManagementSystem.Properties.Resources.back_basic;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.pictureBox2);

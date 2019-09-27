@@ -163,6 +163,9 @@ namespace SchoolManagementSystem
             {
                 lblPath.Text = "";
             }
+            txtNIC.ReadOnly = true;
+            txtExperience.ReadOnly = true;
+            txtQualification.ReadOnly = true;
 
         }
 

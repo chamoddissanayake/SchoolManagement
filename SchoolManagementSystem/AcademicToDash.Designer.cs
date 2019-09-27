@@ -76,6 +76,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnDemo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -136,7 +137,7 @@
             // txtQualification
             // 
             this.txtQualification.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtQualification.Location = new System.Drawing.Point(675, 699);
+            this.txtQualification.Location = new System.Drawing.Point(672, 699);
             this.txtQualification.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtQualification.Multiline = true;
             this.txtQualification.Name = "txtQualification";
@@ -150,7 +151,7 @@
             this.txtEdu.BackColor = System.Drawing.Color.Transparent;
             this.txtEdu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEdu.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtEdu.Location = new System.Drawing.Point(387, 699);
+            this.txtEdu.Location = new System.Drawing.Point(375, 699);
             this.txtEdu.Name = "txtEdu";
             this.txtEdu.Size = new System.Drawing.Size(243, 22);
             this.txtEdu.TabIndex = 87;
@@ -262,7 +263,7 @@
             this.txtYerReg.BackColor = System.Drawing.Color.Transparent;
             this.txtYerReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYerReg.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtYerReg.Location = new System.Drawing.Point(387, 607);
+            this.txtYerReg.Location = new System.Drawing.Point(376, 607);
             this.txtYerReg.Name = "txtYerReg";
             this.txtYerReg.Size = new System.Drawing.Size(117, 22);
             this.txtYerReg.TabIndex = 78;
@@ -345,7 +346,7 @@
             this.txtNiclabel.BackColor = System.Drawing.Color.Transparent;
             this.txtNiclabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNiclabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtNiclabel.Location = new System.Drawing.Point(381, 527);
+            this.txtNiclabel.Location = new System.Drawing.Point(377, 527);
             this.txtNiclabel.Name = "txtNiclabel";
             this.txtNiclabel.Size = new System.Drawing.Size(118, 22);
             this.txtNiclabel.TabIndex = 72;
@@ -367,7 +368,7 @@
             this.txtcont.BackColor = System.Drawing.Color.Transparent;
             this.txtcont.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcont.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtcont.Location = new System.Drawing.Point(377, 395);
+            this.txtcont.Location = new System.Drawing.Point(375, 395);
             this.txtcont.Name = "txtcont";
             this.txtcont.Size = new System.Drawing.Size(154, 22);
             this.txtcont.TabIndex = 70;
@@ -380,7 +381,7 @@
             this.txtSex.BackColor = System.Drawing.Color.Transparent;
             this.txtSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSex.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtSex.Location = new System.Drawing.Point(381, 480);
+            this.txtSex.Location = new System.Drawing.Point(377, 484);
             this.txtSex.Name = "txtSex";
             this.txtSex.Size = new System.Drawing.Size(82, 22);
             this.txtSex.TabIndex = 69;
@@ -649,7 +650,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(381, 653);
+            this.label6.Location = new System.Drawing.Point(375, 653);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(185, 22);
             this.label6.TabIndex = 161;
@@ -658,7 +659,7 @@
             // txtPassword
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPassword.Location = new System.Drawing.Point(675, 853);
+            this.txtPassword.Location = new System.Drawing.Point(674, 853);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(267, 22);
@@ -671,19 +672,36 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(387, 853);
+            this.label7.Location = new System.Drawing.Point(381, 853);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(152, 22);
             this.label7.TabIndex = 163;
             this.label7.Text = "Login Password";
             // 
+            // btnDemo
+            // 
+            this.btnDemo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDemo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(12)))), ((int)(((byte)(2)))));
+            this.btnDemo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDemo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDemo.ForeColor = System.Drawing.SystemColors.Info;
+            this.btnDemo.Location = new System.Drawing.Point(956, 917);
+            this.btnDemo.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnDemo.Name = "btnDemo";
+            this.btnDemo.Size = new System.Drawing.Size(120, 43);
+            this.btnDemo.TabIndex = 165;
+            this.btnDemo.Text = "Demo";
+            this.btnDemo.UseVisualStyleBackColor = false;
+            this.btnDemo.Click += new System.EventHandler(this.btnDemo_Click);
+            // 
             // AcademicToDash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::SchoolManagementSystem.Properties.Resources.back_basic;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1780, 1055);
+            this.Controls.Add(this.btnDemo);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtSpecializedSubject);
@@ -794,5 +812,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnDemo;
     }
 }

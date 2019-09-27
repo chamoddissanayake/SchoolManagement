@@ -205,7 +205,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImage = global::SchoolManagementSystem.Properties.Resources.back_basic;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.btnDocument);
             this.panel1.Controls.Add(this.lblPath);
@@ -373,8 +373,8 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label1.Location = new System.Drawing.Point(63, 150);
+            this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label1.Location = new System.Drawing.Point(64, 194);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 17);
@@ -386,7 +386,7 @@
             // 
             this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtName.BackColor = System.Drawing.Color.LightGray;
-            this.txtName.Location = new System.Drawing.Point(213, 146);
+            this.txtName.Location = new System.Drawing.Point(214, 190);
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(233, 22);
@@ -398,8 +398,8 @@
             this.DOB.AutoSize = true;
             this.DOB.BackColor = System.Drawing.Color.Transparent;
             this.DOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DOB.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.DOB.Location = new System.Drawing.Point(61, 195);
+            this.DOB.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.DOB.Location = new System.Drawing.Point(62, 239);
             this.DOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DOB.Name = "DOB";
             this.DOB.Size = new System.Drawing.Size(41, 17);
@@ -410,7 +410,7 @@
             // 
             this.txtDOB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDOB.BackColor = System.Drawing.Color.LightGray;
-            this.txtDOB.Location = new System.Drawing.Point(213, 195);
+            this.txtDOB.Location = new System.Drawing.Point(214, 239);
             this.txtDOB.Margin = new System.Windows.Forms.Padding(4);
             this.txtDOB.Name = "txtDOB";
             this.txtDOB.Size = new System.Drawing.Size(233, 22);
@@ -422,8 +422,8 @@
             this.Year.AutoSize = true;
             this.Year.BackColor = System.Drawing.Color.Transparent;
             this.Year.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Year.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.Year.Location = new System.Drawing.Point(63, 248);
+            this.Year.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.Year.Location = new System.Drawing.Point(64, 292);
             this.Year.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Year.Name = "Year";
             this.Year.Size = new System.Drawing.Size(42, 17);
@@ -449,7 +449,7 @@
             // 
             this.txtYear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtYear.BackColor = System.Drawing.Color.LightGray;
-            this.txtYear.Location = new System.Drawing.Point(213, 245);
+            this.txtYear.Location = new System.Drawing.Point(214, 289);
             this.txtYear.Margin = new System.Windows.Forms.Padding(4);
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(233, 22);
@@ -476,8 +476,8 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label4.Location = new System.Drawing.Point(61, 303);
+            this.label4.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label4.Location = new System.Drawing.Point(62, 347);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 17);
@@ -488,7 +488,7 @@
             // 
             this.txtMobileNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMobileNumber.BackColor = System.Drawing.Color.LightGray;
-            this.txtMobileNumber.Location = new System.Drawing.Point(213, 394);
+            this.txtMobileNumber.Location = new System.Drawing.Point(214, 438);
             this.txtMobileNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtMobileNumber.Name = "txtMobileNumber";
             this.txtMobileNumber.Size = new System.Drawing.Size(233, 22);
@@ -498,7 +498,7 @@
             // 
             this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAddress.BackColor = System.Drawing.Color.LightGray;
-            this.txtAddress.Location = new System.Drawing.Point(213, 299);
+            this.txtAddress.Location = new System.Drawing.Point(214, 343);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
@@ -511,8 +511,8 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label5.Location = new System.Drawing.Point(63, 402);
+            this.label5.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label5.Location = new System.Drawing.Point(64, 446);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 17);

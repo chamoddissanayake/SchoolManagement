@@ -33,6 +33,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.backAE = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,8 +45,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.backAE = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel1.SuspendLayout();
@@ -103,6 +103,38 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(128, 1151);
             this.panel2.TabIndex = 91;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(71)))), ((int)(((byte)(57)))));
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.Orange;
+            this.button9.Location = new System.Drawing.Point(0, 288);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(128, 50);
+            this.button9.TabIndex = 173;
+            this.button9.Text = "Logout";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // backAE
+            // 
+            this.backAE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(71)))), ((int)(((byte)(57)))));
+            this.backAE.FlatAppearance.BorderSize = 0;
+            this.backAE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backAE.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backAE.ForeColor = System.Drawing.Color.Orange;
+            this.backAE.Location = new System.Drawing.Point(1, 358);
+            this.backAE.Margin = new System.Windows.Forms.Padding(4);
+            this.backAE.Name = "backAE";
+            this.backAE.Size = new System.Drawing.Size(124, 54);
+            this.backAE.TabIndex = 174;
+            this.backAE.Text = "Back";
+            this.backAE.UseVisualStyleBackColor = false;
+            this.backAE.Click += new System.EventHandler(this.backAE_Click);
             // 
             // pictureBox5
             // 
@@ -208,43 +240,11 @@
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(71)))), ((int)(((byte)(57)))));
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.Orange;
-            this.button9.Location = new System.Drawing.Point(0, 288);
-            this.button9.Margin = new System.Windows.Forms.Padding(4);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(128, 50);
-            this.button9.TabIndex = 173;
-            this.button9.Text = "Logout";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // backAE
-            // 
-            this.backAE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(71)))), ((int)(((byte)(57)))));
-            this.backAE.FlatAppearance.BorderSize = 0;
-            this.backAE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backAE.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backAE.ForeColor = System.Drawing.Color.Orange;
-            this.backAE.Location = new System.Drawing.Point(1, 358);
-            this.backAE.Margin = new System.Windows.Forms.Padding(4);
-            this.backAE.Name = "backAE";
-            this.backAE.Size = new System.Drawing.Size(124, 54);
-            this.backAE.TabIndex = 174;
-            this.backAE.Text = "Back";
-            this.backAE.UseVisualStyleBackColor = false;
-            this.backAE.Click += new System.EventHandler(this.backAE_Click);
-            // 
             // sub_staff_dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::SchoolManagementSystem.Properties.Resources.back_basic;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.pictureBox3);

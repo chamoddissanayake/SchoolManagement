@@ -59,7 +59,7 @@ namespace SchoolManagementSystem
                 if(!(Regex.IsMatch(txtEmail.Text, pattern)))
                 {
                     MessageBox.Show("Email is not correct.");
-                }else if(txtNIC.Text.Length ==10)
+                }else if(txtNIC.Text.Length !=10)
                 {
                     MessageBox.Show("NIC is incorrect.");
                 }else
@@ -241,60 +241,89 @@ namespace SchoolManagementSystem
 
         }
 
-        public void exportDataGrid(DataGridView dgw, string fileName)
+        private void exportDataGrid()
         {
-            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
-            PdfPTable pdfpt = new PdfPTable(dgw.Columns.Count);
-            pdfpt.DefaultCell.Padding = 3;
-            pdfpt.WidthPercentage = 100;
-            pdfpt.HorizontalAlignment = Element.ALIGN_LEFT;
-            pdfpt.DefaultCell.BorderWidth = 1;
-
-            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
-
-            //Add Header
-            foreach (DataGridViewColumn column in dgw.Columns)
+            try
             {
-                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, text));
-                cell.BackgroundColor = new iTextSharp.text.Color(191, 47, 47);
-                pdfpt.AddCell(cell);
-            }
+                var savefiledialog = new SaveFileDialog();
+                savefiledialog.FileName = "Academic Staff Report";
+                savefiledialog.DefaultExt = ".pdf";
 
-
-            //Add datarow
-            foreach (DataGridViewRow row in dgw.Rows)
-            {
-                foreach (DataGridViewCell cell in row.Cells)
+                if (savefiledialog.ShowDialog() == DialogResult.OK)
                 {
-                    pdfpt.AddCell(new Phrase(cell.Value.ToString(), text));
+                    using (FileStream stream = new FileStream(savefiledialog.FileName, FileMode.Create))
+                    {
+                        Document document = new Document();
+
+                        PdfWriter.GetInstance(document, stream);
+                        document.Open();
+
+                        Paragraph p = new Paragraph("--- Reprot ---");
+
+                        //Add school logo code start
+                        iTextSharp.text.Image image1 = iTextSharp.text.Image.GetInstance("C:/Users/User/Desktop/SchoolManagementSystem/SchoolManagementSystem/pictures/Academic staff report header.png");
+                        //Fixed Positioning
+                        image1.SetAbsolutePosition(0, 750);
+                        //Scale to new height and new width of image
+                        image1.ScaleAbsolute(600, 90);
+                        //Add to document
+                        document.Add(image1);
+                        //Add school logo code end
+
+                        Paragraph p1 = new Paragraph("\n\n\n\n\n\n\n\n\n\n\n");
+                        document.Add(p1);
+
+                        PdfPTable pdfTable1 = new PdfPTable(6);
+                        //Adding Header row
+                        foreach (DataGridViewColumn column in dataGridView1.Columns)
+                        {
+                            PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                            pdfTable1.AddCell(cell);
+                        }
+
+
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            foreach (DataGridViewCell celli in row.Cells)
+                            {
+                                try
+                                {
+                                    pdfTable1.AddCell(celli.Value.ToString());
+                                }
+                                catch { }
+                            }
+                        }
+
+                        document.Add(pdfTable1);
+
+                        document.Close();
+
+                        stream.Close();
+                    }
                 }
+
+                MessageBox.Show(savefiledialog.FileName + " saved successfully.");
+
             }
-
-            var savefiledialog = new SaveFileDialog();
-            savefiledialog.FileName = fileName;
-            savefiledialog.DefaultExt = ".pdf";
-
-            if (savefiledialog.ShowDialog() == DialogResult.OK)
+            catch (IOException ex1)
             {
-                using (FileStream stream = new FileStream(savefiledialog.FileName, FileMode.Create))
-                {
-                    Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
-                    PdfWriter.GetInstance(pdfdoc, stream);
-                    pdfdoc.Open();
-                    pdfdoc.Add(pdfpt);
-
-                    DateTime now = DateTime.Now;
-                    Paragraph pEnd = new Paragraph("- System generated Academic Staff Report on " + now + " - ");
-                    pdfdoc.Add(pEnd);
-
-                    pdfdoc.Close();
-                    stream.Close();
-                }
+                MessageBox.Show("File Already open, Please close it.");
             }
+            catch (Exception e1)
+            {
+                MessageBox.Show("Error: " + e1);
+            }
+            finally
+            {
+
+            }
+
         }
+
         private void butReport_Click(object sender, EventArgs e)
         {
-            exportDataGrid(dataGridView1, "Academic Staff Report");
+            exportDataGrid();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -443,6 +472,19 @@ namespace SchoolManagementSystem
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnDemo_Click(object sender, EventArgs e)
+        {
+            txtStfId.Text = "STF551";
+            txtFName.Text = "Shaishinka";
+            txtLName.Text = "Kumarage";
+            txtEmail.Text = "sashi@gmail.com";
+            txtPhone.Text = "0715439940";
+            txtNIC.Text = "968241214V";
+            txtSpecializedSubject.Text = "Maths";
+            txtQualification.Text = "Degree";
+            txtPassword.Text = "sasi";
         }
     }
 }

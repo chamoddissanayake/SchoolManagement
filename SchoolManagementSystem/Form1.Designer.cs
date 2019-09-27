@@ -40,6 +40,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnReport = new System.Windows.Forms.Button();
             this.lblPath = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnReport = new System.Windows.Forms.Button();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -206,6 +206,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Khaki;
+            this.panel1.BackgroundImage = global::SchoolManagementSystem.Properties.Resources.back_basic;
             this.panel1.Controls.Add(this.btnReport);
             this.panel1.Controls.Add(this.lblPath);
             this.panel1.Controls.Add(this.button2);
@@ -230,6 +231,22 @@
             this.panel1.Size = new System.Drawing.Size(1156, 620);
             this.panel1.TabIndex = 22;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnReport
+            // 
+            this.btnReport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnReport.BackColor = System.Drawing.Color.Maroon;
+            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnReport.Location = new System.Drawing.Point(596, 488);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(161, 50);
+            this.btnReport.TabIndex = 172;
+            this.btnReport.Text = "Report";
+            this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // lblPath
             // 
@@ -423,12 +440,12 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Sienna;
-            this.button1.Location = new System.Drawing.Point(925, 96);
+            this.button1.Location = new System.Drawing.Point(924, 94);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 37);
+            this.button1.Size = new System.Drawing.Size(203, 37);
             this.button1.TabIndex = 14;
-            this.button1.Text = "Search";
+            this.button1.Text = "Search By BookID";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -511,22 +528,6 @@
             this.label4.Size = new System.Drawing.Size(122, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "Due Date       :";
-            // 
-            // btnReport
-            // 
-            this.btnReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnReport.BackColor = System.Drawing.Color.Maroon;
-            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReport.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnReport.Location = new System.Drawing.Point(596, 488);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(161, 50);
-            this.btnReport.TabIndex = 172;
-            this.btnReport.Text = "Report";
-            this.btnReport.UseVisualStyleBackColor = false;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // Form1
             // 

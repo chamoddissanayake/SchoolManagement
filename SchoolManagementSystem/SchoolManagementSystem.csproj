@@ -561,6 +561,7 @@
     <None Include="Resources\bb8baec8be1c5057ac42f20f09b415bb.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="pictures\back basic.jpg" />
     <Content Include="Resources\1.jpg" />
     <Content Include="Resources\113259274-job-interview-and-recruiting-hr-agency-concept-staff-recruitment-human-resource-search-and-selection.jpg" />
     <Content Include="Resources\113259274-job-interview-and-recruiting-hr-agency-concept-staff-recruitment-human-resource-search-and-selection1.jpg" />

@@ -143,6 +143,10 @@ namespace SchoolManagementSystem
             {
                 lblPath.Text = "";
             }
+            txtNIC.ReadOnly = true;
+            txtSpecializedSubject.ReadOnly= true;
+            txtQualification.ReadOnly = true;
+           
         }
 
         private void fillData()
@@ -171,6 +175,11 @@ namespace SchoolManagementSystem
         {
             Staff_Email obj = new Staff_Email();
             obj.Show();
+        }
+
+        private void txtNIC_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

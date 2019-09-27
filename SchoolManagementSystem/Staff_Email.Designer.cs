@@ -65,7 +65,7 @@
             this.textBox1.BackColor = System.Drawing.Color.DarkRed;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Uighur", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(381, 130);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(716, 61);
@@ -80,7 +80,7 @@
             this.btnSend.Font = new System.Drawing.Font("Microsoft Uighur", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSend.ForeColor = System.Drawing.Color.SeaShell;
             this.btnSend.Location = new System.Drawing.Point(728, 583);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(4);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(157, 53);
             this.btnSend.TabIndex = 10;
@@ -93,7 +93,7 @@
             this.textBody.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBody.BackColor = System.Drawing.Color.White;
             this.textBody.Location = new System.Drawing.Point(581, 427);
-            this.textBody.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBody.Margin = new System.Windows.Forms.Padding(4);
             this.textBody.Multiline = true;
             this.textBody.Name = "textBody";
             this.textBody.Size = new System.Drawing.Size(471, 130);
@@ -104,7 +104,7 @@
             this.textSub.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textSub.BackColor = System.Drawing.Color.White;
             this.textSub.Location = new System.Drawing.Point(581, 286);
-            this.textSub.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textSub.Margin = new System.Windows.Forms.Padding(4);
             this.textSub.Multiline = true;
             this.textSub.Name = "textSub";
             this.textSub.Size = new System.Drawing.Size(471, 57);
@@ -131,7 +131,7 @@
             this.label1.Location = new System.Drawing.Point(344, 286);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.label1.Padding = new System.Windows.Forms.Padding(4);
             this.label1.Size = new System.Drawing.Size(131, 49);
             this.label1.TabIndex = 6;
             this.label1.Text = "Subject";
@@ -144,7 +144,7 @@
             this.backAE.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backAE.ForeColor = System.Drawing.Color.Orange;
             this.backAE.Location = new System.Drawing.Point(4, 201);
-            this.backAE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backAE.Margin = new System.Windows.Forms.Padding(4);
             this.backAE.Name = "backAE";
             this.backAE.Size = new System.Drawing.Size(147, 54);
             this.backAE.TabIndex = 123;
@@ -197,7 +197,7 @@
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(1061, 427);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(85, 63);
             this.pictureBox2.TabIndex = 121;
@@ -210,7 +210,7 @@
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(1061, 286);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(81, 58);
             this.pictureBox3.TabIndex = 122;
@@ -226,7 +226,7 @@
             this.flowLayoutPanel2.Controls.Add(this.button2);
             this.flowLayoutPanel2.Controls.Add(this.backAE);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 149);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(151, 544);
             this.flowLayoutPanel2.TabIndex = 152;
@@ -236,7 +236,7 @@
             this.flowLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(12)))), ((int)(((byte)(2)))));
             this.flowLayoutPanel3.Location = new System.Drawing.Point(4, 4);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(147, 123);
             this.flowLayoutPanel3.TabIndex = 3;
@@ -247,7 +247,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(3, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(151, 146);
             this.pictureBox1.TabIndex = 153;
@@ -260,7 +260,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(12)))), ((int)(((byte)(2)))));
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Location = new System.Drawing.Point(153, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1156, 70);
             this.panel2.TabIndex = 154;
@@ -273,7 +273,7 @@
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(96, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(947, 70);
             this.flowLayoutPanel1.TabIndex = 32;
@@ -282,7 +282,7 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.Location = new System.Drawing.Point(4, 4);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(161, 63);
             this.panel3.TabIndex = 21;
@@ -293,7 +293,7 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(12)))), ((int)(((byte)(2)))));
             this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(173, 4);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(636, 70);
             this.panel4.TabIndex = 1;
@@ -315,7 +315,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::SchoolManagementSystem.Properties.Resources.back_basic;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1312, 695);
             this.Controls.Add(this.flowLayoutPanel2);
@@ -332,7 +332,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Staff_Email";
             this.Text = "Aca_Email";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
